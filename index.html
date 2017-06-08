@@ -607,15 +607,14 @@
 
       
         
-          
-            <p>表备份<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 备份表结构和数据</span></div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name_new <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> table_name_old <span class="keyword">where</span> <span class="number">1</span>=<span class="number">1</span>;</div><div class="line"><span class="comment">-- 备份空表结构</span></div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name_new <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> table_name_old <span class="keyword">where</span> <span class="number">1</span>=<span class="number">2</span>;</div></pre></td></tr></table></figure></p>
-<p>查看当前用户下所有表<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> table_name <span class="keyword">from</span> user_tables;</div></pre></td></tr></table></figure></p>
-<p>查看当前用户下所有表及表注释<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_tab_comments;</div></pre></td></tr></table></figure></p>
-<p>获取表字段：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_tab_columns <span class="keyword">where</span> Table_Name=<span class="string">'用户表'</span> <span class="keyword">order</span> <span class="keyword">by</span> column_name</div></pre></td></tr></table></figure></p>
-<p>获取表注释：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_tab_comments <span class="keyword">where</span> Table_Name=<span class="string">'用户表'</span> <span class="keyword">order</span> <span class="keyword">by</span> Table_Name</div></pre></td></tr></table></figure></p>
-<p>获取字段注释：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_col_comments <span class="keyword">where</span> Table_Name=<span class="string">'用户表'</span> <span class="keyword">order</span> <span class="keyword">by</span> column_name</div></pre></td></tr></table></figure></p>
-
-          
+          <p>表备份<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 备份表结构和数据</span></div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name_new <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> table_name_old <span class="keyword">where</span> <span class="number">1</span>=<span class="number">1</span>;</div><div class="line"><span class="comment">-- 备份空表结构</span></div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name_new <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> table_name_old <span class="keyword">where</span> <span class="number">1</span>=<span class="number">2</span>;</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/25/ORACLE查看所有表和字段/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
