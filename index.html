@@ -425,223 +425,16 @@
 
       
         
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>MySQL提供了众多功能强大、方便易用的函数，使用这些函数，可以极大地提高用户对于数据库的管理效率，从而更加灵活地满足不同用户的需求。本文将MySQL的函数分类并汇总，以便以后用到的时候可以随时查看。</p>
 </blockquote>
-<p>##数学函数</p>
-<h3 id="ABS-x"><a href="#ABS-x" class="headerlink" title="ABS(x)"></a>ABS(x)</h3><blockquote>
-<p>返回x的绝对值</p>
-</blockquote>
-<h3 id="PI"><a href="#PI" class="headerlink" title="PI()"></a>PI()</h3><blockquote>
-<p>返回圆周率π，默认显示6位小数</p>
-</blockquote>
-<h3 id="SQRT-x"><a href="#SQRT-x" class="headerlink" title="SQRT(x)"></a>SQRT(x)</h3><blockquote>
-<p>返回非负数的x的二次方根</p>
-</blockquote>
-<h3 id="MOD-x-y"><a href="#MOD-x-y" class="headerlink" title="MOD(x,y)"></a>MOD(x,y)</h3><blockquote>
-<p>返回x被y除后的余数</p>
-</blockquote>
-<h3 id="CEIL-x-、CEILING-x"><a href="#CEIL-x-、CEILING-x" class="headerlink" title="CEIL(x)、CEILING(x)"></a>CEIL(x)、CEILING(x)</h3><blockquote>
-<p>返回不小于x的最小整数</p>
-</blockquote>
-<h3 id="FLOOR-x"><a href="#FLOOR-x" class="headerlink" title="FLOOR(x)"></a>FLOOR(x)</h3><blockquote>
-<p>返回不大于x的最大整数</p>
-</blockquote>
-<h3 id="ROUND-x-、ROUND-x-y"><a href="#ROUND-x-、ROUND-x-y" class="headerlink" title="ROUND(x)、ROUND(x,y)"></a>ROUND(x)、ROUND(x,y)</h3><blockquote>
-<p>前者返回最接近于x的整数，即对x进行四舍五入；后者返回最接近x的数，其值保留到小数点后面y位，若y为负值，则将保留到x到小数点左边y位</p>
-</blockquote>
-<h3 id="SIGN-x"><a href="#SIGN-x" class="headerlink" title="SIGN(x)"></a>SIGN(x)</h3><blockquote>
-<p>返回参数x的符号，-1表示负数，0表示0，1表示正数</p>
-</blockquote>
-<h3 id="POW-x-y-和、POWER-x-y"><a href="#POW-x-y-和、POWER-x-y" class="headerlink" title="POW(x,y)和、POWER(x,y)"></a>POW(x,y)和、POWER(x,y)</h3><blockquote>
-<p>返回x的y次乘方的值</p>
-</blockquote>
-<h3 id="EXP-x"><a href="#EXP-x" class="headerlink" title="EXP(x)"></a>EXP(x)</h3><blockquote>
-<p>返回e的x乘方后的值</p>
-</blockquote>
-<h3 id="LOG-x"><a href="#LOG-x" class="headerlink" title="LOG(x)"></a>LOG(x)</h3><blockquote>
-<p>返回x的自然对数，x相对于基数e的对数</p>
-</blockquote>
-<h3 id="LOG10-x"><a href="#LOG10-x" class="headerlink" title="LOG10(x)"></a>LOG10(x)</h3><blockquote>
-<p>返回x的基数为10的对数</p>
-</blockquote>
-<h3 id="RADIANS-x"><a href="#RADIANS-x" class="headerlink" title="RADIANS(x)"></a>RADIANS(x)</h3><blockquote>
-<p>返回x由角度转化为弧度的值</p>
-</blockquote>
-<h3 id="DEGREES-x"><a href="#DEGREES-x" class="headerlink" title="DEGREES(x)"></a>DEGREES(x)</h3><blockquote>
-<p>返回x由弧度转化为角度的值</p>
-</blockquote>
-<h3 id="SIN-x-、ASIN-x"><a href="#SIN-x-、ASIN-x" class="headerlink" title="SIN(x)、ASIN(x)"></a>SIN(x)、ASIN(x)</h3><blockquote>
-<p>前者返回x的正弦，其中x为给定的弧度值；后者返回x的反正弦值，x为正弦</p>
-</blockquote>
-<h3 id="COS-x-、ACOS-x"><a href="#COS-x-、ACOS-x" class="headerlink" title="COS(x)、ACOS(x)"></a>COS(x)、ACOS(x)</h3><blockquote>
-<p>前者返回x的余弦，其中x为给定的弧度值；后者返回x的反余弦值，x为余弦</p>
-</blockquote>
-<h3 id="TAN-x-、ATAN-x"><a href="#TAN-x-、ATAN-x" class="headerlink" title="TAN(x)、ATAN(x)"></a>TAN(x)、ATAN(x)</h3><blockquote>
-<p>前者返回x的正切，其中x为给定的弧度值；后者返回x的反正切值，x为正切</p>
-</blockquote>
-<h3 id="COT-x"><a href="#COT-x" class="headerlink" title="COT(x)"></a>COT(x)</h3><blockquote>
-<p>返回给定弧度值x的余切</p>
-</blockquote>
-<h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><h3 id="CHAR-LENGTH-str"><a href="#CHAR-LENGTH-str" class="headerlink" title="CHAR_LENGTH(str)"></a>CHAR_LENGTH(str)</h3><blockquote>
-<p>计算字符串字符个数</p>
-</blockquote>
-<h3 id="CONCAT-s1-s2，…"><a href="#CONCAT-s1-s2，…" class="headerlink" title="CONCAT(s1,s2，…)"></a>CONCAT(s1,s2，…)</h3><blockquote>
-<p>返回连接参数产生的字符串，一个或多个待拼接的内容，任意一个为NULL则返回值为NULL</p>
-</blockquote>
-<h3 id="CONCAT-WS-x-s1-s2-…"><a href="#CONCAT-WS-x-s1-s2-…" class="headerlink" title="CONCAT_WS(x,s1,s2,…)"></a>CONCAT_WS(x,s1,s2,…)</h3><blockquote>
-<p>返回多个字符串拼接之后的字符串，每个字符串之间有一个x</p>
-</blockquote>
-<h3 id="INSERT-s1-x-len-s2"><a href="#INSERT-s1-x-len-s2" class="headerlink" title="INSERT(s1,x,len,s2)"></a>INSERT(s1,x,len,s2)</h3><blockquote>
-<p>返回字符串s1，其子字符串起始于位置x，被字符串s2取代len个字符</p>
-</blockquote>
-<h3 id="LOWER-str-和LCASE-str-、UPPER-str-和UCASE-str"><a href="#LOWER-str-和LCASE-str-、UPPER-str-和UCASE-str" class="headerlink" title="LOWER(str)和LCASE(str)、UPPER(str)和UCASE(str)"></a>LOWER(str)和LCASE(str)、UPPER(str)和UCASE(str)</h3><blockquote>
-<p>前两者将str中的字母全部转换成小写，后两者将字符串中的字母全部转换成大写</p>
-</blockquote>
-<h3 id="LEFT-s-n-、RIGHT-s-n"><a href="#LEFT-s-n-、RIGHT-s-n" class="headerlink" title="LEFT(s,n)、RIGHT(s,n)"></a>LEFT(s,n)、RIGHT(s,n)</h3><blockquote>
-<p>前者返回字符串s从最左边开始的n个字符，后者返回字符串s从最右边开始的n个字符</p>
-</blockquote>
-<h3 id="LPAD-s1-len-s2-、RPAD-s1-len-s2"><a href="#LPAD-s1-len-s2-、RPAD-s1-len-s2" class="headerlink" title="LPAD(s1,len,s2)、RPAD(s1,len,s2)"></a>LPAD(s1,len,s2)、RPAD(s1,len,s2)</h3><blockquote>
-<p>前者返回s1，其左边由字符串s2填补到len字符长度，假如s1的长度大于len，则返回值被缩短至len字符；前者返回s1，其右边由字符串s2填补到len字符长度，假如s1的长度大于len，则返回值被缩短至len字符</p>
-</blockquote>
-<h3 id="LTRIM-s-、RTRIM-s"><a href="#LTRIM-s-、RTRIM-s" class="headerlink" title="LTRIM(s)、RTRIM(s)"></a>LTRIM(s)、RTRIM(s)</h3><blockquote>
-<p>前者返回字符串s，其左边所有空格被删除；后者返回字符串s，其右边所有空格被删除</p>
-</blockquote>
-<h3 id="TRIM-s"><a href="#TRIM-s" class="headerlink" title="TRIM(s)"></a>TRIM(s)</h3><blockquote>
-<p>返回字符串s删除了两边空格之后的字符串</p>
-</blockquote>
-<h3 id="TRIM-s1-FROM-s"><a href="#TRIM-s1-FROM-s" class="headerlink" title="TRIM(s1 FROM s)"></a>TRIM(s1 FROM s)</h3><blockquote>
-<p>删除字符串s两端所有子字符串s1，未指定s1的情况下则默认删除空格</p>
-</blockquote>
-<h3 id="REPEAT-s-n"><a href="#REPEAT-s-n" class="headerlink" title="REPEAT(s,n)"></a>REPEAT(s,n)</h3><blockquote>
-<p>返回一个由重复字符串s组成的字符串，字符串s的数目等于n</p>
-</blockquote>
-<h3 id="SPACE-n"><a href="#SPACE-n" class="headerlink" title="SPACE(n)"></a>SPACE(n)</h3><blockquote>
-<p>返回一个由n个空格组成的字符串</p>
-</blockquote>
-<h3 id="REPLACE-s-s1-s2"><a href="#REPLACE-s-s1-s2" class="headerlink" title="REPLACE(s,s1,s2)"></a>REPLACE(s,s1,s2)</h3><blockquote>
-<p>返回一个字符串，用字符串s2替代字符串s中所有的字符串s1</p>
-</blockquote>
-<h3 id="STRCMP-s1-s2"><a href="#STRCMP-s1-s2" class="headerlink" title="STRCMP(s1,s2)"></a>STRCMP(s1,s2)</h3><blockquote>
-<p>若s1和s2中所有的字符串都相同，则返回0；根据当前分类次序，第一个参数小于第二个则返回-1，其他情况返回1</p>
-</blockquote>
-<h3 id="SUBSTRING-s-n-len-、MID-s-n-len"><a href="#SUBSTRING-s-n-len-、MID-s-n-len" class="headerlink" title="SUBSTRING(s,n,len)、MID(s,n,len)"></a>SUBSTRING(s,n,len)、MID(s,n,len)</h3><blockquote>
-<p>两个函数作用相同，从字符串s中返回一个第n个字符开始、长度为len的字符串</p>
-</blockquote>
-<h3 id="LOCATE-str1-str-、POSITION-str1-IN-str-、INSTR-str-str1"><a href="#LOCATE-str1-str-、POSITION-str1-IN-str-、INSTR-str-str1" class="headerlink" title="LOCATE(str1,str)、POSITION(str1 IN str)、INSTR(str,str1)"></a>LOCATE(str1,str)、POSITION(str1 IN str)、INSTR(str,str1)</h3><blockquote>
-<p>三个函数作用相同，返回子字符串str1在字符串str中的开始位置（从第几个字符开始）</p>
-</blockquote>
-<h3 id="REVERSE-s"><a href="#REVERSE-s" class="headerlink" title="REVERSE(s)"></a>REVERSE(s)</h3><blockquote>
-<p>将字符串s反转</p>
-</blockquote>
-<h3 id="ELT-N-str1-str2-str3-str4-…"><a href="#ELT-N-str1-str2-str3-str4-…" class="headerlink" title="ELT(N,str1,str2,str3,str4,…)"></a>ELT(N,str1,str2,str3,str4,…)</h3><blockquote>
-<p>返回第N个字符串</p>
-</blockquote>
-<h2 id="日期和时间函数"><a href="#日期和时间函数" class="headerlink" title="日期和时间函数"></a>日期和时间函数</h2><h3 id="CURDATE-、CURRENT-DATE"><a href="#CURDATE-、CURRENT-DATE" class="headerlink" title="CURDATE()、CURRENT_DATE()"></a>CURDATE()、CURRENT_DATE()</h3><blockquote>
-<p>将当前日期按照”YYYY-MM-DD”或者”YYYYMMDD”格式的值返回，具体格式根据函数用在字符串或是数字语境中而定</p>
-</blockquote>
-<h3 id="CURRENT-TIMESTAMP-、LOCALTIME-、NOW-、SYSDATE"><a href="#CURRENT-TIMESTAMP-、LOCALTIME-、NOW-、SYSDATE" class="headerlink" title="CURRENT_TIMESTAMP()、LOCALTIME()、NOW()、SYSDATE()"></a>CURRENT_TIMESTAMP()、LOCALTIME()、NOW()、SYSDATE()</h3><blockquote>
-<p>这四个函数作用相同，返回当前日期和时间值，格式为”YYYY_MM-DD HH:MM:SS”或”YYYYMMDDHHMMSS”，具体格式根据函数用在字符串或数字语境中而定</p>
-</blockquote>
-<h3 id="UNIX-TIMESTAMP-、UNIX-TIMESTAMP-date"><a href="#UNIX-TIMESTAMP-、UNIX-TIMESTAMP-date" class="headerlink" title="UNIX_TIMESTAMP()、UNIX_TIMESTAMP(date)"></a>UNIX_TIMESTAMP()、UNIX_TIMESTAMP(date)</h3><blockquote>
-<p>前者返回一个格林尼治标准时间1970-01-01 00:00:00到现在的秒数，后者返回一个格林尼治标准时间1970-01-01 00:00:00到指定时间的秒数</p>
-</blockquote>
-<h3 id="FROM-UNIXTIME-date"><a href="#FROM-UNIXTIME-date" class="headerlink" title="FROM_UNIXTIME(date)"></a>FROM_UNIXTIME(date)</h3><blockquote>
-<p>和UNIX_TIMESTAMP互为反函数，把UNIX时间戳转换为普通格式的时间</p>
-</blockquote>
-<h3 id="UTC-DATE-和UTC-TIME"><a href="#UTC-DATE-和UTC-TIME" class="headerlink" title="UTC_DATE()和UTC_TIME()"></a>UTC_DATE()和UTC_TIME()</h3><blockquote>
-<p>前者返回当前UTC（世界标准时间）日期值，其格式为”YYYY-MM-DD”或”YYYYMMDD”，后者返回当前UTC时间值，其格式为”YYYY-MM-DD”或”YYYYMMDD”。具体使用哪种取决于函数用在字符串还是数字语境中</p>
-</blockquote>
-<h3 id="MONTH-date-和MONTHNAME-date"><a href="#MONTH-date-和MONTHNAME-date" class="headerlink" title="MONTH(date)和MONTHNAME(date)"></a>MONTH(date)和MONTHNAME(date)</h3><blockquote>
-<p>前者返回指定日期中的月份，后者返回指定日期中的月份的名称</p>
-</blockquote>
-<h3 id="DAYNAME-d-、DAYOFWEEK-d-、WEEKDAY-d"><a href="#DAYNAME-d-、DAYOFWEEK-d-、WEEKDAY-d" class="headerlink" title="DAYNAME(d)、DAYOFWEEK(d)、WEEKDAY(d)"></a>DAYNAME(d)、DAYOFWEEK(d)、WEEKDAY(d)</h3><blockquote>
-<p>DAYNAME(d)返回d对应的工作日的英文名称，如Sunday、Monday等；DAYOFWEEK(d)返回的对应一周中的索引，1表示周日、2表示周一；WEEKDAY(d)表示d对应的工作日索引，0表示周一，1表示周二</p>
-</blockquote>
-<h3 id="WEEK-d-、WEEKOFYEAD-d"><a href="#WEEK-d-、WEEKOFYEAD-d" class="headerlink" title="WEEK(d)、WEEKOFYEAD(d)"></a>WEEK(d)、WEEKOFYEAD(d)</h3><blockquote>
-<p>前者计算日期d是一年中的第几周，后者计算某一天位于一年中的第几周</p>
-</blockquote>
-<h3 id="DAYOFYEAR-d-、DAYOFMONTH-d"><a href="#DAYOFYEAR-d-、DAYOFMONTH-d" class="headerlink" title="DAYOFYEAR(d)、DAYOFMONTH(d)"></a>DAYOFYEAR(d)、DAYOFMONTH(d)</h3><blockquote>
-<p>前者返回d是一年中的第几天，后者返回d是一月中的第几天</p>
-</blockquote>
-<h3 id="YEAR-date-、QUARTER-date-、MINUTE-time-、SECOND-time"><a href="#YEAR-date-、QUARTER-date-、MINUTE-time-、SECOND-time" class="headerlink" title="YEAR(date)、QUARTER(date)、MINUTE(time)、SECOND(time)"></a>YEAR(date)、QUARTER(date)、MINUTE(time)、SECOND(time)</h3><blockquote>
-<p>YEAR(date)返回指定日期对应的年份，范围是1970~2069；QUARTER(date)返回date对应一年中的季度，范围是1~4；MINUTE(time)返回time对应的分钟数，范围是0~59；SECOND(time)返回制定时间的秒值</p>
-</blockquote>
-<h3 id="EXTRACE-type-FROM-date"><a href="#EXTRACE-type-FROM-date" class="headerlink" title="EXTRACE(type FROM date)"></a>EXTRACE(type FROM date)</h3><blockquote>
-<p>从日期中提取一部分，type可以是YEAR、YEAR_MONTH、DAY_HOUR、DAY_MICROSECOND、DAY_MINUTE、DAY_SECOND</p>
-</blockquote>
-<h3 id="TIME-TO-SEC-time"><a href="#TIME-TO-SEC-time" class="headerlink" title="TIME_TO_SEC(time)"></a>TIME_TO_SEC(time)</h3><blockquote>
-<p>返回以转换为秒的time参数，转换公式为”3600<em>小时 + 60</em>分钟 + 秒”</p>
-</blockquote>
-<h3 id="SEC-TO-TIME"><a href="#SEC-TO-TIME" class="headerlink" title="SEC_TO_TIME()"></a>SEC_TO_TIME()</h3><blockquote>
-<p>和TIME_TO_SEC(time)互为反函数，将秒值转换为时间格式</p>
-</blockquote>
-<h3 id="DATE-ADD-date-INTERVAL-expr-type-、ADD-DATE-date-INTERVAL-expr-type"><a href="#DATE-ADD-date-INTERVAL-expr-type-、ADD-DATE-date-INTERVAL-expr-type" class="headerlink" title="DATE_ADD(date,INTERVAL expr type)、ADD_DATE(date,INTERVAL expr type)"></a>DATE_ADD(date,INTERVAL expr type)、ADD_DATE(date,INTERVAL expr type)</h3><blockquote>
-<p>返回将起始时间加上expr type之后的时间，比如DATE_ADD(‘2010-12-31 23:59:59’, INTERVAL 1 SECOND)表示的就是把第一个时间加1秒</p>
-</blockquote>
-<h3 id="DATE-SUB-date-INTERVAL-expr-type-、SUBDATE-date-INTERVAL-expr-type"><a href="#DATE-SUB-date-INTERVAL-expr-type-、SUBDATE-date-INTERVAL-expr-type" class="headerlink" title="DATE_SUB(date,INTERVAL expr type)、SUBDATE(date,INTERVAL expr type)"></a>DATE_SUB(date,INTERVAL expr type)、SUBDATE(date,INTERVAL expr type)</h3><blockquote>
-<p>返回将起始时间减去expr type之后的时间</p>
-</blockquote>
-<h3 id="ADDTIME-date-expr-、SUBTIME-date-expr"><a href="#ADDTIME-date-expr-、SUBTIME-date-expr" class="headerlink" title="ADDTIME(date,expr)、SUBTIME(date,expr)"></a>ADDTIME(date,expr)、SUBTIME(date,expr)</h3><blockquote>
-<p>前者进行date的时间加操作，后者进行date的时间减操作</p>
-</blockquote>
-<h2 id="条件判断函数"><a href="#条件判断函数" class="headerlink" title="条件判断函数"></a>条件判断函数</h2><h3 id="IF-expr-v1-v2"><a href="#IF-expr-v1-v2" class="headerlink" title="IF(expr,v1,v2)"></a>IF(expr,v1,v2)</h3><blockquote>
-<p>如果expr是TRUE则返回v1，否则返回v2</p>
-</blockquote>
-<h3 id="IFNULL-v1-v2"><a href="#IFNULL-v1-v2" class="headerlink" title="IFNULL(v1,v2)"></a>IFNULL(v1,v2)</h3><blockquote>
-<p>如果v1不为NULL，则返回v1，否则返回v2</p>
-</blockquote>
-<h3 id="CASE-expr-WHEN-v1-THEN-r1-WHEN-v2-THEN-v2-ELSE-rn-END"><a href="#CASE-expr-WHEN-v1-THEN-r1-WHEN-v2-THEN-v2-ELSE-rn-END" class="headerlink" title="CASE expr WHEN v1 THEN r1 [WHEN v2 THEN v2] [ELSE rn] END"></a>CASE expr WHEN v1 THEN r1 [WHEN v2 THEN v2] [ELSE rn] END</h3><blockquote>
-<p>如果expr等于某个vn，则返回对应位置THEN后面的结果，如果与所有值都不想等，则返回ELSE后面的rn</p>
-</blockquote>
-<h2 id="系统信息函数"><a href="#系统信息函数" class="headerlink" title="系统信息函数"></a>系统信息函数</h2><h3 id="VERSION"><a href="#VERSION" class="headerlink" title="VERSION()"></a>VERSION()</h3><blockquote>
-<p>查看MySQL版本号</p>
-</blockquote>
-<h3 id="CONNECTION-ID"><a href="#CONNECTION-ID" class="headerlink" title="CONNECTION_ID()"></a>CONNECTION_ID()</h3><blockquote>
-<p>查看当前用户的连接数</p>
-</blockquote>
-<h3 id="USER-、CURRENT-USER-、SYSTEM-USER-、SESSION-USER"><a href="#USER-、CURRENT-USER-、SYSTEM-USER-、SESSION-USER" class="headerlink" title="USER()、CURRENT_USER()、SYSTEM_USER()、SESSION_USER()"></a>USER()、CURRENT_USER()、SYSTEM_USER()、SESSION_USER()</h3><blockquote>
-<p>查看当前被MySQL服务器验证的用户名和主机的组合，一般这几个函数的返回值是相同的</p>
-</blockquote>
-<h3 id="CHARSET-str"><a href="#CHARSET-str" class="headerlink" title="CHARSET(str)"></a>CHARSET(str)</h3><blockquote>
-<p>查看字符串str使用的字符集</p>
-</blockquote>
-<h3 id="COLLATION-str"><a href="#COLLATION-str" class="headerlink" title="COLLATION(str)"></a>COLLATION(str)</h3><blockquote>
-<p>查看字符串排列方式</p>
-</blockquote>
-<h2 id="加密函数"><a href="#加密函数" class="headerlink" title="加密函数"></a>加密函数</h2><h3 id="PASSWORD-str"><a href="#PASSWORD-str" class="headerlink" title="PASSWORD(str)"></a>PASSWORD(str)</h3><blockquote>
-<p>从原明文密码str计算并返回加密后的字符串密码，注意这个函数的加密是单向的（不可逆），因此不应将它应用在个人的应用程序中而应该只在MySQL服务器的鉴定系统中使用</p>
-</blockquote>
-<h3 id="MD5-str"><a href="#MD5-str" class="headerlink" title="MD5(str)"></a>MD5(str)</h3><blockquote>
-<p>为字符串算出一个MD5 128比特校验和，改值以32位十六进制数字的二进制字符串形式返回</p>
-</blockquote>
-<h3 id="ENCODE-str-pswd-str"><a href="#ENCODE-str-pswd-str" class="headerlink" title="ENCODE(str, pswd_str)"></a>ENCODE(str, pswd_str)</h3><blockquote>
-<p>使用pswd_str作为密码，加密str</p>
-</blockquote>
-<h3 id="DECODE-crypt-str-pswd-str"><a href="#DECODE-crypt-str-pswd-str" class="headerlink" title="DECODE(crypt_str,pswd_str)"></a>DECODE(crypt_str,pswd_str)</h3><blockquote>
-<p>使用pswd_str作为密码，解密加密字符串crypt_str，crypt_str是由ENCODE函数返回的字符串</p>
-</blockquote>
-<h2 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h2><h3 id="FORMAT-x-n"><a href="#FORMAT-x-n" class="headerlink" title="FORMAT(x,n)"></a>FORMAT(x,n)</h3><blockquote>
-<p>将数字x格式化，并以四舍五入的方式保留小数点后n位，结果以字符串形式返回</p>
-</blockquote>
-<h3 id="CONV-N-from-base-to-base"><a href="#CONV-N-from-base-to-base" class="headerlink" title="CONV(N,from_base,to_base)"></a>CONV(N,from_base,to_base)</h3><blockquote>
-<p>不同进制数之间的转换，返回值为数值N的字符串表示，由from_base进制转换为to_base进制</p>
-</blockquote>
-<h3 id="INET-ATON-expr"><a href="#INET-ATON-expr" class="headerlink" title="INET_ATON(expr)"></a>INET_ATON(expr)</h3><blockquote>
-<p>给出一个作为字符串的网络地址的点地址表示，返回一个代表该地址数值的整数，地址可以使4或8比特</p>
-</blockquote>
-<h3 id="INET-NTOA-expr"><a href="#INET-NTOA-expr" class="headerlink" title="INET_NTOA(expr)"></a>INET_NTOA(expr)</h3><blockquote>
-<p>给定一个数字网络地址（4或8比特），返回作为字符串的该地址的点地址表示</p>
-</blockquote>
-<h3 id="BENCHMARK-count-expr"><a href="#BENCHMARK-count-expr" class="headerlink" title="BENCHMARK(count,expr)"></a>BENCHMARK(count,expr)</h3><blockquote>
-<p>重复执行count次表达式expr，它可以用于计算MySQL处理表达式的速度，结果值通常是0（0只是表示很快，并不是没有速度）。另一个作用是用它在MySQL客户端内部报告语句执行的时间</p>
-</blockquote>
-<h3 id="CONVERT-str-USING-charset"><a href="#CONVERT-str-USING-charset" class="headerlink" title="CONVERT(str USING charset)"></a>CONVERT(str USING charset)</h3><blockquote>
-<p>使用字符集charset表示字符串str</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/08/MySQL函数总汇/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -995,10 +788,14 @@
 
       
         
-          
-            <p><img src="http://or2aqyec7.bkt.clouddn.com/default.jpeg" alt="mahua"></p>
-
-          
+          <p><img src="http://or2aqyec7.bkt.clouddn.com/default.jpeg" alt="mahua"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/25/魅力甘南/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
