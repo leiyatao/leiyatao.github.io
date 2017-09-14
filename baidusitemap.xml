@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/08/24/spring-boot%E9%9B%86%E6%88%90swagger2/</loc>
+    <lastmod>2017-08-28T09:20:14.152Z</lastmod>
+    <data>
+        <display>
+        <title>spring-boot集成swagger2</title>
+        <pubTime>2017-08-24T10:15:06.000Z</pubTime>
+        
+        <tag>Spring-boot swagger2</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring-boot" url="http://leiyatao.com/categories/Spring-boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/06/27/zookeeper-dubbo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2017-07-17T02:57:54.990Z</lastmod>
+    <data>
+        <display>
+        <title>zookeeper+dubbo环境搭建</title>
+        <pubTime>2017-06-27T15:33:35.000Z</pubTime>
+        
+        <tag>zookeeper</tag>
+         
+        <tag>dobbo</tag>
+         
+        <tag>rpc</tag>
+         
+        <tag>远程接口调用</tag>
+         
+         
+           
+             
+              <breadCrumb title="dubbo" url="http://leiyatao.com/categories/dubbo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/06/19/linux%E5%91%BD%E4%BB%A4%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E5%AD%90%E7%9B%AE%E5%BD%95%E6%89%80%E5%8D%A0%E7%A9%BA%E9%97%B4%E5%A4%A7%E5%B0%8F/</loc>
+    <lastmod>2017-06-19T09:20:51.627Z</lastmod>
+    <data>
+        <display>
+        <title>linux命令检查当前文件夹子目录所占空间大小</title>
+        <pubTime>2017-06-19T09:02:06.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>shell</tag>
+         
+        <tag>mongodb</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://leiyatao.com/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2015/01/01/%E5%91%8A%E5%88%AB2014/</loc>
+    <lastmod>2017-06-14T03:01:02.671Z</lastmod>
+    <data>
+        <display>
+        <title>告别2014</title>
+        <pubTime>2015-01-01T07:56:11.000Z</pubTime>
+        
+        <tag>旅行</tag>
+         
+        <tag>摄影</tag>
+         
+         
+           
+             
+              <breadCrumb title="旅行" url="http://leiyatao.com/categories/%E6%97%85%E8%A1%8C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/05/25/ORACLE%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8%E5%92%8C%E5%AD%97%E6%AE%B5/</loc>
+    <lastmod>2017-06-08T09:02:29.304Z</lastmod>
+    <data>
+        <display>
+        <title>ORACLE语句整理</title>
+        <pubTime>2017-05-25T07:56:11.000Z</pubTime>
+        
+        <tag>SQL</tag>
+         
+        <tag>ORACLE</tag>
+         
+        <tag>数据备份</tag>
+         
+         
+           
+             
+              <breadCrumb title="SQL" url="http://leiyatao.com/categories/SQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
+    <lastmod>2017-06-08T09:00:08.372Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL函数总汇</title>
+        <pubTime>2017-06-08T07:22:53.000Z</pubTime>
+        
+        <tag>SQL</tag>
+         
+        <tag>MySQL</tag>
+         
+        <tag>数据库</tag>
+         
+        <tag>函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://leiyatao.com/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2016/06/25/%E9%AD%85%E5%8A%9B%E7%94%98%E5%8D%97/</loc>
+    <lastmod>2017-06-08T08:57:21.514Z</lastmod>
+    <data>
+        <display>
+        <title>魅力甘南</title>
+        <pubTime>2016-06-25T07:56:11.000Z</pubTime>
+        
+        <tag>旅行</tag>
+         
+        <tag>摄影</tag>
+         
+         
+           
+             
+              <breadCrumb title="旅行" url="http://leiyatao.com/categories/%E6%97%85%E8%A1%8C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+</urlset>
