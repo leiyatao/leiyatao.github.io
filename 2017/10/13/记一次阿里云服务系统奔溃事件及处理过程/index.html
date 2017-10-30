@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="雷子">
 <meta property="og:description" content="昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功">
 <meta property="og:image" content="http://olg4sxpno.bkt.clouddn.com/20171013note_attach.jpg">
-<meta property="og:updated_time" content="2017-10-30T04:20:47.050Z">
+<meta property="og:updated_time" content="2017-10-30T04:23:30.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次阿里云服务系统奔溃事件及处理过程">
 <meta name="twitter:description" content="昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功">
@@ -457,7 +457,7 @@
 <p>老数据迁移 在<code>/var/lib/mysql</code>目录下 执行如下数据，将老数据迁移到新安装的数据库，迁移是注意，对本目录下<code>ibdata1</code>进行备份，防止迁移迁移过来后数据库服务不能启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cp /mnt/var/lib/mysql/ibdata1  ./ -f     ##这是保存的数据</div><div class="line">cp -rf /mnt/var/lib/mysql/databasename  ./       ##这是要迁移的数据库目录 与数据库名同名</div><div class="line">sync</div></pre></td></tr></table></figure></p>
 <p>启动mysql服务，并登录mysql 查询数据是否迁移成功。</p>
 <p>至此，数据库迁移成功，jdk环境变量配置成功，tomcat服务重新启动，大功告成！</p>
-<p>##结语<br>本次处理问题环境 </p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本次处理问题环境 </p>
 <table>
 <thead>
 <tr>
@@ -697,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对系统盘创建快照"><span class="nav-number">1.</span> <span class="nav-text">对系统盘创建快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建云盘并保存系统盘快照"><span class="nav-number">2.</span> <span class="nav-text">创建云盘并保存系统盘快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统盘格式化"><span class="nav-number">3.</span> <span class="nav-text">系统盘格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动实例"><span class="nav-number">4.</span> <span class="nav-text">启动实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh远程连接"><span class="nav-number">5.</span> <span class="nav-text">ssh远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载云盘"><span class="nav-number">6.</span> <span class="nav-text">挂载云盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置jdk"><span class="nav-number">7.</span> <span class="nav-text">配置jdk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库迁移"><span class="nav-number">8.</span> <span class="nav-text">mysql数据库迁移</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对系统盘创建快照"><span class="nav-number">1.</span> <span class="nav-text">对系统盘创建快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建云盘并保存系统盘快照"><span class="nav-number">2.</span> <span class="nav-text">创建云盘并保存系统盘快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统盘格式化"><span class="nav-number">3.</span> <span class="nav-text">系统盘格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动实例"><span class="nav-number">4.</span> <span class="nav-text">启动实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh远程连接"><span class="nav-number">5.</span> <span class="nav-text">ssh远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载云盘"><span class="nav-number">6.</span> <span class="nav-text">挂载云盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置jdk"><span class="nav-number">7.</span> <span class="nav-text">配置jdk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库迁移"><span class="nav-number">8.</span> <span class="nav-text">mysql数据库迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">9.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
