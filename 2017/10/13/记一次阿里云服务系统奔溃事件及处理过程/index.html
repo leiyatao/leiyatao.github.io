@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MySQL,数据库,阿里云," />
+  <meta name="keywords" content="MySQL,数据库,阿里云,centos6.5,数据迁移," />
 
 
 
@@ -91,14 +91,14 @@
 
 
 <meta name="description" content="昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功">
-<meta name="keywords" content="MySQL,数据库,阿里云">
+<meta name="keywords" content="MySQL,数据库,阿里云,centos6.5,数据迁移">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次阿里云服务系统奔溃事件及处理过程">
 <meta property="og:url" content="http://leiyatao.com/2017/10/13/记一次阿里云服务系统奔溃事件及处理过程/index.html">
 <meta property="og:site_name" content="雷子">
 <meta property="og:description" content="昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功">
 <meta property="og:image" content="http://olg4sxpno.bkt.clouddn.com/20171013note_attach.jpg">
-<meta property="og:updated_time" content="2017-10-13T10:13:54.440Z">
+<meta property="og:updated_time" content="2017-10-30T04:20:47.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次阿里云服务系统奔溃事件及处理过程">
 <meta name="twitter:description" content="昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功">
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  831
+                  1,147
                 </span>
               
 
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -444,13 +444,47 @@
 <p>尝试了各种方法暂时无法解决这个问题。<br>建议做好备份，然后重新初始化磁盘，然后重新安装应用恢复业务，加强主机安全。<br>创建快照:<a href="https://help.aliyun.com/document_detail/25455.html?spm=5176.product25365.6.701.haklDS" target="_blank" rel="external">https://help.aliyun.com/document_detail/25455.html?spm=5176.product25365.6.701.haklDS</a><br>重新初始化磁盘 <a href="https://help.aliyun.com/document_detail/25449.html?spm=5176.doc25455.6.697.ywlUna" target="_blank" rel="external">https://help.aliyun.com/document_detail/25449.html?spm=5176.doc25455.6.697.ywlUna</a><br>重新初始化后如需要之前系统的数据，可以使用快照创建云盘，然后挂载到数据，然后拷贝出需要的数据。<a href="https://help.aliyun.com/document_detail/32317.html?spm=5176.doc25455.6.680.JDavY" target="_blank" rel="external">https://help.aliyun.com/document_detail/32317.html?spm=5176.doc25455.6.680.JDavY</a></p>
 </blockquote>
 <p>由于服务器上有重要数据包括应用部署文件及mysql数据库文件，之前都没有备份，所以接下来的每一步操作都慎之又慎，心里默念数据不能丢。具体操作步骤如下：</p>
-<h2 id="1-对系统盘创建快照"><a href="#1-对系统盘创建快照" class="headerlink" title="1. 对系统盘创建快照"></a>1. 对系统盘创建快照</h2><p>这个比较耗时，系统盘空间20G创建快照大概用时20分钟左右（直接在阿里云界面操作）。</p>
-<h2 id="2-创建云盘并保存系统盘快照"><a href="#2-创建云盘并保存系统盘快照" class="headerlink" title="2. 创建云盘并保存系统盘快照"></a>2. 创建云盘并保存系统盘快照</h2><p>创建云盘（阿里云云盘现在开始收费，按时收费份SSD盘和普通盘价格不一样，SSD盘20G每小时0.028元），将快照导入云盘（直接在阿里云界面操作）。创建云盘选择地区时一定要注意选择与ECS服务地区一致，否则到时候无法挂载。</p>
-<h2 id="3-系统盘格式化"><a href="#3-系统盘格式化" class="headerlink" title="3. 系统盘格式化"></a>3. 系统盘格式化</h2><p>点击重新初始化磁盘（直接在阿里云界面操作），做了这个操作相当于对ECS实例进行了恢复出厂设置操作</p>
-<h2 id="4-启动实例"><a href="#4-启动实例" class="headerlink" title="4. 启动实例"></a>4. 启动实例</h2><p>直接在界面操作</p>
-<h2 id="5-ssh远程连接"><a href="#5-ssh远程连接" class="headerlink" title="5. ssh远程连接"></a>5. ssh远程连接</h2><p>使用ssh远程工具进行连接，输入密码登录成功，一个全新ESC服务器诞生了</p>
-<h2 id="6-挂载云盘"><a href="#6-挂载云盘" class="headerlink" title="6. 挂载云盘"></a>6. 挂载云盘</h2><p>直接在阿里云界面操作，挂载云盘后，在linux系统中就会发现一个新的空间，挂载盘作为系统盘中根目录下的一个文件夹，文件夹中的内容就是之前系统盘中数据，目录结构也与之前系统盘中的目录保持一致。</p>
-<p>直接在挂载盘中找到之前部署的应用，启动tomcat无法启动，报错找不到jdk</p>
+<h2 id="对系统盘创建快照"><a href="#对系统盘创建快照" class="headerlink" title="对系统盘创建快照"></a>对系统盘创建快照</h2><p>这个比较耗时，系统盘空间20G创建快照大概用时20分钟左右（直接在阿里云界面操作）。</p>
+<h2 id="创建云盘并保存系统盘快照"><a href="#创建云盘并保存系统盘快照" class="headerlink" title="创建云盘并保存系统盘快照"></a>创建云盘并保存系统盘快照</h2><p>创建云盘（阿里云云盘现在开始收费，按时收费份SSD盘和普通盘价格不一样，SSD盘20G每小时0.028元），将快照导入云盘（直接在阿里云界面操作）。创建云盘选择地区时一定要注意选择与ECS服务地区一致，否则到时候无法挂载。</p>
+<h2 id="系统盘格式化"><a href="#系统盘格式化" class="headerlink" title="系统盘格式化"></a>系统盘格式化</h2><p>点击重新初始化磁盘（直接在阿里云界面操作），做了这个操作相当于对ECS实例进行了恢复出厂设置操作</p>
+<h2 id="启动实例"><a href="#启动实例" class="headerlink" title="启动实例"></a>启动实例</h2><p>直接在界面操作</p>
+<h2 id="ssh远程连接"><a href="#ssh远程连接" class="headerlink" title="ssh远程连接"></a>ssh远程连接</h2><p>使用ssh远程工具进行连接，输入密码登录成功，一个全新ESC服务器诞生了</p>
+<h2 id="挂载云盘"><a href="#挂载云盘" class="headerlink" title="挂载云盘"></a>挂载云盘</h2><p>直接在阿里云界面操作，挂载云盘后，在linux系统中就会发现一个新的空间，挂载盘作为系统盘中根目录下的一个文件夹，文件夹中的内容就是之前系统盘中数据，目录结构也与之前系统盘中的目录保持一致。</p>
+<h2 id="配置jdk"><a href="#配置jdk" class="headerlink" title="配置jdk"></a>配置jdk</h2><p>直接在挂载盘中找到之前部署的应用，启动tomcat无法启动，报错找不到jdk，在<code>/etc/profile</code>下配置jdk环境变量并让jdk生效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/profile</div></pre></td></tr></table></figure></p>
+<p>在<code>/etc/profile</code>文件最底部添加jdk环境变量的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/mnt/usr/java/jdk1.7.0_79</div><div class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div><div class="line">export JAVA_HOME CLASSPATH PATH</div></pre></td></tr></table></figure></p>
+<p>使配置立即生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p>
+<h2 id="mysql数据库迁移"><a href="#mysql数据库迁移" class="headerlink" title="mysql数据库迁移"></a>mysql数据库迁移</h2><p>先安装数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y mysql-server mysql mysql-devel</div></pre></td></tr></table></figure></p>
+<p>老数据迁移 在<code>/var/lib/mysql</code>目录下 执行如下数据，将老数据迁移到新安装的数据库，迁移是注意，对本目录下<code>ibdata1</code>进行备份，防止迁移迁移过来后数据库服务不能启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cp /mnt/var/lib/mysql/ibdata1  ./ -f     ##这是保存的数据</div><div class="line">cp -rf /mnt/var/lib/mysql/databasename  ./       ##这是要迁移的数据库目录 与数据库名同名</div><div class="line">sync</div></pre></td></tr></table></figure></p>
+<p>启动mysql服务，并登录mysql 查询数据是否迁移成功。</p>
+<p>至此，数据库迁移成功，jdk环境变量配置成功，tomcat服务重新启动，大功告成！</p>
+<p>##结语<br>本次处理问题环境 </p>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th style="text-align:left">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统</td>
+<td style="text-align:left">linux Centos6.5</td>
+</tr>
+<tr>
+<td>mysql</td>
+<td style="text-align:left">5.1.73</td>
+</tr>
+<tr>
+<td>jdk</td>
+<td style="text-align:left">build 1.7.0_79-b15</td>
+</tr>
+<tr>
+<td>tomcat</td>
+<td style="text-align:left">7.0.67</td>
+</tr>
+</tbody>
+</table>
+<p>此次最担心的是数据丢失，告诫自己，以后在生产环境必须对数据库进行备份或做数据实时同步，防止数据丢失。</p>
 
       
     </div>
@@ -485,6 +519,10 @@
             <a href="/tags/数据库/" rel="tag"># 数据库</a>
           
             <a href="/tags/阿里云/" rel="tag"># 阿里云</a>
+          
+            <a href="/tags/centos6-5/" rel="tag"># centos6.5</a>
+          
+            <a href="/tags/数据迁移/" rel="tag"># 数据迁移</a>
           
         </div>
       
@@ -624,7 +662,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -659,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-对系统盘创建快照"><span class="nav-number">1.</span> <span class="nav-text">1. 对系统盘创建快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建云盘并保存系统盘快照"><span class="nav-number">2.</span> <span class="nav-text">2. 创建云盘并保存系统盘快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-系统盘格式化"><span class="nav-number">3.</span> <span class="nav-text">3. 系统盘格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-启动实例"><span class="nav-number">4.</span> <span class="nav-text">4. 启动实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-ssh远程连接"><span class="nav-number">5.</span> <span class="nav-text">5. ssh远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-挂载云盘"><span class="nav-number">6.</span> <span class="nav-text">6. 挂载云盘</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对系统盘创建快照"><span class="nav-number">1.</span> <span class="nav-text">对系统盘创建快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建云盘并保存系统盘快照"><span class="nav-number">2.</span> <span class="nav-text">创建云盘并保存系统盘快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统盘格式化"><span class="nav-number">3.</span> <span class="nav-text">系统盘格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动实例"><span class="nav-number">4.</span> <span class="nav-text">启动实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh远程连接"><span class="nav-number">5.</span> <span class="nav-text">ssh远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载云盘"><span class="nav-number">6.</span> <span class="nav-text">挂载云盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置jdk"><span class="nav-number">7.</span> <span class="nav-text">配置jdk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库迁移"><span class="nav-number">8.</span> <span class="nav-text">mysql数据库迁移</span></a></li></ol></div>
             
 
           </div>
