@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[linux 常用命令(不断更新)]]></title>
+    <url>%2F2017%2F12%2F09%2Flinux%2F</url>
+    <content type="text"><![CDATA[linux常用命令整理 工作中常用linux命令整理 检查占用端口命令1234-- 检查所有占用端口netstat -ntlp-- 查询指定端口被占用 例如8080netstat -apn | grep 8080 检查占用端口命令1234-- 检查所有占用端口netstat -ntlp-- 查询指定端口被占用 例如8080netstat -apn | grep 8080 常用指令123456789101112131415161718192021222324ls 显示文件或目录 -l 列出文件详细信息l(list) -a 列出当前目录下所有文件及目录，包括隐藏的a(all)mkdir 创建目录 -p 创建目录，若无父目录，则创建p(parent)cd 切换目录touch 创建空文件echo 创建带有内容的文件。cat 查看文件内容cp 拷贝mv 移动或重命名rm 删除文件 -r 递归删除，可删除子目录及文件 -f 强制删除find 在文件系统中搜索某文件wc 统计文本中行数、字数、字符数grep 在文本文件中查找某个字符串rmdir 删除空目录tree 树形结构显示目录，需要安装tree包pwd 显示当前目录ln 创建链接文件more、less 分页显示文本文件内容head、tail 显示文件头、尾内容ctrl+alt+F1 命令行全屏模式 检查服务是否启动1234-- 检查tomcat服务是否启动ps -ef|grep tomcat-- 检查nginx服务是否启动ps -ef|grep nginx vim命令 vim三种模式，分别为：命令模式、插入模式、编辑模式。使用Esc或者i按键来切换模式。Esc切换到命令模式，i切换到编辑模式。12345678910命令模式下：:q 退出:q! 强制退出:wq 保存并退出:set number 显示行号:set nonumber 隐藏行号/apache 在文档中查找apache 按n跳到下一个，shift+n上一个yyp 复制光标所在行，并粘贴h(左移一个字符←)、j(下一行↓)、k(上一行↑)、l(右移一个字符→) 用户及用户组管理1234567891011121314151617/etc/passwd 存储用户账号/etc/group 存储组账号/etc/shadow 存储用户账号的密码/etc/gshadow 存储用户组账号的密码useradd 添加用户名userdel 删除用户名adduser 添加用户名groupadd 添加组名groupdel 删除组名passwd root 给root设置密码su rootsu – root/etc/profile 系统环境变量bash_profile 用户环境变量.bashrc 用户环境变量su user 切换用户，加载配置文件.bashrcsu – user 切换用户，加载配置文件/etc/profile ，加载bash_profile 关机/重启命令123456shutdown -r 关机重启 -h 关机不重启 now 立刻关机halt 关机reboot 重启 打包压缩相关命令123456789gzip：bzip2：tar: 打包压缩 -c 归档文件 -x 压缩文件 -z gzip压缩文件 -j bzip2压缩文件 -v 显示压缩或解压缩过程 v(view) -f 使用档名 举例：123tar -cvf /home/abc.tar /home/abc 只打包，不压缩tar -zcvf /home/abc.tar.gz /home/abc 打包，并用gzip压缩tar -jcvf /home/abc.tar.bz2 /home/abc 打包，并用bzip2压缩 解压当然，如果想解压缩，就直接替换上面的命令tar -cvf / tar -zcvf / tar -jcvf 中的“c” 换成“x” 就可以了123tar -xvf /home/abc.tar /home/abc.tar 只打包，不压缩tar -zxvf /home/abc.tar.gz /home/abc.zip 打包，并用gzip压缩tar -jxvf /home/abc.tar.bz2 /home/abc.zip 打包，并用bzip2压缩 系统管理命令12345678910111213141516stat 显示指定文件的详细信息，比ls更详细who 显示在线登陆用户whoami 显示当前操作用户hostname 显示主机名uname 显示系统信息top 动态显示当前耗费资源最多进程信息ps 显示瞬间进程状态 ps -auxdu 查看目录大小 du -h /home带有单位显示目录信息df 查看磁盘大小 df -h 带有单位显示磁盘信息ifconfig 查看网络情况ping 测试网络连通netstat 显示网络状态信息man 命令不会用了，找男人? 如：man lsclear 清屏alias 对命令重命名 如：alias showmeit=”ps -aux” ，另外解除使用unaliax showmeitkill 杀死进程，可以先用ps 或 top命令查看进程的id，然后再用kill命令杀死进程。 防火墙设置firewalld防火墙1234567891011121314151617181920212223242526272829303132333435363738391、firewalld的基本使用启动： systemctl start firewalld查看状态： systemctl status firewalld停止： systemctl disable firewalld禁用： systemctl stop firewalld2.systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。启动一个服务：systemctl start firewalld.service关闭一个服务：systemctl stop firewalld.service重启一个服务：systemctl restart firewalld.service显示一个服务的状态：systemctl status firewalld.service在开机时启用一个服务：systemctl enable firewalld.service在开机时禁用一个服务：systemctl disable firewalld.service查看服务是否开机启动：systemctl is-enabled firewalld.service查看已启动的服务列表：systemctl list-unit-files|grep enabled查看启动失败的服务列表：systemctl --failed3.配置firewalld-cmd查看版本： firewall-cmd --version查看帮助： firewall-cmd --help显示状态： firewall-cmd --state查看所有打开的端口： firewall-cmd --zone=public --list-ports更新防火墙规则： firewall-cmd --reload查看区域信息: firewall-cmd --get-active-zones查看指定接口所属区域： firewall-cmd --get-zone-of-interface=eth0拒绝所有包：firewall-cmd --panic-on取消拒绝状态： firewall-cmd --panic-off查看是否拒绝： firewall-cmd --query-panic那怎么开启一个端口呢添加firewall-cmd --zone=public --add-port=80/tcp --permanent （--permanent永久生效，没有此参数重启后失效）重新载入firewall-cmd --reload查看firewall-cmd --zone= public --query-port=80/tcp删除firewall-cmd --zone= public --remove-port=80/tcp --permanent]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+        <tag>命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS7.2上tomcat启动慢问题解决]]></title>
+    <url>%2F2017%2F11%2F30%2Ftomcat%2F</url>
+    <content type="text"><![CDATA[今天在阿里云CentOS 7.2 启动Tomcat，发现启动很慢，需要几分钟，并且是在没有部署war包的情况下，这个问题值得重视，所以就去查看日志，发现耗时是session引起随机数问题导致的。Tomcat的Session ID通过SHA1算法计算得到的，计算Session ID的时候必须有1个秘钥，为了提高安全性Tomcat在启动的时候通过随机数生成秘钥。 一、环境介绍系统版本：CentOS 7.2软件版本：Tomcat 8 二、日志分析,排查原因日志如下：1230-Nov-2017 19:46:47.436 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [182,556] milliseconds.30-Nov-2017 19:46:47.458 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/apache-tomcat-8.0.47/webapps/manager has finished in 183,080 ms 主要原因：就是通过随机数生成秘钥的时候卡住了，导致Tomcat启动慢或失败。 #影响随机数的强度的是生成用的熵，具体含义可以自己度娘 查下，不在这里细说了。查看是否有足够的熵来用于产生随机数，可以通过如下命令来查看12[root@qiuyuetao tools]# cat/proc/sys/kernel/random/entropy_avail 7 为了加速/dev/random提供随机数的速度，你可以通过操作设备的外设，让其产生大量的中断（如网络传输数据，按键，移动鼠标，在命令行敲几个不同的命令，俗称聚气。cat /dev/random ##可以消耗能量 三、处理及优化解决方法有3种； 方法1：使用rngd 软件增大熵池 *建议使用grep rdrand /proc/cpuinfo #需要cpu支持yum install rng-tools # 安装rngd服务（熵服务，增大熵池）systemctl start rngd # 启动服务 方法2：java环境下修改配置文件vim $JAVA_HOME/jre/lib/security/java.securitysecurerandom.source=file:/dev/random改为securerandom.source=file:/dev/urandom 方法3：可以通过配置JRE使用非阻塞的Entropy Source：vim $TOMCAT_HOME/bin/catalina.sh 文件中 JAVA_OPTS=”$JAVA_OPTS $JSSE_OPTS” 下添加如下shell1234567891011 JAVA_OPTS=&quot;$JAVA_OPTS $JSSE_OPTS&quot;################################################################if [[ &quot;$JAVA_OPTS&quot; != *-Djava.security.egd=* ]]; then JAVA_OPTS=&quot;$JAVA_OPTS -Djava.security.egd=file:/dev/urandom&quot;fi################################################################ 经过验证发现第三种方法最为靠谱优化前130-Nov-2017 19:55:11.656 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 318445 ms 优化后：130-Nov-2017 20:29:53.580 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1335 ms]]></content>
+      <categories>
+        <category>tomcat</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>tomcat</tag>
+        <tag>centos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[记一次阿里云服务系统奔溃事件及处理过程]]></title>
+    <url>%2F2017%2F10%2F13%2F%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F%E5%A5%94%E6%BA%83%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功，通过阿里云控制台实例的远程连接 进入管理终端，界面显示如下：通过上图说明系统无法重启，打电话给阿里云客服，客服建议提交工单找阿里工程师处理（工单受理等待时间一般为半小时），工程师尝试恢复系统也无果，给出如下处理建议。 尝试了各种方法暂时无法解决这个问题。建议做好备份，然后重新初始化磁盘，然后重新安装应用恢复业务，加强主机安全。创建快照:https://help.aliyun.com/document_detail/25455.html?spm=5176.product25365.6.701.haklDS重新初始化磁盘 https://help.aliyun.com/document_detail/25449.html?spm=5176.doc25455.6.697.ywlUna重新初始化后如需要之前系统的数据，可以使用快照创建云盘，然后挂载到数据，然后拷贝出需要的数据。https://help.aliyun.com/document_detail/32317.html?spm=5176.doc25455.6.680.JDavY 由于服务器上有重要数据包括应用部署文件及mysql数据库文件，之前都没有备份，所以接下来的每一步操作都慎之又慎，心里默念数据不能丢。具体操作步骤如下： 对系统盘创建快照这个比较耗时，系统盘空间20G创建快照大概用时20分钟左右（直接在阿里云界面操作）。 创建云盘并保存系统盘快照创建云盘（阿里云云盘现在开始收费，按时收费份SSD盘和普通盘价格不一样，SSD盘20G每小时0.028元），将快照导入云盘（直接在阿里云界面操作）。创建云盘选择地区时一定要注意选择与ECS服务地区一致，否则到时候无法挂载。 系统盘格式化点击重新初始化磁盘（直接在阿里云界面操作），做了这个操作相当于对ECS实例进行了恢复出厂设置操作 启动实例直接在界面操作 ssh远程连接使用ssh远程工具进行连接，输入密码登录成功，一个全新ESC服务器诞生了 挂载云盘直接在阿里云界面操作，挂载云盘后，在linux系统中就会发现一个新的空间，挂载盘作为系统盘中根目录下的一个文件夹，文件夹中的内容就是之前系统盘中数据，目录结构也与之前系统盘中的目录保持一致。 配置jdk直接在挂载盘中找到之前部署的应用，启动tomcat无法启动，报错找不到jdk，在/etc/profile下配置jdk环境变量并让jdk生效。1vim /etc/profile 在/etc/profile文件最底部添加jdk环境变量的配置1234export JAVA_HOME=/mnt/usr/java/jdk1.7.0_79export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jarexport PATH=$PATH:$JAVA_HOME/binexport JAVA_HOME CLASSPATH PATH 使配置立即生效1source /etc/profile mysql数据库迁移先安装数据库1yum install -y mysql-server mysql mysql-devel 老数据迁移 在/var/lib/mysql目录下 执行如下数据，将老数据迁移到新安装的数据库，迁移是注意，对本目录下ibdata1进行备份，防止迁移迁移过来后数据库服务不能启动123cp /mnt/var/lib/mysql/ibdata1 ./ -f ##这是保存的数据cp -rf /mnt/var/lib/mysql/databasename ./ ##这是要迁移的数据库目录 与数据库名同名sync 启动mysql服务，并登录mysql 查询数据是否迁移成功。 至此，数据库迁移成功，jdk环境变量配置成功，tomcat服务重新启动，大功告成！ 结语本次处理问题环境 环境 版本 系统 linux Centos6.5 mysql 5.1.73 jdk build 1.7.0_79-b15 tomcat 7.0.67 此次最担心的是数据丢失，告诫自己，以后在生产环境必须对数据库进行备份或做数据实时同步，防止数据丢失。]]></content>
+      <categories>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>阿里云</tag>
+        <tag>centos6.5</tag>
+        <tag>数据迁移</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spring-boot集成swagger2]]></title>
+    <url>%2F2017%2F08%2F24%2Fspring-boot%E9%9B%86%E6%88%90swagger2%2F</url>
+    <content type="text"><![CDATA[1.pom.xml引入swagger2依赖：1234567891011&lt;!--Swagger2的依赖--&gt;&lt;dependency&gt; &lt;groupId&gt;io.springfox&lt;/groupId&gt; &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt; &lt;version&gt;$&#123;swagger.version&#125;&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;io.springfox&lt;/groupId&gt; &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt; &lt;version&gt;$&#123;swagger.version&#125;&lt;/version&gt;&lt;/dependency&gt; 2.代码配置12345678910111213141516171819202122232425262728293031323334353637383940@Configuration@EnableSwagger2public class Swagger2Config extends WebMvcConfigurerAdapter &#123; /** * 这个地方要重新注入一下资源文件，不然不会注入资源的，也没有注入requestHandlerMappping,相当于xml配置的 * &lt;!--swagger资源配置--&gt; * &lt;mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/&gt; * &lt;mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/&gt; * 不知道为什么，这也是spring boot的一个缺点（菜鸟觉得的） * @param registry */ @Override public void addResourceHandlers(ResourceHandlerRegistry registry) &#123; registry.addResourceHandler("swagger-ui.html") .addResourceLocations("classpath:/META-INF/resources/"); registry.addResourceHandler("/webjars*") .addResourceLocations("classpath:/META-INF/resources/webjars/"); &#125; @Bean public Docket createRestApi() &#123; return new Docket(DocumentationType.SWAGGER_2) .apiInfo(apiInfo()) .select() .apis(RequestHandlerSelectors.basePackage("com.kiko.controller")) //需要扫描的路径 .paths(PathSelectors.any()) .build(); &#125; private ApiInfo apiInfo() &#123; return new ApiInfoBuilder() .title("Spring Boot中使用Swagger2构建RESTful APIs") .description("更多Spring Boot相关文章请关注：http://www.leiyatao.com/") .termsOfServiceUrl("http://www.leiyatao.com/") .contact("leiyatao0204@qq.com") .version("1.0").license("2.0").licenseUrl("http://www.leiyatao.com") .build(); &#125;&#125; 3.Controller方法中添加注解1234567891011121314151617181920212223242526272829303132333435363738394041424344@RestController@Api(value = "用户接口", description = "描述")public class HelloWorldController &#123; @Autowired private UserRepository userRepository; @RequestMapping(value="hello",method=RequestMethod.GET) public String hello()&#123; return "Hello Spring boot"; &#125; @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息") @ApiImplicitParam(name = "id", value = "用户ID", required = true,dataType = "Long",paramType = "query") @RequestMapping(value="getUser", method=RequestMethod.GET) public User getUserById(Long id) &#123; return userRepository.getOne(id); &#125; @ApiOperation(value="创建用户", notes="根据User对象创建用户") @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User" ) @RequestMapping(value="saveUser", method=RequestMethod.POST) public String saveUser(@RequestBody User user)&#123; userRepository.save(user); return "success"; &#125; @ApiOperation(value="修改用户", notes="根据User对象修改用户") @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User" ) @RequestMapping(value="updateUser", method=RequestMethod.POST) public String updateUser(@RequestBody User user)&#123; User user1=userRepository.getOne(user.getId()); user1.setAge(user.getAge()); user1.setName(user.getName()); userRepository.save(user1); return "success"; &#125; @ApiOperation(value="查询所有", notes="查询所有") @RequestMapping(value="findAll", method=RequestMethod.POST) public List&lt;User&gt; findAll()&#123; return userRepository.findAll(); &#125;&#125; 4.启动工程并访问http://localhost:9999/swagger-ui.html大功告成！！]]></content>
+      <categories>
+        <category>Spring-boot</category>
+      </categories>
+      <tags>
+        <tag>Spring-boot swagger2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[zookeeper+dubbo环境搭建]]></title>
+    <url>%2F2017%2F06%2F27%2Fzookeeper-dubbo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[安装前准备 jdk1.7+ 下载地址 apache-tomcat-7.0.67.tar.gz 下载地址 dubbo-admin-2.5.4.war 下载地址 zookeeper-3.4.9 .tar.gz 下载地址 zookeeper下载 地址:http://apache.fayea.com/zookeeper/ 上传本地文件到远程服务器123scp zookeeper-3.4.9.tar.gz root@remote:/reyesscp dubbo-admin-2.5.4.war root@remote:/reyes 安装安装配置jdk这个网上大把,自己找 安装zookeeper解压1tar -xvf zookeeper-3.4.9.tar.gz 配置在解压后的文件中找到zookeeper-3.4.9/conf/,这里有三个文件123456/reyes/zookeeper-3.4.9/conf[root@iZ948994a6hZ conf]# lltotal 12-rw-rw-r-- 1 1001 1001 535 Aug 23 2016 configuration.xsl-rw-rw-r-- 1 1001 1001 2161 Aug 23 2016 log4j.properties-rw-rw-r-- 1 1001 1001 922 Aug 23 2016 zoo_sample.cfg 复制其中的zoo_sample.cfg重命名为zoo.cfg1cp zoo_sample.cfg zoo.cfg 修改zoo.cfg123456tickTime=2000initLimit=10syncLimit=5dataDir=../datadataLogDir=../logsclientPort=2181 启动在bin目录启动zookeeper服务1./zkServer.sh start dubbo-admin部署 解压tomcat 删除tomcat webapp底下的所有文件夹,只保留ROOT目录,清理ROOT目录 将dubbo-admin-2.5.4.war复制到 tomcat的ROOT目录下 启动tomcat服务 访问浏览器dubbo-admin访问 http://localhost:8080进入 dubbo-admin登录界面,输入root/root 进入管理界面则大功告成 注意事项dubbo-admin与jdk及tomcat兼容问题,我在远程服务器部署时,远程服务器是tomcat7,jdk1.7 在部署dubbo-admin-2.5.3时没有问题 在本地mac电脑中进行dubbo部署,由于本地安装的jdk1.8 使用tomcat8.5部署,启动tomcat时报错,后在网上找了各种资料,说2.5.3与jdk8/tomcat8不兼容,后下载dubbo-admin-2.5.4.war重新部署后OK]]></content>
+      <categories>
+        <category>dubbo</category>
+      </categories>
+      <tags>
+        <tag>zookeeper</tag>
+        <tag>dobbo</tag>
+        <tag>rpc</tag>
+        <tag>远程接口调用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux命令检查当前文件夹子目录所占空间大小]]></title>
+    <url>%2F2017%2F06%2F19%2Flinux%E5%91%BD%E4%BB%A4%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E5%AD%90%E7%9B%AE%E5%BD%95%E6%89%80%E5%8D%A0%E7%A9%BA%E9%97%B4%E5%A4%A7%E5%B0%8F%2F</url>
+    <content type="text"><![CDATA[今天开发服务器[linux]上的mongodb数据库突然挂了,打开mongodb日志发现如下提示： 12345678910111213141516172017-06-19T15:32:51.629+0800 [initandlisten] ERROR: Insufficient free space for journal files2017-06-19T15:32:51.629+0800 [initandlisten] Please make at least 3379MB available in ../data/journal or use --smallfiles2017-06-19T15:32:51.629+0800 [initandlisten] 2017-06-19T15:32:51.641+0800 [initandlisten] exception in initAndListen: 15926 Insufficient free space for journals, terminating2017-06-19T15:32:51.641+0800 [initandlisten] dbexit: 2017-06-19T15:32:51.641+0800 [initandlisten] shutdown: going to close listening sockets...2017-06-19T15:32:51.642+0800 [initandlisten] shutdown: going to flush diaglog...2017-06-19T15:32:51.642+0800 [initandlisten] shutdown: going to close sockets...2017-06-19T15:32:51.642+0800 [initandlisten] shutdown: waiting for fs preallocator...2017-06-19T15:32:51.642+0800 [initandlisten] shutdown: lock for final commit...2017-06-19T15:32:51.642+0800 [initandlisten] shutdown: final commit...2017-06-19T15:32:51.642+0800 [initandlisten] shutdown: closing all files...2017-06-19T15:32:51.642+0800 [initandlisten] closeAllFiles() finished2017-06-19T15:32:51.642+0800 [initandlisten] journalCleanup...2017-06-19T15:32:51.642+0800 [initandlisten] removeJournalFiles2017-06-19T15:32:51.643+0800 [initandlisten] shutdown: removing fs lock...2017-06-19T15:32:51.643+0800 [initandlisten] dbexit: really exiting now 从日志文件明显看出，linux服务器磁盘空间不足。使用df-hl命令查看磁盘空间发现果然如此,/opt挂载盘可用空间为0123456789[root@hs010 proc]# df -hlFilesystem Size Used Avail Use% Mounted on/dev/mapper/sysvg-rootlv 4.8G 2.4G 2.2G 53% /tmpfs 3.9G 0 3.9G 0% /dev/shm/dev/sda1 477M 55M 398M 12% /boot/dev/mapper/sysvg-homelv 4.8G 10M 4.6G 1% /home/dev/mapper/sysvg-optlv 40G 38G 0 100% /opt/dev/mapper/sysvg-tmplv 9.8G 86M 9.2G 1% /tmp/dev/mapper/sysvg-varlv 9.8G 766M 8.5G 9% /var 通过find . -type f -size +800M -print0 | xargs -0 ls -l命令查找大于800M的文件发现 zookeeper.out日志文件比较大。如下：1234567[root@hs010 /]# find . -type f -size +800M -print0 | xargs -0 ls -lfind: `./proc/3677/task/3677/fd/5&apos;: No such file or directoryfind: `./proc/3677/task/3677/fdinfo/5&apos;: No such file or directoryfind: `./proc/3677/fd/5&apos;: No such file or directoryfind: `./proc/3677/fdinfo/5&apos;: No such file or directory-rw-r--r-- 1 root root 991461376 Jun 18 05:46 ./opt/pcserv/zookeeper/bin/zookeeper.out-r-------- 1 root root 140737486266368 Jun 19 16:03 ./proc/kcore 找到大文件删除后，重启mongodb服务ok 另外还可用du命令进行当前目录下子目录所占空间的查询12345678du -h --max-depth=1 |grep [TG] |sort #查找上G和T的目录并排序du -sh #统计当前目录的大小，以直观方式展现du -h --max-depth=1 |grep 'G' |sort #查看上G目录并排序du -sh --max-depth=1 #查看当前目录下所有一级子目录文件夹大小du -h --max-depth=1 |sort #查看当前目录下所有一级子目录文件夹大小 并排序du -h --max-depth=1 |grep [TG] |sort -nr #倒序排]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+        <tag>mongodb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL函数总汇]]></title>
+    <url>%2F2017%2F06%2F08%2FMySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87%2F</url>
+    <content type="text"><![CDATA[前言 MySQL提供了众多功能强大、方便易用的函数，使用这些函数，可以极大地提高用户对于数据库的管理效率，从而更加灵活地满足不同用户的需求。本文将MySQL的函数分类并汇总，以便以后用到的时候可以随时查看。 ##数学函数 ABS(x) 返回x的绝对值 PI() 返回圆周率π，默认显示6位小数 SQRT(x) 返回非负数的x的二次方根 MOD(x,y) 返回x被y除后的余数 CEIL(x)、CEILING(x) 返回不小于x的最小整数 FLOOR(x) 返回不大于x的最大整数 ROUND(x)、ROUND(x,y) 前者返回最接近于x的整数，即对x进行四舍五入；后者返回最接近x的数，其值保留到小数点后面y位，若y为负值，则将保留到x到小数点左边y位 SIGN(x) 返回参数x的符号，-1表示负数，0表示0，1表示正数 POW(x,y)和、POWER(x,y) 返回x的y次乘方的值 EXP(x) 返回e的x乘方后的值 LOG(x) 返回x的自然对数，x相对于基数e的对数 LOG10(x) 返回x的基数为10的对数 RADIANS(x) 返回x由角度转化为弧度的值 DEGREES(x) 返回x由弧度转化为角度的值 SIN(x)、ASIN(x) 前者返回x的正弦，其中x为给定的弧度值；后者返回x的反正弦值，x为正弦 COS(x)、ACOS(x) 前者返回x的余弦，其中x为给定的弧度值；后者返回x的反余弦值，x为余弦 TAN(x)、ATAN(x) 前者返回x的正切，其中x为给定的弧度值；后者返回x的反正切值，x为正切 COT(x) 返回给定弧度值x的余切 字符串函数CHAR_LENGTH(str) 计算字符串字符个数 CONCAT(s1,s2，…) 返回连接参数产生的字符串，一个或多个待拼接的内容，任意一个为NULL则返回值为NULL CONCAT_WS(x,s1,s2,…) 返回多个字符串拼接之后的字符串，每个字符串之间有一个x INSERT(s1,x,len,s2) 返回字符串s1，其子字符串起始于位置x，被字符串s2取代len个字符 LOWER(str)和LCASE(str)、UPPER(str)和UCASE(str) 前两者将str中的字母全部转换成小写，后两者将字符串中的字母全部转换成大写 LEFT(s,n)、RIGHT(s,n) 前者返回字符串s从最左边开始的n个字符，后者返回字符串s从最右边开始的n个字符 LPAD(s1,len,s2)、RPAD(s1,len,s2) 前者返回s1，其左边由字符串s2填补到len字符长度，假如s1的长度大于len，则返回值被缩短至len字符；前者返回s1，其右边由字符串s2填补到len字符长度，假如s1的长度大于len，则返回值被缩短至len字符 LTRIM(s)、RTRIM(s) 前者返回字符串s，其左边所有空格被删除；后者返回字符串s，其右边所有空格被删除 TRIM(s) 返回字符串s删除了两边空格之后的字符串 TRIM(s1 FROM s) 删除字符串s两端所有子字符串s1，未指定s1的情况下则默认删除空格 REPEAT(s,n) 返回一个由重复字符串s组成的字符串，字符串s的数目等于n SPACE(n) 返回一个由n个空格组成的字符串 REPLACE(s,s1,s2) 返回一个字符串，用字符串s2替代字符串s中所有的字符串s1 STRCMP(s1,s2) 若s1和s2中所有的字符串都相同，则返回0；根据当前分类次序，第一个参数小于第二个则返回-1，其他情况返回1 SUBSTRING(s,n,len)、MID(s,n,len) 两个函数作用相同，从字符串s中返回一个第n个字符开始、长度为len的字符串 LOCATE(str1,str)、POSITION(str1 IN str)、INSTR(str,str1) 三个函数作用相同，返回子字符串str1在字符串str中的开始位置（从第几个字符开始） REVERSE(s) 将字符串s反转 ELT(N,str1,str2,str3,str4,…) 返回第N个字符串 日期和时间函数CURDATE()、CURRENT_DATE() 将当前日期按照”YYYY-MM-DD”或者”YYYYMMDD”格式的值返回，具体格式根据函数用在字符串或是数字语境中而定 CURRENT_TIMESTAMP()、LOCALTIME()、NOW()、SYSDATE() 这四个函数作用相同，返回当前日期和时间值，格式为”YYYY_MM-DD HH:MM:SS”或”YYYYMMDDHHMMSS”，具体格式根据函数用在字符串或数字语境中而定 UNIX_TIMESTAMP()、UNIX_TIMESTAMP(date) 前者返回一个格林尼治标准时间1970-01-01 00:00:00到现在的秒数，后者返回一个格林尼治标准时间1970-01-01 00:00:00到指定时间的秒数 FROM_UNIXTIME(date) 和UNIX_TIMESTAMP互为反函数，把UNIX时间戳转换为普通格式的时间 UTC_DATE()和UTC_TIME() 前者返回当前UTC（世界标准时间）日期值，其格式为”YYYY-MM-DD”或”YYYYMMDD”，后者返回当前UTC时间值，其格式为”YYYY-MM-DD”或”YYYYMMDD”。具体使用哪种取决于函数用在字符串还是数字语境中 MONTH(date)和MONTHNAME(date) 前者返回指定日期中的月份，后者返回指定日期中的月份的名称 DAYNAME(d)、DAYOFWEEK(d)、WEEKDAY(d) DAYNAME(d)返回d对应的工作日的英文名称，如Sunday、Monday等；DAYOFWEEK(d)返回的对应一周中的索引，1表示周日、2表示周一；WEEKDAY(d)表示d对应的工作日索引，0表示周一，1表示周二 WEEK(d)、WEEKOFYEAD(d) 前者计算日期d是一年中的第几周，后者计算某一天位于一年中的第几周 DAYOFYEAR(d)、DAYOFMONTH(d) 前者返回d是一年中的第几天，后者返回d是一月中的第几天 YEAR(date)、QUARTER(date)、MINUTE(time)、SECOND(time) YEAR(date)返回指定日期对应的年份，范围是1970~2069；QUARTER(date)返回date对应一年中的季度，范围是1~4；MINUTE(time)返回time对应的分钟数，范围是0~59；SECOND(time)返回制定时间的秒值 EXTRACE(type FROM date) 从日期中提取一部分，type可以是YEAR、YEAR_MONTH、DAY_HOUR、DAY_MICROSECOND、DAY_MINUTE、DAY_SECOND TIME_TO_SEC(time) 返回以转换为秒的time参数，转换公式为”3600小时 + 60分钟 + 秒” SEC_TO_TIME() 和TIME_TO_SEC(time)互为反函数，将秒值转换为时间格式 DATE_ADD(date,INTERVAL expr type)、ADD_DATE(date,INTERVAL expr type) 返回将起始时间加上expr type之后的时间，比如DATE_ADD(‘2010-12-31 23:59:59’, INTERVAL 1 SECOND)表示的就是把第一个时间加1秒 DATE_SUB(date,INTERVAL expr type)、SUBDATE(date,INTERVAL expr type) 返回将起始时间减去expr type之后的时间 ADDTIME(date,expr)、SUBTIME(date,expr) 前者进行date的时间加操作，后者进行date的时间减操作 条件判断函数IF(expr,v1,v2) 如果expr是TRUE则返回v1，否则返回v2 IFNULL(v1,v2) 如果v1不为NULL，则返回v1，否则返回v2 CASE expr WHEN v1 THEN r1 [WHEN v2 THEN v2] [ELSE rn] END 如果expr等于某个vn，则返回对应位置THEN后面的结果，如果与所有值都不想等，则返回ELSE后面的rn 系统信息函数VERSION() 查看MySQL版本号 CONNECTION_ID() 查看当前用户的连接数 USER()、CURRENT_USER()、SYSTEM_USER()、SESSION_USER() 查看当前被MySQL服务器验证的用户名和主机的组合，一般这几个函数的返回值是相同的 CHARSET(str) 查看字符串str使用的字符集 COLLATION(str) 查看字符串排列方式 加密函数PASSWORD(str) 从原明文密码str计算并返回加密后的字符串密码，注意这个函数的加密是单向的（不可逆），因此不应将它应用在个人的应用程序中而应该只在MySQL服务器的鉴定系统中使用 MD5(str) 为字符串算出一个MD5 128比特校验和，改值以32位十六进制数字的二进制字符串形式返回 ENCODE(str, pswd_str) 使用pswd_str作为密码，加密str DECODE(crypt_str,pswd_str) 使用pswd_str作为密码，解密加密字符串crypt_str，crypt_str是由ENCODE函数返回的字符串 其他函数FORMAT(x,n) 将数字x格式化，并以四舍五入的方式保留小数点后n位，结果以字符串形式返回 CONV(N,from_base,to_base) 不同进制数之间的转换，返回值为数值N的字符串表示，由from_base进制转换为to_base进制 INET_ATON(expr) 给出一个作为字符串的网络地址的点地址表示，返回一个代表该地址数值的整数，地址可以使4或8比特 INET_NTOA(expr) 给定一个数字网络地址（4或8比特），返回作为字符串的该地址的点地址表示 BENCHMARK(count,expr) 重复执行count次表达式expr，它可以用于计算MySQL处理表达式的速度，结果值通常是0（0只是表示很快，并不是没有速度）。另一个作用是用它在MySQL客户端内部报告语句执行的时间 CONVERT(str USING charset) 使用字符集charset表示字符串str]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ORACLE语句整理]]></title>
+    <url>%2F2017%2F05%2F25%2FORACLE%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8%E5%92%8C%E5%AD%97%E6%AE%B5%2F</url>
+    <content type="text"><![CDATA[表备份1234-- 备份表结构和数据create table table_name_new as select * from table_name_old where 1=1;-- 备份空表结构create table table_name_new as select * from table_name_old where 1=2; 查看当前用户下所有表1select table_name from user_tables; 查看当前用户下所有表及表注释1select * from user_tab_comments; 获取表字段：1select * from user_tab_columns where Table_Name='用户表' order by column_name 获取表注释：1select * from user_tab_comments where Table_Name='用户表' order by Table_Name 获取字段注释：1select * from user_col_comments where Table_Name='用户表' order by column_name]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>ORACLE</tag>
+        <tag>数据备份</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[魅力甘南]]></title>
+    <url>%2F2016%2F06%2F25%2F%E9%AD%85%E5%8A%9B%E7%94%98%E5%8D%97%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>旅行</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+        <tag>摄影</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[告别2014]]></title>
+    <url>%2F2015%2F01%2F01%2F%E5%91%8A%E5%88%AB2014%2F</url>
+    <content type="text"><![CDATA[用照片回顾这一年，告别的是一个个地方，也是一段段属于自己的生命。 春节在家睡大觉，睡到初三。没憋住去了趟厦门，城市旅行就是换个地方继续睡大觉。 环岛路上 沙画公园 摩天轮，给喜欢的人 成都，来过无数次的地方。工作后来成都的次数超过回家的次数。 都江堰，那年地震过后，看过她的满目疮痍，今年来过两次，虽然已重建多年，但处处还有地震留下的累累伤痕。 重庆，七月出差来这里，酒店大堂在一楼，停车场在八路，直通酒店背后大马路 色达，一个向往了很多年的地方，路途充满各种艰辛也乐在其中。 历尽艰险，就是为了多看你一眼 老天总会眷顾善良的孩子（大叔） 塔公草原，那年在新都桥与你擦肩而过时，三年后我们终于相遇 雅拉雪山 香港，从十一月初，每个周末都去，我不生产奶，也不做奶粉的搬运工 来年，依旧不断看见世界，不断跨越藩篱，感受内心切近生活，为了远方的风和传说，继续脚下漫长的旅途……]]></content>
+      <categories>
+        <category>旅行</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+        <tag>摄影</tag>
+      </tags>
+  </entry>
+</search>
