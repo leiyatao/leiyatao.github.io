@@ -4,32 +4,8 @@
 
     
   <url>
-    <loc>http://leiyatao.com/2017/12/09/linux/</loc>
-    <lastmod>2017-12-09T04:28:35.025Z</lastmod>
-    <data>
-        <display>
-        <title>linux 常用命令(不断更新)</title>
-        <pubTime>2017-12-09T02:17:45.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>shell</tag>
-         
-        <tag>命令</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://leiyatao.com/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://leiyatao.com/2017/11/30/tomcat/</loc>
-    <lastmod>2017-11-30T13:00:16.157Z</lastmod>
+    <lastmod>2017-12-09T06:18:07.669Z</lastmod>
     <data>
         <display>
         <title>CentOS7.2上tomcat启动慢问题解决</title>
@@ -45,6 +21,30 @@
            
              
               <breadCrumb title="tomcat" url="http://leiyatao.com/categories/tomcat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/12/09/linux/</loc>
+    <lastmod>2017-12-09T06:17:56.825Z</lastmod>
+    <data>
+        <display>
+        <title>linux 常用命令(不断更新)</title>
+        <pubTime>2017-12-09T02:17:45.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>shell</tag>
+         
+        <tag>命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://leiyatao.com/categories/linux/"/>
           
         </display>
     </data>

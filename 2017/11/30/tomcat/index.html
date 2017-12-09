@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://leiyatao.com/2017/11/30/tomcat/index.html">
 <meta property="og:site_name" content="雷子">
 <meta property="og:description" content="今天在阿里云CentOS 7.2 启动Tomcat，发现启动很慢，需要几分钟，并且是在没有部署war包的情况下，这个问题值得重视，所以就去查看日志，发现耗时是session引起随机数问题导致的。Tomcat的Session ID通过SHA1算法计算得到的，计算Session ID的时候必须有1个秘钥，为了提高安全性Tomcat在启动的时候通过随机数生成秘钥。 一、环境介绍系统版本：CentOS 7">
-<meta property="og:updated_time" content="2017-11-30T13:00:16.157Z">
+<meta property="og:updated_time" content="2017-12-09T06:18:07.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7.2上tomcat启动慢问题解决">
 <meta name="twitter:description" content="今天在阿里云CentOS 7.2 启动Tomcat，发现启动很慢，需要几分钟，并且是在没有部署war包的情况下，这个问题值得重视，所以就去查看日志，发现耗时是session引起随机数问题导致的。Tomcat的Session ID通过SHA1算法计算得到的，计算Session ID的时候必须有1个秘钥，为了提高安全性Tomcat在启动的时候通过随机数生成秘钥。 一、环境介绍系统版本：CentOS 7">
@@ -439,6 +439,7 @@
       
         <p>今天在阿里云CentOS 7.2 启动Tomcat，发现启动很慢，需要几分钟，并且是在没有部署war包的情况下，这个问题值得重视，所以就去查看日志，发现耗时是session引起随机数问题导致的。Tomcat的Session ID通过SHA1算法计算得到的，计算Session ID的时候必须有1个秘钥，为了提高安全性Tomcat在启动的时候通过随机数生成秘钥。</p>
 <h2 id="一、环境介绍"><a href="#一、环境介绍" class="headerlink" title="一、环境介绍"></a>一、环境介绍</h2><p>系统版本：CentOS 7.2<br>软件版本：Tomcat 8</p>
+<a id="more"></a>
 <h2 id="二、日志分析-排查原因"><a href="#二、日志分析-排查原因" class="headerlink" title="二、日志分析,排查原因"></a>二、日志分析,排查原因</h2><p>日志如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">30-Nov-2017 19:46:47.436 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [182,556] milliseconds.</div><div class="line">30-Nov-2017 19:46:47.458 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/apache-tomcat-8.0.47/webapps/manager has finished in 183,080 ms</div></pre></td></tr></table></figure></p>
 <h2 id="主要原因："><a href="#主要原因：" class="headerlink" title="主要原因："></a>主要原因：</h2><p>就是通过随机数生成秘钥的时候卡住了，导致Tomcat启动慢或失败。</p>
 <p>#影响随机数的强度的是生成用的熵，具体含义可以自己度娘 查下，不在这里细说了。<br>查看是否有足够的熵来用于产生随机数，可以通过如下命令来查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@qiuyuetao tools]# cat/proc/sys/kernel/random/entropy_avail </div><div class="line">7</div></pre></td></tr></table></figure></p>
