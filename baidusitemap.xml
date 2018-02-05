@@ -4,6 +4,54 @@
 
     
   <url>
+    <loc>http://leiyatao.com/2017/11/30/tomcat-1/</loc>
+    <lastmod>2018-02-05T08:38:48.184Z</lastmod>
+    <data>
+        <display>
+        <title>linux中tomcat启动报错</title>
+        <pubTime>2017-11-30T12:36:38.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>tomcat</tag>
+         
+        <tag>centos</tag>
+         
+         
+           
+             
+              <breadCrumb title="tomcat" url="http://leiyatao.com/categories/tomcat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2017/05/25/ORACLE%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8%E5%92%8C%E5%AD%97%E6%AE%B5/</loc>
+    <lastmod>2017-12-15T09:48:12.170Z</lastmod>
+    <data>
+        <display>
+        <title>ORACLE语句整理</title>
+        <pubTime>2017-05-25T07:56:11.000Z</pubTime>
+        
+        <tag>SQL</tag>
+         
+        <tag>ORACLE</tag>
+         
+        <tag>数据备份</tag>
+         
+         
+           
+             
+              <breadCrumb title="ORACLE" url="http://leiyatao.com/categories/ORACLE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leiyatao.com/2017/11/30/tomcat/</loc>
     <lastmod>2017-12-09T06:18:07.669Z</lastmod>
     <data>
@@ -165,30 +213,6 @@
            
              
               <breadCrumb title="旅行" url="http://leiyatao.com/categories/%E6%97%85%E8%A1%8C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2017/05/25/ORACLE%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8%E5%92%8C%E5%AD%97%E6%AE%B5/</loc>
-    <lastmod>2017-06-08T09:02:29.304Z</lastmod>
-    <data>
-        <display>
-        <title>ORACLE语句整理</title>
-        <pubTime>2017-05-25T07:56:11.000Z</pubTime>
-        
-        <tag>SQL</tag>
-         
-        <tag>ORACLE</tag>
-         
-        <tag>数据备份</tag>
-         
-         
-           
-             
-              <breadCrumb title="SQL" url="http://leiyatao.com/categories/SQL/"/>
           
         </display>
     </data>
