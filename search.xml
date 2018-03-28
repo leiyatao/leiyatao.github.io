@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git教程，将本地已有项目托管到码云]]></title>
+    <url>%2F2018%2F03%2F28%2Fgit%2F</url>
+    <content type="text"><![CDATA[码云上创建一个项目 本地创建一个项目或文件夹 然后使用git bash 使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹 使用git remote add origin https://gitee.com/你的码云用户名/testgit //添加远程仓库git remote add origin git@gitee.com:leiyatao/kiko.git 使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹 使用git add . 或者 git add + 文件名 (将文件保存到缓存区) 使用git commit -m ‘描述新添加的文件内容’ (就是注释) （文件保存到本地仓库） 使用git push origin master ，将本地仓库推送到远程仓库 补充说明修改提交作者git config –global user.name “Your Name Here”]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>oschia</tag>
+        <tag>gitee</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux top命令详解]]></title>
     <url>%2F2018%2F02%2F05%2Flinux-command-top%2F</url>
     <content type="text"><![CDATA[Linux命令工具 top详解top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。top是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止.比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定。常在linux系统下玩，这是必须掌握的命令之一；下面详细说说这个命令： 执行top命令进入如下界面：12345678910top - 09:14:56 up 264 days, 20:56, 1 user, load average: 0.02, 0.04, 0.00Tasks: 87 total, 1 running, 86 sleeping, 0 stopped, 0 zombieCpu(s): 0.0%us, 0.2%sy, 0.0%ni, 99.7%id, 0.0%wa, 0.0%hi, 0.0%si, 0.2%stMem: 377672k total, 322332k used, 55340k free, 32592k buffersSwap: 397308k total, 67192k used, 330116k free, 71900k cached PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND 1 root 20 0 2856 656 388 S 0.0 0.2 0:49.40 init 2 root 20 0 0 0 0 S 0.0 0.0 0:00.00 kthreadd 3 root 20 0 0 0 0 S 0.0 0.0 7:15.20 ksoftirqd/0 4 root RT 0 0 0 0 S 0.0 0.0 0:00.00 migration/0 第一行1top - 16:47:09 up 129 days, 21:57, 3 users, load average: 0.00, 0.01, 0.05 09:14:56 ： 系统当前时间264 days, 20:56 ： 系统开机到现在经过了多少时间1 users ： 当前2用户在线load average: 0.02, 0.04, 0.00： 系统1分钟、5分钟、15分钟的CPU负载信息 第二行1Tasks: 87 total, 1 running, 86 sleeping, 0 stopped, 0 zombie Tasks：任务;87 total：很好理解，就是当前有87个任务，也就是87个进程。1 running：1个进程正在运行86 sleeping：86个进程睡眠0 stopped：停止的进程数0 zombie：僵死的进程数 第三行1Cpu(s): 0.0%us, 0.2%sy, 0.0%ni, 99.7%id, 0.0%wa, 0.0%hi, 0.0%si, 0.2%st Cpu(s)：表示这一行显示CPU总体信息0.0%us：用户态进程占用CPU时间百分比，不包含renice值为负的任务占用的CPU的时间。0.7%sy：内核占用CPU时间百分比0.0%ni：改变过优先级的进程占用CPU的百分比99.3%id：空闲CPU时间百分比0.0%wa：等待I/O的CPU时间百分比0.0%hi：CPU硬中断时间百分比0.0%si：CPU软中断时间百分比注：这里显示数据是所有cpu的平均值，如果想看每一个cpu的处理情况，按1即可；折叠，再次按1； 第四行1Mem: 377672k total, 322332k used, 55340k free, 32592k buffers Men：内存的意思377672k total：物理内存总量322332k used：使用的物理内存量55340k free：空闲的物理内存量32592k buffers：用作内核缓存的物理内存量 第五行1Swap: 397308k total, 67192k used, 330116k free, 71900k cached Swap：交换空间6881272k total：交换区总量4010444k used：使用的交换区量2870828k free：空闲的交换区量4336992k cached：缓冲交换区总量 进程信息1PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND 再下面就是进程信息：PID：进程的IDUSER：进程所有者PR：进程的优先级别，越小越优先被执行NInice：值VIRT：进程占用的虚拟内存RES：进程占用的物理内存SHR：进程使用的共享内存S：进程的状态。S表示休眠，R表示正在运行，Z表示僵死状态，N表示该进程优先值为负数%CPU：进程占用CPU的使用率%MEM：进程使用的物理内存和总内存的百分比TIME+：该进程启动后占用的总的CPU时间，即占用CPU使用时间的累加值。COMMAND：进程启动命令名称 top命令交互操作指令下面列出一些常用的 top命令操作指令12345678910111213141516171819q：退出top命令&lt;Space&gt;：立即刷新s：设置刷新时间间隔c：显示命令完全模式t:：显示或隐藏进程和CPU状态信息m：显示或隐藏内存状态信息l：显示或隐藏uptime信息f：增加或减少进程显示标志S：累计模式，会把已完成或退出的子进程占用的CPU时间累计到父进程的MITE+P：按%CPU使用率排行T：按MITE+排行M：按%MEM排行u：指定显示用户进程r：修改进程renice值kkill：进程i：只显示正在运行的进程W：保存对top的设置到文件~/.toprc，下次启动将自动调用toprc文件的设置。h：帮助命令。q：退出]]></content>
