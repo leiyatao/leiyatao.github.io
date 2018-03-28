@@ -90,13 +90,13 @@
 
 
 
-<meta name="description" content="码云上创建一个项目 本地创建一个项目或文件夹  然后使用git bash 使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹 使用git remote add origin https://gitee.com/你的码云用户名/testgit      //添加远程仓库git remote add origin git@gitee.com:lei">
+<meta name="description" content="准备工作 注册项目托管账号，国内有coding,gitee等，国外有github等，根据个人喜好。本文以gitee为例。 本地电脑安装git管理工具，网上教程有很多，如果是win7系统 可参考 这篇文章，如果是Mac或者Linux系统，一般都自带git。 添加ssh秘钥，参考 这篇文章。">
 <meta name="keywords" content="git,oschia,gitee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git教程，将本地已有项目托管到码云">
 <meta property="og:url" content="http://leiyatao.com/2018/03/28/git/index.html">
 <meta property="og:site_name" content="雷子の博客">
-<meta property="og:description" content="码云上创建一个项目 本地创建一个项目或文件夹  然后使用git bash 使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹 使用git remote add origin https://gitee.com/你的码云用户名/testgit      //添加远程仓库git remote add origin git@gitee.com:lei">
+<meta property="og:description" content="准备工作 注册项目托管账号，国内有coding,gitee等，国外有github等，根据个人喜好。本文以gitee为例。 本地电脑安装git管理工具，网上教程有很多，如果是win7系统 可参考 这篇文章，如果是Mac或者Linux系统，一般都自带git。 添加ssh秘钥，参考 这篇文章。">
 <meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/1.png">
 <meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/2.png">
 <meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/3.png">
@@ -107,10 +107,10 @@
 <meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/8.png">
 <meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/9.png">
 <meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/10.png">
-<meta property="og:updated_time" content="2018-03-28T09:40:54.814Z">
+<meta property="og:updated_time" content="2018-03-28T10:21:02.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git教程，将本地已有项目托管到码云">
-<meta name="twitter:description" content="码云上创建一个项目 本地创建一个项目或文件夹  然后使用git bash 使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹 使用git remote add origin https://gitee.com/你的码云用户名/testgit      //添加远程仓库git remote add origin git@gitee.com:lei">
+<meta name="twitter:description" content="准备工作 注册项目托管账号，国内有coding,gitee等，国外有github等，根据个人喜好。本文以gitee为例。 本地电脑安装git管理工具，网上教程有很多，如果是win7系统 可参考 这篇文章，如果是Mac或者Linux系统，一般都自带git。 添加ssh秘钥，参考 这篇文章。">
 <meta name="twitter:image" content="http://p6anbvehn.bkt.clouddn.com/image/20180328/1.png">
 
 
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  197
+                  397
                 </span>
               
 
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -482,17 +482,12 @@
       
 
       
-        <h2 id="码云上创建一个项目"><a href="#码云上创建一个项目" class="headerlink" title="码云上创建一个项目"></a>码云上创建一个项目</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/1.png" alt="1"></p>
-<h2 id="本地创建一个项目或文件夹-然后使用git-bash"><a href="#本地创建一个项目或文件夹-然后使用git-bash" class="headerlink" title="本地创建一个项目或文件夹  然后使用git bash"></a>本地创建一个项目或文件夹  然后使用git bash</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/2.png" alt="1"></p>
-<h2 id="使用-git-init-命令-，初始化一个git-本地仓库（项目）-会在本地创建一个-git-的文件夹"><a href="#使用-git-init-命令-，初始化一个git-本地仓库（项目）-会在本地创建一个-git-的文件夹" class="headerlink" title="使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹"></a>使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/3.png" alt="1"></p>
-<h2 id="使用git-remote-add-origin-https-gitee-com-你的码云用户名-testgit-添加远程仓库"><a href="#使用git-remote-add-origin-https-gitee-com-你的码云用户名-testgit-添加远程仓库" class="headerlink" title="使用git remote add origin https://gitee.com/你的码云用户名/testgit      //添加远程仓库"></a>使用git remote add origin <a href="https://gitee.com/你的码云用户名/testgit" target="_blank" rel="external">https://gitee.com/你的码云用户名/testgit</a>      //添加远程仓库</h2><p>git remote add origin git@gitee.com:leiyatao/kiko.git<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/4.png" alt="1"></p>
-<h2 id="使用-git-pull-origin-master-命令，将码云上的仓库pull到本地文件夹"><a href="#使用-git-pull-origin-master-命令，将码云上的仓库pull到本地文件夹" class="headerlink" title="使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹"></a>使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/5.png" alt="1"></p>
-<h2 id="使用git-add-或者-git-add-文件名-将文件保存到缓存区"><a href="#使用git-add-或者-git-add-文件名-将文件保存到缓存区" class="headerlink" title="使用git add . 或者 git add + 文件名 (将文件保存到缓存区)"></a>使用git add . 或者 git add + 文件名 (将文件保存到缓存区)</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/6.png" alt="1"></p>
-<h2 id="使用git-commit-m-‘描述新添加的文件内容’-就是注释-（文件保存到本地仓库）"><a href="#使用git-commit-m-‘描述新添加的文件内容’-就是注释-（文件保存到本地仓库）" class="headerlink" title="使用git commit -m ‘描述新添加的文件内容’  (就是注释)   （文件保存到本地仓库）"></a>使用git commit -m ‘描述新添加的文件内容’  (就是注释)   （文件保存到本地仓库）</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/7.png" alt="1"></p>
-<h2 id="使用git-push-origin-master-，将本地仓库推送到远程仓库"><a href="#使用git-push-origin-master-，将本地仓库推送到远程仓库" class="headerlink" title="使用git push origin master ，将本地仓库推送到远程仓库"></a>使用git push origin master ，将本地仓库推送到远程仓库</h2><p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/8.png" alt="1"></p>
-<p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/9.png" alt="1"></p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>修改提交作者<br>git config –global user.name “Your Name Here”</p>
-<p><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/10.png" alt="1"></p>
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>注册项目托管账号，国内有coding,gitee等，国外有github等，根据个人喜好。本文以gitee为例。</li>
+<li>本地电脑安装git管理工具，网上教程有很多，如果是win7系统 可参考 <a href="https://www.cnblogs.com/tuhooo/p/7497233.html" target="_blank" rel="external">这篇文章</a>，如果是Mac或者Linux系统，一般都自带git。</li>
+<li>添加ssh秘钥，参考 <a href="https://www.cnblogs.com/tuhooo/p/7497233.html" target="_blank" rel="external">这篇文章</a>。<a id="more"></a>
+<h2 id="码云上创建一个项目"><a href="#码云上创建一个项目" class="headerlink" title="码云上创建一个项目"></a>码云上创建一个项目</h2><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/1.png" alt="1"><h2 id="本地创建一个同名项目"><a href="#本地创建一个同名项目" class="headerlink" title="本地创建一个同名项目"></a>本地创建一个同名项目</h2>本地创建一个项目或文件夹  然后使用git bash<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/2.png" alt="1"><h2 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h2>使用 <code>git init</code> 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/3.png" alt="1"><h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2>使用<code>git remote add origin https://gitee.com/你的码云用户名/kiko</code><br>注意,我这里使用的是ssh方式，如果使用https方式每次提交都要输入远程仓库的用户名密码和密码<br><code>git remote add origin git@gitee.com:leiyatao/kiko.git</code><br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/4.png" alt="1"><h2 id="拉取远程文件到本地"><a href="#拉取远程文件到本地" class="headerlink" title="拉取远程文件到本地"></a>拉取远程文件到本地</h2>使用 <code>git pull origin master</code> 命令，将码云上的仓库pull到本地文件夹<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/5.png" alt="1"><h2 id="添加本地文件到缓存区"><a href="#添加本地文件到缓存区" class="headerlink" title="添加本地文件到缓存区"></a>添加本地文件到缓存区</h2>使用<code>git add .</code> 或者 <code>git add + filename</code> (将文件保存到缓存区)<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/6.png" alt="1"><h2 id="提交文件到本地仓库"><a href="#提交文件到本地仓库" class="headerlink" title="提交文件到本地仓库"></a>提交文件到本地仓库</h2>使用<code>git commit -m &#39;描述新添加的文件内容&#39;</code>  (就是注释)   （文件保存到本地仓库）<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/7.png" alt="1"><h2 id="推送本地仓库内容到远程仓库"><a href="#推送本地仓库内容到远程仓库" class="headerlink" title="推送本地仓库内容到远程仓库"></a>推送本地仓库内容到远程仓库</h2>使用<code>git push origin master</code> ，将本地仓库推送到远程仓库<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/8.png" alt="1"><br>推送结果如下<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/9.png" alt="1"><h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2>使用<code>git config --global user.name &quot;Your Name Here&quot;</code>命令修改提交作者<br><img src="http://p6anbvehn.bkt.clouddn.com/image/20180328/10.png" alt="1"></li>
+</ol>
 
       
     </div>
@@ -701,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#码云上创建一个项目"><span class="nav-number">1.</span> <span class="nav-text">码云上创建一个项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地创建一个项目或文件夹-然后使用git-bash"><span class="nav-number">2.</span> <span class="nav-text">本地创建一个项目或文件夹  然后使用git bash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-git-init-命令-，初始化一个git-本地仓库（项目）-会在本地创建一个-git-的文件夹"><span class="nav-number">3.</span> <span class="nav-text">使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git-remote-add-origin-https-gitee-com-你的码云用户名-testgit-添加远程仓库"><span class="nav-number">4.</span> <span class="nav-text">使用git remote add origin https://gitee.com/你的码云用户名/testgit      //添加远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-git-pull-origin-master-命令，将码云上的仓库pull到本地文件夹"><span class="nav-number">5.</span> <span class="nav-text">使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git-add-或者-git-add-文件名-将文件保存到缓存区"><span class="nav-number">6.</span> <span class="nav-text">使用git add . 或者 git add + 文件名 (将文件保存到缓存区)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git-commit-m-‘描述新添加的文件内容’-就是注释-（文件保存到本地仓库）"><span class="nav-number">7.</span> <span class="nav-text">使用git commit -m ‘描述新添加的文件内容’  (就是注释)   （文件保存到本地仓库）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用git-push-origin-master-，将本地仓库推送到远程仓库"><span class="nav-number">8.</span> <span class="nav-text">使用git push origin master ，将本地仓库推送到远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充说明"><span class="nav-number">9.</span> <span class="nav-text">补充说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#码云上创建一个项目"><span class="nav-number">2.</span> <span class="nav-text">码云上创建一个项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地创建一个同名项目"><span class="nav-number">3.</span> <span class="nav-text">本地创建一个同名项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化本地仓库"><span class="nav-number">4.</span> <span class="nav-text">初始化本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">5.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取远程文件到本地"><span class="nav-number">6.</span> <span class="nav-text">拉取远程文件到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加本地文件到缓存区"><span class="nav-number">7.</span> <span class="nav-text">添加本地文件到缓存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交文件到本地仓库"><span class="nav-number">8.</span> <span class="nav-text">提交文件到本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送本地仓库内容到远程仓库"><span class="nav-number">9.</span> <span class="nav-text">推送本地仓库内容到远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充说明"><span class="nav-number">10.</span> <span class="nav-text">补充说明</span></a></li></ol></div>
             
 
           </div>
