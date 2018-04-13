@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://leiyatao.com/2018/04/12/jdk-install-linux/index.html">
 <meta property="og:site_name" content="雷子の博客">
 <meta property="og:description" content="准备工作 检查系统 12-[root@apply tool]# uname -a Linux localhost 3.8.13-26.1.1.el6uek.x86_64 #2 SMP Thu Feb 13 19:42:43 PST 2014 x86_64 x86_64 x86_64 GNU/Linux  下载jdk根据系统类型及位数下载相应的jdk，刚才查询结果本机属于64位linux系统，jdk">
-<meta property="og:updated_time" content="2018-04-13T06:59:28.613Z">
+<meta property="og:updated_time" content="2018-04-13T07:06:47.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下JDK环境变量配置">
 <meta name="twitter:description" content="准备工作 检查系统 12-[root@apply tool]# uname -a Linux localhost 3.8.13-26.1.1.el6uek.x86_64 #2 SMP Thu Feb 13 19:42:43 PST 2014 x86_64 x86_64 x86_64 GNU/Linux  下载jdk根据系统类型及位数下载相应的jdk，刚才查询结果本机属于64位linux系统，jdk">
@@ -481,15 +481,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# cd /usr/</div><div class="line">[root@localhost usr]# tar -xvf /opt/tool/jdk-8u161-linux-x64.tar.gz</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol>
-<li>编辑<code>/etc/profile</code>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# vim etc/profile</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h3 id="编辑-etc-profile文件"><a href="#编辑-etc-profile文件" class="headerlink" title="编辑/etc/profile文件"></a>编辑<code>/etc/profile</code>文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# vim etc/profile</div></pre></td></tr></table></figure>
 <p>在profile的最后加入/修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/usr/jdk1.8.0_161</div><div class="line">PATH=$JAVA_HOME/bin:$HBASE_HOME/bin:$PATH</div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div></pre></td></tr></table></figure></p>
-<ol>
-<li>更新<code>/etc/profile</code>文件让变量立即生效<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# source /etc/profile</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="更新-etc-profile文件让变量立即生效"><a href="#更新-etc-profile文件让变量立即生效" class="headerlink" title="更新/etc/profile文件让变量立即生效"></a>更新<code>/etc/profile</code>文件让变量立即生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# source /etc/profile</div></pre></td></tr></table></figure>
 <h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>输入<code>java -version</code>查看jdk版本，如果出现如下信息，标识配置成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# java -version</div><div class="line">java version &quot;1.8.0_161&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_161-b12)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.161-b12, mixed mode)</div></pre></td></tr></table></figure></p>
 
       
@@ -697,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.</span> <span class="nav-text">配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-etc-profile文件"><span class="nav-number">2.1.</span> <span class="nav-text">编辑/etc/profile文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-etc-profile文件让变量立即生效"><span class="nav-number">2.2.</span> <span class="nav-text">更新/etc/profile文件让变量立即生效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a></li></ol></div>
             
 
           </div>

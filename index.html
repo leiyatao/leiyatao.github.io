@@ -470,15 +470,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# cd /usr/</div><div class="line">[root@localhost usr]# tar -xvf /opt/tool/jdk-8u161-linux-x64.tar.gz</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol>
-<li>编辑<code>/etc/profile</code>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# vim etc/profile</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h3 id="编辑-etc-profile文件"><a href="#编辑-etc-profile文件" class="headerlink" title="编辑/etc/profile文件"></a>编辑<code>/etc/profile</code>文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# vim etc/profile</div></pre></td></tr></table></figure>
 <p>在profile的最后加入/修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/usr/jdk1.8.0_161</div><div class="line">PATH=$JAVA_HOME/bin:$HBASE_HOME/bin:$PATH</div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div></pre></td></tr></table></figure></p>
-<ol>
-<li>更新<code>/etc/profile</code>文件让变量立即生效<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# source /etc/profile</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="更新-etc-profile文件让变量立即生效"><a href="#更新-etc-profile文件让变量立即生效" class="headerlink" title="更新/etc/profile文件让变量立即生效"></a>更新<code>/etc/profile</code>文件让变量立即生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# source /etc/profile</div></pre></td></tr></table></figure>
 <h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>输入<code>java -version</code>查看jdk版本，如果出现如下信息，标识配置成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# java -version</div><div class="line">java version &quot;1.8.0_161&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_161-b12)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.161-b12, mixed mode)</div></pre></td></tr></table></figure></p>
 
           
@@ -660,7 +654,7 @@
 <li>添加ssh秘钥，参考 <a href="https://www.cnblogs.com/tuhooo/p/7497233.html" target="_blank" rel="external">这篇文章</a>。
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/28/git/#далее" rel="contents">
+            <a class="btn" href="/2018/03/28/git/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -841,7 +835,7 @@
 <p>执行<code>top</code>命令进入如下界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">top - 09:14:56 up 264 days, 20:56,  1 user,  load average: 0.02, 0.04, 0.00</div><div class="line">Tasks:  87 total,   1 running,  86 sleeping,   0 stopped,   0 zombie</div><div class="line">Cpu(s):  0.0%us,  0.2%sy,  0.0%ni, 99.7%id,  0.0%wa,  0.0%hi,  0.0%si,  0.2%st</div><div class="line">Mem:    377672k total,   322332k used,    55340k free,    32592k buffers</div><div class="line">Swap:   397308k total,    67192k used,   330116k free,    71900k cached</div><div class="line">  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND</div><div class="line">    1 root      20   0  2856  656  388 S  0.0  0.2   0:49.40 init</div><div class="line">    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd</div><div class="line">    3 root      20   0     0    0    0 S  0.0  0.0   7:15.20 ksoftirqd/0</div><div class="line">    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/05/linux-command-top/#далее" rel="contents">
+            <a class="btn" href="/2018/02/05/linux-command-top/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1021,7 +1015,7 @@
           <p>今天在linux同一服务器部署部署两个tomcat，tomcat1启动正常，tomcat2启动时包如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ERROR: transport error 202: bind failed: Address already in use</div><div class="line">ERROR: JDWP Transport dt_socket failed to initialize, TRANSPORT_INIT(510)</div><div class="line">JDWP exit error AGENT_ERROR_TRANSPORT_INIT(197): No transports initialized [debugInit.c:750]</div><div class="line">ERROR: transport error 202: bind failed: Address already in use</div><div class="line">ERROR: JDWP Transport dt_socket failed to initialize, TRANSPORT_INIT(510)</div><div class="line">JDWP exit error AGENT_ERROR_TRANSPORT_INIT(197): No transports initialized [debugInit.c:750]</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/30/tomcat-1/#далее" rel="contents">
+            <a class="btn" href="/2018/01/30/tomcat-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1204,7 +1198,7 @@
 <h2 id="检查占用端口命令"><a href="#检查占用端口命令" class="headerlink" title="检查占用端口命令"></a>检查占用端口命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-- 检查所有占用端口</div><div class="line">netstat -ntlp</div><div class="line">-- 查询指定端口被占用 例如8080</div><div class="line">netstat -apn | grep 8080</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/09/linux/#далее" rel="contents">
+            <a class="btn" href="/2017/12/09/linux/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1385,7 +1379,7 @@
 <h2 id="一、环境介绍"><a href="#一、环境介绍" class="headerlink" title="一、环境介绍"></a>一、环境介绍</h2><p>系统版本：CentOS 7.2<br>软件版本：Tomcat 8</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/30/tomcat/#далее" rel="contents">
+            <a class="btn" href="/2017/11/30/tomcat/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1565,7 +1559,7 @@
           <p>昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功，通过阿里云控制台实例的<strong>远程连接</strong> 进入管理终端，界面显示如下：<br><img src="http://olg4sxpno.bkt.clouddn.com/20171013note_attach.jpg" alt="yun"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/记一次阿里云服务系统奔溃事件及处理过程/#далее" rel="contents">
+            <a class="btn" href="/2017/10/13/记一次阿里云服务系统奔溃事件及处理过程/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1745,7 +1739,7 @@
           <h2 id="1-pom-xml引入swagger2依赖："><a href="#1-pom-xml引入swagger2依赖：" class="headerlink" title="1.pom.xml引入swagger2依赖："></a>1.pom.xml引入swagger2依赖：</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--Swagger2的依赖--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;swagger.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;swagger.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/24/spring-boot集成swagger2/#далее" rel="contents">
+            <a class="btn" href="/2017/08/24/spring-boot集成swagger2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1930,7 +1924,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/27/zookeeper-dubbo环境搭建/#далее" rel="contents">
+            <a class="btn" href="/2017/06/27/zookeeper-dubbo环境搭建/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2110,7 +2104,7 @@
           <p>今天开发服务器[<code>linux</code>]上的mongodb数据库突然挂了,打开mongodb日志发现如下提示：</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/19/linux命令检查当前文件夹子目录所占空间大小/#далее" rel="contents">
+            <a class="btn" href="/2017/06/19/linux命令检查当前文件夹子目录所占空间大小/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
