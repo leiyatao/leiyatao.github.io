@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux下JDK环境变量配置]]></title>
+    <url>%2F2018%2F04%2F12%2Fjdk-install-linux%2F</url>
+    <content type="text"><![CDATA[准备工作 检查系统 12-[root@apply tool]# uname -a Linux localhost 3.8.13-26.1.1.el6uek.x86_64 #2 SMP Thu Feb 13 19:42:43 PST 2014 x86_64 x86_64 x86_64 GNU/Linux 下载jdk根据系统类型及位数下载相应的jdk，刚才查询结果本机属于64位linux系统，jdk下载地址http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 解压将下载的jdk解压到 /usr路径 12[root@localhost ~]# cd /usr/[root@localhost usr]# tar -xvf /opt/tool/jdk-8u161-linux-x64.tar.gz 配置环境变量 编辑/etc/profile文件1[root@localhost /]# vim etc/profile 在profile的最后加入/修改：123JAVA_HOME=/usr/jdk1.8.0_161PATH=$JAVA_HOME/bin:$HBASE_HOME/bin:$PATHCLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 更新/etc/profile文件让变量立即生效1[root@localhost /]# source /etc/profile 验证输入java -version查看jdk版本，如果出现如下信息，标识配置成功1234[root@localhost /]# java -versionjava version &quot;1.8.0_161&quot;Java(TM) SE Runtime Environment (build 1.8.0_161-b12)Java HotSpot(TM) 64-Bit Server VM (build 25.161-b12, mixed mode)]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>java，jdk安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git教程，将本地已有项目托管到码云]]></title>
     <url>%2F2018%2F03%2F28%2Fgit%2F</url>
     <content type="text"><![CDATA[准备工作 注册项目托管账号，国内有coding,gitee等，国外有github等，根据个人喜好。本文以gitee为例。 本地电脑安装git管理工具，网上教程有很多，如果是win7系统 可参考 这篇文章，如果是Mac或者Linux系统，一般都自带git。 添加ssh秘钥，参考 这篇文章。 码云上创建一个项目本地创建一个同名项目本地创建一个项目或文件夹 然后使用git bash初始化本地仓库使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹添加远程仓库使用git remote add origin https://gitee.com/你的码云用户名/kiko注意,我这里使用的是ssh方式，如果使用https方式每次提交都要输入远程仓库的用户名密码和密码git remote add origin git@gitee.com:leiyatao/kiko.git拉取远程文件到本地使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹添加本地文件到缓存区使用git add . 或者 git add + filename (将文件保存到缓存区)提交文件到本地仓库使用git commit -m &#39;描述新添加的文件内容&#39; (就是注释) （文件保存到本地仓库）推送本地仓库内容到远程仓库使用git push origin master ，将本地仓库推送到远程仓库推送结果如下补充说明使用git config --global user.name &quot;Your Name Here&quot;命令修改提交作者]]></content>
