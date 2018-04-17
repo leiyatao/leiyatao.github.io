@@ -459,8 +459,7 @@
 
       
         
-          
-            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>主从复制可以使MySQL数据库主服务器的主数据库，复制到一个或多个MySQL从服务器从数据库，默认情况下，复制异步; 根据配置，可以复制数据库中的所有数据库，选定的数据库或甚至选定的表。</p>
+          <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>主从复制可以使MySQL数据库主服务器的主数据库，复制到一个或多个MySQL从服务器从数据库，默认情况下，复制异步; 根据配置，可以复制数据库中的所有数据库，选定的数据库或甚至选定的表。</p>
 <h2 id="MySQL中主从复制的优点"><a href="#MySQL中主从复制的优点" class="headerlink" title="MySQL中主从复制的优点"></a>MySQL中主从复制的优点</h2><ol>
 <li>横向扩展解决方案</li>
 </ol>
@@ -495,41 +494,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p><a href="http://www.leiyatao.com/2018/04/13/mysql-install-linux/" target="_blank" rel="external">参考上篇博文</a><br>首先在两台机器上装上，保证正常启动，可以使用</p>
-<h2 id="Master-Server-配置"><a href="#Master-Server-配置" class="headerlink" title="Master-Server 配置"></a>Master-Server 配置</h2><h3 id="修改-my-cnf"><a href="#修改-my-cnf" class="headerlink" title="修改 my.cnf"></a>修改 my.cnf</h3><p>配置 Master 以使用基于二进制日志文件位置的复制，必须启用二进制日志记录并建立唯一的服务器ID,否则则无法进行主从复制。</p>
-<h3 id="开启binlog-，每台设置不同的-server-id"><a href="#开启binlog-，每台设置不同的-server-id" class="headerlink" title="开启binlog ，每台设置不同的 server-id"></a>开启binlog ，每台设置不同的 server-id</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cat /etc/my.cnf</div><div class="line">[mysqld]</div><div class="line">log-bin=mysql-bin</div><div class="line">server-id=1</div></pre></td></tr></table></figure>
-<h3 id="重启MySQL服务"><a href="#重启MySQL服务" class="headerlink" title="重启MySQL服务"></a>重启MySQL服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service mysql restart</div></pre></td></tr></table></figure>
-<h3 id="登录MySQL"><a href="#登录MySQL" class="headerlink" title="登录MySQL"></a>登录MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root -p</div></pre></td></tr></table></figure>
-<h3 id="创建备份用户"><a href="#创建备份用户" class="headerlink" title="创建备份用户"></a>创建备份用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; CREATE USER &apos;backup&apos;@&apos;192.168.229.119&apos; IDENTIFIED BY &apos;backup&apos;;</div><div class="line">mysql&gt; GRANT REPLICATION SLAVE ON *.* TO &apos;backup&apos;@&apos;192.168.252.119&apos;;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>每个从库使用MySQL用户名和密码连接到主库，因此主库上必须有用户帐户，从库可以连接。任何帐户都可以用于此操作，只要它已被授予 REPLICATION SLAVE权限。可以选择为每个从库创建不同的帐户，或者每个从库使用相同帐户连接到主库</p>
-<p>虽然不必专门为复制创建帐户，但应注意，复制用到的用户名和密码会以纯文本格式存储在主信息存储库文件或表中 。因此，需要创建一个单独的帐户，该帐户只具有复制过程的权限，以尽可能减少对其他帐户的危害。</p>
-</blockquote>
-<h2 id="Slave-Server-配置"><a href="#Slave-Server-配置" class="headerlink" title="Slave-Server 配置"></a>Slave-Server 配置</h2><h3 id="修改-my-cnf-1"><a href="#修改-my-cnf-1" class="headerlink" title="修改 my.cnf"></a>修改 my.cnf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cat /etc/my.cnf</div><div class="line">[mysqld]</div><div class="line">server-id=2</div></pre></td></tr></table></figure>
-<p>如果要设置多个从库，则每个从库的server-id与主库和其他从库设置不同的唯一值。</p>
-<h3 id="重启MySQL服务-1"><a href="#重启MySQL服务-1" class="headerlink" title="重启MySQL服务"></a>重启MySQL服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service mysql restart</div></pre></td></tr></table></figure>
-<h3 id="登录MySQL-1"><a href="#登录MySQL-1" class="headerlink" title="登录MySQL"></a>登录MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root -p</div></pre></td></tr></table></figure>
-<h3 id="配置主库通信"><a href="#配置主库通信" class="headerlink" title="配置主库通信"></a>配置主库通信</h3><p>查看 Master-Server ， binlog File 文件名称和 Position值位置 并且记下来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show master status\G</div><div class="line">*************************** 1. row ***************************</div><div class="line">             File: mysql-bin.000001</div><div class="line">         Position: 1697</div><div class="line">     Binlog_Do_DB:</div><div class="line"> Binlog_Ignore_DB:</div><div class="line">Executed_Gtid_Set:</div><div class="line">1 row in set (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt;</div></pre></td></tr></table></figure></p>
-<p>要设置从库与主库进行通信，进行复制，使用必要的连接信息配置从库在从库上执行以下语句<br>将选项值替换为与系统相关的实际值</p>
-<h3 id="配置存库通信"><a href="#配置存库通信" class="headerlink" title="配置存库通信"></a>配置存库通信</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CHANGE MASTER TO MASTER_HOST=&apos;192.168.229.116&apos;, MASTER_USER=&apos;backup&apos;, MASTER_PASSWORD=&apos;backup&apos;, MASTER_LOG_FILE=&apos;mysql-bin.000001&apos;, MASTER_LOG_POS=1697;</div></pre></td></tr></table></figure>
-<h3 id="查看复制状态"><a href="#查看复制状态" class="headerlink" title="查看复制状态"></a>查看复制状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show slave status\G</div><div class="line">*************************** 1. row ***************************</div><div class="line">               Slave_IO_State: Waiting for master to send event</div><div class="line">                  Master_Host: 192.168.229.116</div><div class="line">                  Master_User: slave</div><div class="line">                  Master_Port: 3306</div><div class="line">                Connect_Retry: 60</div><div class="line">              Master_Log_File: mysql-bin.000001</div><div class="line">          Read_Master_Log_Pos: 1697</div><div class="line">               Relay_Log_File: kiko-relay-bin.000005</div><div class="line">                Relay_Log_Pos: 320</div><div class="line">        Relay_Master_Log_File: mysql-bin.000001</div><div class="line">             Slave_IO_Running: Yes</div><div class="line">            Slave_SQL_Running: Yes</div><div class="line">.....</div></pre></td></tr></table></figure>
-<h3 id="检查主从复制通信状态"><a href="#检查主从复制通信状态" class="headerlink" title="检查主从复制通信状态"></a>检查主从复制通信状态</h3><ul>
-<li><code>Slave_IO_State：</code> #从站的当前状态</li>
-<li><code>Slave_IO_Running：</code> Yes #读取主程序二进制日志的I/O线程是否正在运行</li>
-<li><code>Slave_SQL_Running：</code> Yes #执行读取主服务器中二进制日志事件的SQL线程是否正在运行。与I/O线程一样</li>
-<li><code>Seconds_Behind_Master</code> #是否为0，0就是已经同步了</li>
-</ul>
-<p>必须都是 Yes</p>
-<h2 id="测试主从复制"><a href="#测试主从复制" class="headerlink" title="测试主从复制"></a>测试主从复制</h2><p>启动mysql服务并在主库中创建表<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mysql&gt; create database demo;</div><div class="line">Query OK, 1 row affected (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; use demo;</div><div class="line">Database changed</div><div class="line">mysql&gt; create table users(id int not null auto_increment,name varchar(32) not null, primary key(id)) engine=InnoDB auto_increment=0 default charset=utf8;</div><div class="line">Query OK, 0 rows affected (0.03 sec)</div></pre></td></tr></table></figure></p>
-<p>存库中查询库表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show databases;</div><div class="line">+--------------------+</div><div class="line">| Database           |</div><div class="line">+--------------------+</div><div class="line">| information_schema |</div><div class="line">| demo               |</div><div class="line">| mysql              |</div><div class="line">| performance_schema |</div><div class="line">| sys                |</div><div class="line">+--------------------+</div><div class="line">5 rows in set (0.01 sec)</div></pre></td></tr></table></figure></p>
-<p>主库中刚才创建的数据库<code>demo</code>已经同步到存库中,即标识一个主从复制的数据库配置已经大功告成</p>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000010867488" target="_blank" rel="external">https://segmentfault.com/a/1190000010867488</a></li>
-<li><a href="http://www.ymq.io/2017/08/26/mysql-Master-Slave/" target="_blank" rel="external">http://www.ymq.io/2017/08/26/mysql-Master-Slave/</a></li>
-</ul>
-
-          
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p><a href="http://www.leiyatao.com/2018/04/13/mysql-install-linux/" target="_blank" rel="external">参考上篇博文</a><br>首先在两台机器上装上，保证正常启动，可以使用<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/16/mysql-master-slave-sync/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
