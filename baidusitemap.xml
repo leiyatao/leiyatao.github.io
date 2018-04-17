@@ -4,8 +4,34 @@
 
     
   <url>
+    <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
+    <lastmod>2018-04-17T11:26:55.209Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL函数总汇</title>
+        <pubTime>2017-06-08T07:22:53.000Z</pubTime>
+        
+        <tag>SQL</tag>
+         
+        <tag>MySQL</tag>
+         
+        <tag>数据库</tag>
+         
+        <tag>函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
-    <lastmod>2018-04-17T08:26:29.374Z</lastmod>
+    <lastmod>2018-04-17T11:26:28.951Z</lastmod>
     <data>
         <display>
         <title>mysql主从复制</title>
@@ -329,32 +355,6 @@
            
              
               <breadCrumb title="旅行" url="http://leiyatao.com/categories/%E6%97%85%E8%A1%8C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
-    <lastmod>2017-06-08T09:00:08.372Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL函数总汇</title>
-        <pubTime>2017-06-08T07:22:53.000Z</pubTime>
-        
-        <tag>SQL</tag>
-         
-        <tag>MySQL</tag>
-         
-        <tag>数据库</tag>
-         
-        <tag>函数</tag>
-         
-         
-           
-             
-              <breadCrumb title="MySQL" url="http://leiyatao.com/categories/MySQL/"/>
           
         </display>
     </data>

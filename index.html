@@ -463,38 +463,7 @@
 <h2 id="MySQL中主从复制的优点"><a href="#MySQL中主从复制的优点" class="headerlink" title="MySQL中主从复制的优点"></a>MySQL中主从复制的优点</h2><ol>
 <li>横向扩展解决方案</li>
 </ol>
-<p>在多个从库之间扩展负载以提高性能。在这种环境中，所有写入和更新在主库上进行。但是，读取可能发生在一个或多个从库上。该模型可以提高写入的性能（由于主库专用于更新），同时在多个从库上读取，可以大大提高读取速度。</p>
-<ol>
-<li>数据安全性</li>
-</ol>
-<p>由于主库数据被复制到从库，从库可以暂停复制过程，可以在从库上运行备份服务，而不会破坏对应的主库数据。</p>
-<ol>
-<li>分析</li>
-</ol>
-<p>可以在主库上创建实时数据，而信息分析可以在从库上进行，而不会影响主服务器的性能。</p>
-<ol>
-<li>长距离数据分发</li>
-</ol>
-<p>可以使用复制创建远程站点使用的数据的本地副本，而无需永久访问主库。</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><table>
-<thead>
-<tr>
-<th>MySQL版本</th>
-<th>MySQL 5.7.21</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Master-Server</td>
-<td>192.168.229.116</td>
-</tr>
-<tr>
-<td>Slave-Server</td>
-<td>192.168.252.119</td>
-</tr>
-</tbody>
-</table>
-<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p><a href="http://www.leiyatao.com/2018/04/13/mysql-install-linux/" target="_blank" rel="external">参考上篇博文</a><br>首先在两台机器上装上，保证正常启动，可以使用<br>
+<p>在多个从库之间扩展负载以提高性能。在这种环境中，所有写入和更新在主库上进行。但是，读取可能发生在一个或多个从库上。该模型可以提高写入的性能（由于主库专用于更新），同时在多个从库上读取，可以大大提高读取速度。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/16/mysql-master-slave-sync/#more" rel="contents">
@@ -2227,7 +2196,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
