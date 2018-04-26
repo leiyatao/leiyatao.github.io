@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
+    
+    <lastmod>2018-04-26T09:28:43.871Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leiyatao.com/link/index.html</loc>
     
     <lastmod>2018-04-20T02:31:47.242Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
     
     <lastmod>2018-04-17T11:26:55.209Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
-    
-    <lastmod>2018-04-17T11:26:28.951Z</lastmod>
     
   </url>
   

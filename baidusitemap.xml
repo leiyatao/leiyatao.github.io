@@ -3,6 +3,30 @@
 
 
     
+  <url>
+    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
+    <lastmod>2018-04-26T09:28:43.871Z</lastmod>
+    <data>
+        <display>
+        <title>mysql主从复制</title>
+        <pubTime>2018-04-16T14:33:33.000Z</pubTime>
+        
+        <tag>环境配置</tag>
+         
+        <tag>mysql，数据库</tag>
+         
+        <tag>主从复制</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
@@ -19,30 +43,6 @@
         <tag>数据库</tag>
          
         <tag>函数</tag>
-         
-         
-           
-             
-              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
-    <lastmod>2018-04-17T11:26:28.951Z</lastmod>
-    <data>
-        <display>
-        <title>mysql主从复制</title>
-        <pubTime>2018-04-16T14:33:33.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-        <tag>mysql，数据库</tag>
-         
-        <tag>主从复制</tag>
          
          
            
