@@ -4,32 +4,8 @@
 
     
   <url>
-    <loc>http://leiyatao.com/2018/04/27/%E6%90%AD%E5%BB%BAsolr%E5%8D%95%E6%9C%BA%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2018-04-27T06:33:59.988Z</lastmod>
-    <data>
-        <display>
-        <title>搭建solr单机服务</title>
-        <pubTime>2018-04-27T02:35:02.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-        <tag>solr，java</tag>
-         
-        <tag>搜索引擎</tag>
-         
-         
-           
-             
-              <breadCrumb title="solr" url="http://leiyatao.com/categories/solr/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
-    <lastmod>2018-04-26T09:28:43.871Z</lastmod>
+    <lastmod>2018-04-27T10:07:55.065Z</lastmod>
     <data>
         <display>
         <title>mysql主从复制</title>
@@ -45,6 +21,30 @@
            
              
               <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2018/04/27/%E6%90%AD%E5%BB%BAsolr%E5%8D%95%E6%9C%BA%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2018-04-27T06:47:59.948Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 搭建solr单机服务</title>
+        <pubTime>2018-04-27T02:35:02.000Z</pubTime>
+        
+        <tag>环境配置</tag>
+         
+        <tag>solr，java</tag>
+         
+        <tag>搜索引擎</tag>
+         
+         
+           
+             
+              <breadCrumb title="solr" url="http://leiyatao.com/categories/solr/"/>
           
         </display>
     </data>
