@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://leiyatao.com/2017/08/24/spring-boot%E9%9B%86%E6%88%90swagger2/</loc>
+    <lastmod>2018-05-09T06:44:16.166Z</lastmod>
+    <data>
+        <display>
+        <title>spring-boot集成swagger2</title>
+        <pubTime>2017-08-24T10:15:06.000Z</pubTime>
+        
+        <tag>Spring-boot</tag>
+         
+        <tag>swagger2</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring-boot" url="http://leiyatao.com/categories/Spring-boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
     <lastmod>2018-05-09T06:41:19.012Z</lastmod>
     <data>
@@ -370,26 +392,6 @@
            
              
               <breadCrumb title="运维" url="http://leiyatao.com/categories/%E8%BF%90%E7%BB%B4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2017/08/24/spring-boot%E9%9B%86%E6%88%90swagger2/</loc>
-    <lastmod>2017-08-28T09:20:14.152Z</lastmod>
-    <data>
-        <display>
-        <title>spring-boot集成swagger2</title>
-        <pubTime>2017-08-24T10:15:06.000Z</pubTime>
-        
-        <tag>Spring-boot swagger2</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring-boot" url="http://leiyatao.com/categories/Spring-boot/"/>
           
         </display>
     </data>
