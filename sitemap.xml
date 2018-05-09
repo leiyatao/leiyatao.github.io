@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leiyatao.com/link/index.html</loc>
+    
+    <lastmod>2018-05-09T01:43:34.340Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leiyatao.com/2018/05/08/linux-ssh-free-passwd-login/</loc>
     
     <lastmod>2018-05-09T01:42:12.662Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://leiyatao.com/2018/04/27/%E6%90%AD%E5%BB%BAsolr%E5%8D%95%E6%9C%BA%E6%9C%8D%E5%8A%A1/</loc>
     
     <lastmod>2018-04-27T06:47:59.948Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/link/index.html</loc>
-    
-    <lastmod>2018-04-20T02:31:47.242Z</lastmod>
     
   </url>
   
