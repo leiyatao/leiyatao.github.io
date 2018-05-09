@@ -90,17 +90,20 @@
 
 
 
-<meta name="description" content="待发布">
+<meta name="description" content="概述Lucene是一个Java语言编写的利用倒排原理实现的文本检索类库 Solr是以Lucene为基础实现的文本检索应用服务。Solr部署方式有单机方式、多机Master-Slaver方式、Cloud方式。 SolrCloud是基于Solr和Zookeeper的分布式搜索方案。当索引越来越大，一个单一的系统无法满足磁盘需求，查询速度缓慢，此时就需要分布式索引。在分布式索引中，原来的大索引，将会分成">
 <meta name="keywords" content="环境配置,solr，java,集群,Cluster,zookeeper,搜索引擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 搭建 SolrCloud 集群服务">
 <meta property="og:url" content="http://leiyatao.com/2018/05/09/linux-solr-SolrCloud/index.html">
 <meta property="og:site_name" content="雷子の博客">
-<meta property="og:description" content="待发布">
-<meta property="og:updated_time" content="2018-05-09T08:12:50.557Z">
+<meta property="og:description" content="概述Lucene是一个Java语言编写的利用倒排原理实现的文本检索类库 Solr是以Lucene为基础实现的文本检索应用服务。Solr部署方式有单机方式、多机Master-Slaver方式、Cloud方式。 SolrCloud是基于Solr和Zookeeper的分布式搜索方案。当索引越来越大，一个单一的系统无法满足磁盘需求，查询速度缓慢，此时就需要分布式索引。在分布式索引中，原来的大索引，将会分成">
+<meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/solrCloud/20180509/solrcloud1.PNG">
+<meta property="og:image" content="http://p6anbvehn.bkt.clouddn.com/solrCloud/20180509/solrcloud2.PNG">
+<meta property="og:updated_time" content="2018-05-09T12:53:47.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 搭建 SolrCloud 集群服务">
-<meta name="twitter:description" content="待发布">
+<meta name="twitter:description" content="概述Lucene是一个Java语言编写的利用倒排原理实现的文本检索类库 Solr是以Lucene为基础实现的文本检索应用服务。Solr部署方式有单机方式、多机Master-Slaver方式、Cloud方式。 SolrCloud是基于Solr和Zookeeper的分布式搜索方案。当索引越来越大，一个单一的系统无法满足磁盘需求，查询速度缓慢，此时就需要分布式索引。在分布式索引中，原来的大索引，将会分成">
+<meta name="twitter:image" content="http://p6anbvehn.bkt.clouddn.com/solrCloud/20180509/solrcloud1.PNG">
 
 
 
@@ -447,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3
+                  2,339
                 </span>
               
 
@@ -463,7 +466,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  10
                 </span>
               
             </div>
@@ -481,7 +484,84 @@
       
 
       
-        <p>待发布</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Lucene是一个Java语言编写的利用倒排原理实现的文本检索类库</p>
+<p>Solr是以Lucene为基础实现的文本检索应用服务。Solr部署方式有单机方式、多机Master-Slaver方式、Cloud方式。</p>
+<p>SolrCloud是基于Solr和Zookeeper的分布式搜索方案。当索引越来越大，一个单一的系统无法满足磁盘需求，查询速度缓慢，此时就需要分布式索引。在分布式索引中，原来的大索引，将会分成多个小索引，solr可以将这些小索引返回的结果合并，然后返回给客户端。</p>
+<h2 id="特色功能"><a href="#特色功能" class="headerlink" title="特色功能"></a>特色功能</h2><p>SolrCloud有几个特色功能：</p>
+<p>集中式的配置信息使用ZK进行集中配置。启动时可以指定把Solr的相关配置文件上传 Zookeeper，多机器共用。这些ZK中的配置不会再拿到本地缓存，Solr直接读取ZK中的配置信息。配置文件的变动，所有机器都可以感知到。另外，Solr的一些任务也是通过ZK作为媒介发布的。目的是为了容错。接收到任务，但在执行任务时崩溃的机器，在重启后，或者集群选出候选者时，可以再次执行这个未完成的任务。</p>
+<p>自动容错SolrCloud对索引分片，并对每个分片创建多个Replication。每个 Replication都可以对外提供服务。一个Replication挂掉不会影响索引服务。更强大的是，它还能自动的在其它机器上帮你把失败机器上的索引Replication重建并投入使用。</p>
+<p>近实时搜索立即推送式的replication（也支持慢推送）。可以在秒内检索到新加入索引。</p>
+<p>查询时自动负载均衡SolrCloud索引的多个Replication可以分布在多台机器上，均衡查询压力。如果查询压力大，可以通过扩展机器，增加Replication来减缓。</p>
+<p>自动分发的索引和索引分片发送文档到任何节点，它都会转发到正确节点。</p>
+<p>事务日志确保更新无丢失，即使文档没有索引到磁盘。</p>
+<p>其它值得一提的功能有：</p>
+<p>索引存储在HDFS上索引的大小通常在G和几十G，上百G的很少，这样的功能或许很难实用。但是，如果你有上亿数据来建索引的话，也是可以考虑一下的。我觉得这个功能最大的好处或许就是和下面这个“通过MR批量创建索引”联合实用。</p>
+<p>通过MR批量创建索引有了这个功能，你还担心创建索引慢吗？</p>
+<p>强大的RESTful API通常你能想到的管理功能，都可以通过此API方式调用。这样写一些维护和管理脚本就方便多了。</p>
+<p>优秀的管理界面主要信息一目了然；可以清晰的以图形化方式看到SolrCloud的部署分布；当然还有不可或缺的Debug功能。</p>
+<h2 id="SolrCloud的基本概念"><a href="#SolrCloud的基本概念" class="headerlink" title="SolrCloud的基本概念"></a>SolrCloud的基本概念</h2><p>Cluster集群：一组Solr节点，逻辑上作为一个单元进行管理，整个集群使用同一套Schema和SolrConfig</p>
+<p>Node节点：一个运行Solr的JVM实例</p>
+<p>Collection：在SolrCloud集群中逻辑意义上的完整的索引，常常被划分为一个或多个Shard。这些Shard使用相同的config set,如果Shard数超过一个，那么索引方案就是分布式索引。</p>
+<p>Core：也就是Solr Core，一个Solr中包含一个或者多个SolrCore，每个Solr Core可以独立提供索引和查询功能，Solr Core额提出是为了增加管理灵活性和共用资源。<br>SolrCloud中使用的配置是在Zookeeper中的，而传统的Solr Core的配置文件是在磁盘上的配置目录中。</p>
+<p>Config Set:Solr Core提供服务必须的一组配置文件，每个Config Set有一个名字。必须包含solrconfig.xml和schema.xml，初次之外，依据这两个文件的配置内容，可能还需要包含其他文件。<br>Config Set存储在Zookeeper中，可以重新上传或者使用upconfig命令进行更新，可以用Solr的启动参数bootstrap_confdir进行初始化或者更新。</p>
+<p>Shard分片：Collection的逻辑分片。每个Shard被分成一个或者多个replicas，通过选举确定那个是Leader。</p>
+<p>Replica：Shard的一个拷贝。每个Replica存在于Solr的一个Core中。</p>
+<p>Leader：赢得选举的Shard replicas，每个Shard有多个replicas，这几个Replicas需要选举确定一个Leader。选举可以发生在任何时间。当进行索引操作时，SolrCloud将索引操作请求传到此Shard对应的leader，leader再分发它们到全部Shard的replicas。</p>
+<h2 id="Solr-文档"><a href="#Solr-文档" class="headerlink" title="Solr 文档"></a>Solr 文档</h2><ul>
+<li><p><a href="http://lucene.apache.org/solr/guide/6_6/solrcloud.html" target="_blank" rel="external">Apache SolrCloud 参考指南</a></p>
+</li>
+<li><p><a href="https://cwiki.apache.org/confluence/display/solr/" target="_blank" rel="external">Apache Solr文档</a></p>
+</li>
+<li><p><a href="https://cwiki.apache.org/confluence/display/solr/Format+of+solr.xml" target="_blank" rel="external">Solr 参数配置</a></p>
+</li>
+<li><p><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=50234737" target="_blank" rel="external">Solr控制脚本参考</a></p>
+</li>
+</ul>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
+<li>Linux版本：Linux version 3.8.13-26.1.1.el6uek.x86_64 (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) )</li>
+<li>Solr版本：solr-6.6.3</li>
+<li>Jdk环境：1.8.0_121 环境配置具体参考 <a href="http://www.leiyatao.com/2018/04/12/jdk-install-linux/" target="_blank" rel="external">Linux下JDK环境变量配置</a></li>
+<li>ZooKeeper版本：zookeeper-3.4.12.tar.gz 具体参考 <a href="http://www.leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/" target="_blank" rel="external">Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务</a><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3>关闭防火墙</li>
+</ul>
+<p><code>iptables</code>防火墙关闭命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service iptables stop # 关闭命令：</div></pre></td></tr></table></figure></p>
+<p><code>firewall</code>防火墙关闭命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl stop firewalld.service # 停止firewall</div></pre></td></tr></table></figure></p>
+<p>Solr 6（和SolrJ客户端库）的Java支持的最低版本现在是Java 8。</p>
+<h2 id="Solr-安装"><a href="#Solr-安装" class="headerlink" title="Solr 安装"></a>Solr 安装</h2><h3 id="下载-Solr"><a href="#下载-Solr" class="headerlink" title="下载 Solr"></a>下载 Solr</h3><p>下载最新版本的Solr<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://mirrors.tuna.tsinghua.edu.cn/apache/lucene/solr/6.6.3/solr-6.6.3.zip</div></pre></td></tr></table></figure></p>
+<h3 id="提取tar文件"><a href="#提取tar文件" class="headerlink" title="提取tar文件"></a>提取tar文件</h3><h3 id="提取zip文件"><a href="#提取zip文件" class="headerlink" title="提取zip文件"></a>提取zip文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ unzip -xvf solr-6.6.3.zip</div><div class="line">$ cd solr-6.6.3</div></pre></td></tr></table></figure>
+<h2 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h2><h3 id="编辑-solr-in-sh"><a href="#编辑-solr-in-sh" class="headerlink" title="编辑 solr.in.sh"></a>编辑 solr.in.sh</h3><p>集群中的每台机器都要按照以下说明进行配置启动</p>
+<p>首先到 solr 安装目录的 bin 下,编辑 solr.in.sh 文件</p>
+<p>搜索 SOLR_HOST, 取消注释, 设置成自己的 ip 或机器名 例如(kiko1) 建议使用机器名</p>
+<p>搜索 SOLR_TIMEZONE, 取消注释, 设置成 UTC+8</p>
+<p>把kiko1 的solr.in.sh 修改为以下配置</p>
+<p>建议设置Solr服务器的主机名，特别是在以SolrCloud模式运行时，因为它会在使用ZooKeeper注册时确定节点的地址 ，不建议用ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SOLR_HOST=&quot;kiko1&quot;   #节点(机器)名称</div><div class="line">SOLR_TIMEZONE=&quot;UTC+8&quot; #时区 UTC+8为东八区</div></pre></td></tr></table></figure></p>
+<h3 id="复制-Solr-配置"><a href="#复制-Solr-配置" class="headerlink" title="复制 Solr 配置"></a>复制 Solr 配置</h3><ol>
+<li><p>把 kiko1 编辑好的 Solr 文件及配置通过 scp -r 复制到集群 kiko2, kiko3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 solr-6.6.3]# for a in &#123;2..3&#125; ; do scp -r /home/kiko/tools/solr-6.6.3/ kiko$a:/home/kiko/tools/solr-6.6.3 ; done</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后依次修改 kiko2, kiko3 的上的 solr.in.sh 的SOLR_HOST 为机器的ip或机器名（建议为机器名）</p>
+</li>
+</ol>
+<p>格式 SOLR_HOST=”ip”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko2 tools]# vim solr-6.6.3/bin/solr.in.sh</div></pre></td></tr></table></figure></p>
+<h3 id="启动-ZooKeeper-集群"><a href="#启动-ZooKeeper-集群" class="headerlink" title="启动 ZooKeeper 集群"></a>启动 ZooKeeper 集群</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 bin]# for a in &#123;1..3&#125; ; do ssh kiko$a &quot;source /etc/profile; /home/kiko/tools/zookeeper-3.4.12/bin/zkServer.sh start&quot; ; done</div></pre></td></tr></table></figure>
+<h3 id="启动-SolrCloud-集群"><a href="#启动-SolrCloud-集群" class="headerlink" title="启动 SolrCloud 集群"></a>启动 SolrCloud 集群</h3><p>在任意一台机器，启动 SolrCloud 集群 并且关联 ZooKeeper 集群<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 solr-6.6.3]# for a in &#123;1..3&#125; ; do ssh kiko$a &quot;source /etc/profile; /home/kiko/tools/solr-6.6.3/bin/solr start -cloud -z kiko1:2181,kiko2:2181,kiko3:2181 -p 8983 -force&quot; ; done</div></pre></td></tr></table></figure></p>
+<p> 响应<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Warning: Available entropy is low. As a result, use of the UUIDField, SSL, or any other features that require</div><div class="line">RNG might not work properly. To check for the amount of available entropy, use &apos;cat /proc/sys/kernel/random/entropy_avail&apos;.</div><div class="line"></div><div class="line">Waiting up to 180 seconds to see Solr running on port 8983 [\]</div><div class="line">Started Solr server on port 8983 (pid=10860). Happy searching!</div><div class="line">                                                                                                                                                                                                                               Warning: Available entropy is low. As a result, use of the UUIDField, SSL, or any other features that require</div><div class="line">RNG might not work properly. To check for the amount of available entropy, use &apos;cat /proc/sys/kernel/random/entropy_avail&apos;.</div><div class="line"></div><div class="line">Waiting up to 180 seconds to see Solr running on port 8983 [\]</div><div class="line">Started Solr server on port 8983 (pid=24326). Happy searching!</div><div class="line">                                                                                                                                                                                                                               Warning: Available entropy is low. As a result, use of the UUIDField, SSL, or any other features that require</div><div class="line">RNG might not work properly. To check for the amount of available entropy, use &apos;cat /proc/sys/kernel/random/entropy_avail&apos;.</div><div class="line"></div><div class="line">Waiting up to 180 seconds to see Solr running on port 8983 [\]</div><div class="line">Started Solr server on port 8983 (pid=9689). Happy searching!</div></pre></td></tr></table></figure></p>
+<h3 id="创建集群库"><a href="#创建集群库" class="headerlink" title="创建集群库"></a>创建集群库</h3><p>在任意一台机器执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 solr-6.6.3]# /home/kiko/tools/solr-6.6.3/bin/solr create_collection -c test_collection -shards 2 -replicationFactor 3 -force</div></pre></td></tr></table></figure></p>
+<ul>
+<li>执行命令参数说明：<ul>
+<li>-c 指定库(collection)名称</li>
+<li>-shards 指定分片数量,可简写为 -s ,索引数据会分布在这些分片上</li>
+<li>-replicationFactor 每个分片的副本数量,每个碎片由至少1个物理副本组成</li>
+</ul>
+</li>
+</ul>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">Connecting to ZooKeeper at kiko1:2181,kiko2:2181,kiko3:2181 ...</div><div class="line">INFO  - 2018-05-09 20:23:42.323; org.apache.solr.client.solrj.impl.ZkClientClusterStateProvider; Cluster at kiko1:2181,kiko2:2181,kiko3:2181 ready</div><div class="line">Uploading /home/kiko/tools/solr-6.6.3/server/solr/configsets/data_driven_schema_configs/conf for config test_collection to ZooKeeper at kiko1:2181,kiko2:2181,kiko3:2181</div><div class="line"></div><div class="line">Creating new collection &apos;test_collection&apos; using command:</div><div class="line">http://kiko1:8983/solr/admin/collections?action=CREATE&amp;name=test_collection&amp;numShards=2&amp;replicationFactor=3&amp;maxShardsPerNode=2&amp;collection.configName=test_collection</div><div class="line"></div><div class="line">&#123;</div><div class="line">  &quot;responseHeader&quot;:&#123;</div><div class="line">    &quot;status&quot;:0,</div><div class="line">    &quot;QTime&quot;:6132&#125;,</div><div class="line">  &quot;success&quot;:&#123;</div><div class="line">    &quot;kiko3:8983_solr&quot;:&#123;</div><div class="line">      &quot;responseHeader&quot;:&#123;</div><div class="line">        &quot;status&quot;:0,</div><div class="line">        &quot;QTime&quot;:4315&#125;,</div><div class="line">      &quot;core&quot;:&quot;test_collection_shard1_replica1&quot;&#125;,</div><div class="line">    &quot;kiko2:8983_solr&quot;:&#123;</div><div class="line">      &quot;responseHeader&quot;:&#123;</div><div class="line">        &quot;status&quot;:0,</div><div class="line">        &quot;QTime&quot;:4637&#125;,</div><div class="line">      &quot;core&quot;:&quot;test_collection_shard1_replica2&quot;&#125;,</div><div class="line">    &quot;kiko1:8983_solr&quot;:&#123;</div><div class="line">      &quot;responseHeader&quot;:&#123;</div><div class="line">        &quot;status&quot;:0,</div><div class="line">        &quot;QTime&quot;:4801&#125;,</div><div class="line">      &quot;core&quot;:&quot;test_collection_shard1_replica3&quot;&#125;&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>SolrCloud状态 图表</p>
+<p><img src="http://p6anbvehn.bkt.clouddn.com/solrCloud/20180509/solrcloud1.PNG" alt=""></p>
+<p>可以看到 solr 2个分片,个3个副本</p>
+<p><img src="http://p6anbvehn.bkt.clouddn.com/solrCloud/20180509/solrcloud2.PNG" alt=""></p>
+<h3 id="服务状态"><a href="#服务状态" class="headerlink" title="服务状态"></a>服务状态</h3><p>如果您不确定SolrCloud状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko2 tools]# /home/kiko/tools/solr-6.6.3/bin/solr status</div></pre></td></tr></table></figure></p>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Found 1 Solr nodes:</div><div class="line"></div><div class="line">Solr process 24326 running on port 8983</div><div class="line">&#123;</div><div class="line">  &quot;solr_home&quot;:&quot;/home/kiko/tools/solr-6.6.3/server/solr&quot;,</div><div class="line">  &quot;version&quot;:&quot;6.6.3 d1e9bbd333ea55cfa0c75d324424606e857a775b - sarowe - 2018-03-02 15:09:34&quot;,</div><div class="line">  &quot;startTime&quot;:&quot;2018-05-09T12:21:22.783Z&quot;,</div><div class="line">  &quot;uptime&quot;:&quot;0 days, 0 hours, 26 minutes, 40 seconds&quot;,</div><div class="line">  &quot;memory&quot;:&quot;99.4 MB (%20.3) of 490.7 MB&quot;,</div><div class="line">  &quot;cloud&quot;:&#123;</div><div class="line">    &quot;ZooKeeper&quot;:&quot;kiko1:2181,kiko2:2181,kiko3:2181&quot;,</div><div class="line">    &quot;liveNodes&quot;:&quot;3&quot;,</div><div class="line">    &quot;collections&quot;:&quot;1&quot;&#125;&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="删除集群库"><a href="#删除集群库" class="headerlink" title="删除集群库"></a>删除集群库</h3><h3 id="停止集群"><a href="#停止集群" class="headerlink" title="停止集群"></a>停止集群</h3><h3 id="副本状态"><a href="#副本状态" class="headerlink" title="副本状态"></a>副本状态</h3><h3 id="ZK管理配置"><a href="#ZK管理配置" class="headerlink" title="ZK管理配置"></a>ZK管理配置</h3><p>本文参考 <a href="http://www.ymq.io/2017/08/23/SolrCloud/" target="_blank" rel="external">CentOs7.3 搭建 SolrCloud 集群服务</a></p>
 
       
     </div>
@@ -614,8 +694,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -677,6 +766,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特色功能"><span class="nav-number">2.</span> <span class="nav-text">特色功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SolrCloud的基本概念"><span class="nav-number">3.</span> <span class="nav-text">SolrCloud的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solr-文档"><span class="nav-number">4.</span> <span class="nav-text">Solr 文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境"><span class="nav-number">4.1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">4.2.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solr-安装"><span class="nav-number">5.</span> <span class="nav-text">Solr 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-Solr"><span class="nav-number">5.1.</span> <span class="nav-text">下载 Solr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取tar文件"><span class="nav-number">5.2.</span> <span class="nav-text">提取tar文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取zip文件"><span class="nav-number">5.3.</span> <span class="nav-text">提取zip文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群配置"><span class="nav-number">6.</span> <span class="nav-text">集群配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-solr-in-sh"><span class="nav-number">6.1.</span> <span class="nav-text">编辑 solr.in.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制-Solr-配置"><span class="nav-number">6.2.</span> <span class="nav-text">复制 Solr 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-ZooKeeper-集群"><span class="nav-number">6.3.</span> <span class="nav-text">启动 ZooKeeper 集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-SolrCloud-集群"><span class="nav-number">6.4.</span> <span class="nav-text">启动 SolrCloud 集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建集群库"><span class="nav-number">6.5.</span> <span class="nav-text">创建集群库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务状态"><span class="nav-number">6.6.</span> <span class="nav-text">服务状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除集群库"><span class="nav-number">6.7.</span> <span class="nav-text">删除集群库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止集群"><span class="nav-number">6.8.</span> <span class="nav-text">停止集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#副本状态"><span class="nav-number">6.9.</span> <span class="nav-text">副本状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZK管理配置"><span class="nav-number">6.10.</span> <span class="nav-text">ZK管理配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
