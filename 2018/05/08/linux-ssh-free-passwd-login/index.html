@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://leiyatao.com/2018/05/08/linux-ssh-free-passwd-login/index.html">
 <meta property="og:site_name" content="雷子の博客">
 <meta property="og:description" content="环境 Linux版本 Oracle Linux Server release 6.5 三台虚拟机 192.168.229.115，192.168.229.116，192.168.229.117  修改主机名修改三台主机名，以此类推，kiko1，kiko2，kiko31# vim /etc/sysconfig/network 依次修改各机器的hostname12NETWORKING=yesHOSTN">
-<meta property="og:updated_time" content="2018-05-09T01:32:15.105Z">
+<meta property="og:updated_time" content="2018-05-09T01:42:12.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux ssh  免密登录">
 <meta name="twitter:description" content="环境 Linux版本 Oracle Linux Server release 6.5 三台虚拟机 192.168.229.115，192.168.229.116，192.168.229.117  修改主机名修改三台主机名，以此类推，kiko1，kiko2，kiko31# vim /etc/sysconfig/network 依次修改各机器的hostname12NETWORKING=yesHOSTN">
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  730
+                  806
                 </span>
               
 
@@ -532,7 +532,7 @@
 <p>例如在<code>kiko3</code>机器 <code>ssh</code>登录<code>kiko1</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[root@kiko3 ~]# ssh kiko1</div><div class="line">The authenticity of host &apos;kiko1 (192.168.229.115)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is d9:33:04:3b:3a:d4:c3:1e:9e:bb:f1:bd:d9:bf:2a:3f.</div><div class="line">Are you sure you want to continue connecting (yes/no)? yes</div><div class="line">Warning: Permanently added &apos;kiko1,192.168.229.115&apos; (RSA) to the list of known hosts.</div><div class="line">Last login: Tue May  8 20:29:25 from kiko2</div><div class="line">[root@kiko1 ~]#</div></pre></td></tr></table></figure></p>
 <p>表示登录成功</p>
 <p><code>exit</code>退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 ~]# exit</div><div class="line">logout</div><div class="line">Connection to kiko1 closed.</div></pre></td></tr></table></figure></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><font color="red"><strong>在重启<code>sshd</code>服务时切记不要对<code>sshd</code>服务进程进行<code>kill</code>操作</strong></font>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><font color="red"><strong>在重启<code>sshd</code>服务时,只能选择<code>service sshd restart</code>命令重启，切记千万不要对<code>sshd</code>服务进程进行<code>kill</code>操作,再进行启动，因为当你kill掉sshd服务进程后，你远程登录的机器将会自动退出并永远无法登录。特别是linux服务器不受自己控制或在异地的时候，惨痛的教训</strong></font>
 
 <p>本文参考：<a href="https://segmentfault.com/a/1190000010738165" target="_blank" rel="external">CentOs7.3 ssh 免密登录</a></p>
 
