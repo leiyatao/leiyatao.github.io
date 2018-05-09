@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="待发布">
+<meta name="description" content="Zookeeper 概述zookeeper实际上是yahoo开发的，用于分布式中一致性处理的框架。最初其作为研发Hadoop时的副产品。由于分布式系统中一致性处理较为困难，其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了zookeeper，以至于zookeeper成为了各种分布式系统的基础组件，其地位之重要，可想而知。著名的hadoop，kafka，dubbo 都是基于zo">
 <meta name="keywords" content="linux,集群服务,zookeeper,Cluster">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务">
 <meta property="og:url" content="http://leiyatao.com/2018/05/09/zookeeper-3-4-12集群/index.html">
 <meta property="og:site_name" content="雷子の博客">
-<meta property="og:description" content="待发布">
-<meta property="og:updated_time" content="2018-05-09T06:26:21.083Z">
+<meta property="og:description" content="Zookeeper 概述zookeeper实际上是yahoo开发的，用于分布式中一致性处理的框架。最初其作为研发Hadoop时的副产品。由于分布式系统中一致性处理较为困难，其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了zookeeper，以至于zookeeper成为了各种分布式系统的基础组件，其地位之重要，可想而知。著名的hadoop，kafka，dubbo 都是基于zo">
+<meta property="og:updated_time" content="2018-05-09T08:02:51.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务">
-<meta name="twitter:description" content="待发布">
+<meta name="twitter:description" content="Zookeeper 概述zookeeper实际上是yahoo开发的，用于分布式中一致性处理的框架。最初其作为研发Hadoop时的副产品。由于分布式系统中一致性处理较为困难，其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了zookeeper，以至于zookeeper成为了各种分布式系统的基础组件，其地位之重要，可想而知。著名的hadoop，kafka，dubbo 都是基于zo">
 
 
 
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3
+                  2,508
                 </span>
               
 
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  12
                 </span>
               
             </div>
@@ -481,7 +481,64 @@
       
 
       
-        <p>待发布</p>
+        <h2 id="Zookeeper-概述"><a href="#Zookeeper-概述" class="headerlink" title="Zookeeper 概述"></a>Zookeeper 概述</h2><p><code>zookeeper</code>实际上是<code>yahoo</code>开发的，用于分布式中一致性处理的框架。最初其作为研发<code>Hadoop</code>时的副产品。由于分布式系统中一致性处理较为困难，<br>其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了<code>zookeeper</code>，以至于<code>zookeeper</code>成为了各种分布式系统的基础组件，其地位之重要，<br>可想而知。著名的<code>hadoop，kafka，dubbo</code> 都是基于<code>zookeeper</code>而构建。</p>
+<p>想理解zookeeper到底是做啥的，那首先得理解清楚，<strong>什么是一致性</strong>？</p>
+<p>所谓的一致性，实际上就是围绕着“看见”来的。谁能看见？能否看见？什么时候看见？举个例子：淘宝后台卖家，在后台上架一件大促的商品，通过服务器A提交到主数据库，<br>假设刚提交后立马就有用户去通过应用服务器B去从数据库查询该商品，就会出现一个现象，卖家已经更新成功了，然而买家却看不到；而经过一段时间后，主数据库的数据同步到<br>了从数据库，买家就能查到了。</p>
+<p>假设卖家更新成功之后买家立马就能看到卖家的更新，则称为<strong>强一致性</strong></p>
+<p>如果卖家更新成功后买家不能看到卖家更新的内容，则称为<strong>弱一致性</strong></p>
+<p>而卖家更新成功后，买家经过一段时间最终能看到卖家的更新，则称为<strong>最终一致性</strong></p>
+<p><a href="http://www.cnblogs.com/leesf456/p/6001278.html" target="_blank" rel="external">《一致性协议》</a></p>
+<p><a href="http://www.cnblogs.com/leesf456/p/6036548.html" target="_blank" rel="external">《ZooKeeper应用场景》</a></p>
+<p><a href="http://www.cnblogs.com/leesf456/p/5992377.html" target="_blank" rel="external">《分布式架构》</a></p>
+<p><a href="http://www.cnblogs.com/leesf456/tag/%E5%88%86%E5%B8%83%E5%BC%8F/" target="_blank" rel="external">《分布式 ZooKeeper 系列》</a></p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Linux版本：Oracle Linux Server release 6.5</li>
+<li>ZooKeeper版本：zookeeper-3.4.12.tar.gz</li>
+<li>虚拟机IP：192.168.229.115,192.168.229.116,192.168.229.117</li>
+<li>集群主机名称：kiko1,kiko2,kiko3</li>
+<li>集群主机用户：root</li>
+<li>集群JDK版本：jdk1.8.0_121</li>
+<li>集群主机之间设置免密登陆：设置方式请参考 <a href="http://www.leiyatao.com/2018/05/08/linux-ssh-free-passwd-login/" target="_blank" rel="external">linux ssh 免密登录</a></li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>关闭防火墙<br><code>iptables</code>防火墙关闭命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service iptables stop # 关闭命令：</div></pre></td></tr></table></figure></p>
+<p><code>firewall</code>防火墙关闭命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl stop firewalld.service # 停止firewall</div></pre></td></tr></table></figure></p>
+<h2 id="ZooKeeper-安装"><a href="#ZooKeeper-安装" class="headerlink" title="ZooKeeper 安装"></a>ZooKeeper 安装</h2><h3 id="下载ZooKeeper"><a href="#下载ZooKeeper" class="headerlink" title="下载ZooKeeper"></a>下载ZooKeeper</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /home/kiko/tools/</div><div class="line">$ wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.12/zookeeper-3.4.12.tar.gz</div></pre></td></tr></table></figure>
+<h3 id="提取tar文件"><a href="#提取tar文件" class="headerlink" title="提取tar文件"></a>提取tar文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ tar -xvf zookeeper-3.4.12.tar.gz</div><div class="line">$ cd zookeeper-3.4.12</div></pre></td></tr></table></figure>
+<h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p><code>zoo.cfg</code>为<code>zookeeper</code>的主要配置文件，因为<code>Zookeeper</code>是一个集群服务，集群的每个节点都需要这个配置文件。为了避免出差错，<code>zoo.cfg</code>这个配置文件里没有跟特定节点相关的配置，所以每个节点上的这个<code>zoo.cfg</code>都是一模一样的配置。这样就非常便于管理了，比如我们可以把这个文件提交到版本控制里管理起来。其实这给我们设计集群系统的时候也是个提示：集群系统一般有很多配置，应该尽量将通用的配置和特定每个服务的配置(比如服务标识)分离，这样通用的配置在不同服务之间copy就ok了</p>
+<p>编辑<code>zoo.cfg</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 ~]# vim /home/kiko/tools/zookeeper-3.4.12/conf/zoo.cfg</div></pre></td></tr></table></figure></p>
+<p>编辑内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">dataDir =  /home/kiko/tools/zookeeper-3.4.12/data</div><div class="line">dataLogDir = /home/kiko/tools/zookeeper-3.4.12/logs</div><div class="line">tickTime = 2000</div><div class="line">clientPort = 2181</div><div class="line">initLimit = 5</div><div class="line">syncLimit = 2</div><div class="line">server.1=kiko1:2888:3888</div><div class="line">server.2=kiko2:2888:3888</div><div class="line">server.3=kiko3:2888:3888</div></pre></td></tr></table></figure></p>
+<p>配置文件描述</p>
+<ul>
+<li>tickTime tickTime则是上述两个超时配置的基本单位，例如对于initLimit，其配置值为5，说明其超时时间为 2000ms * 5 = 10秒。</li>
+<li>dataDir 其配置的含义跟单机模式下的含义类似，不同的是集群模式下还有一个myid文件。myid文件的内容只有一行，且内容只能为1 - 255之间的数字，这个数字亦即上面介绍server.id中的id，表示zk进程的id。</li>
+<li>dataLogDir 如果没提供的话使用的则是dataDir。zookeeper的持久化都存储在这两个目录里。dataLogDir里是放到的顺序日志(WAL)。而dataDir里放的是内存数据结构的snapshot，便于快速恢复。为了达到性能最大化，一般建议把dataDir和dataLogDir分到不同的磁盘上，这样就可以充分利用磁盘顺序写的特性。</li>
+<li>initLimit  ZooKeeper集群模式下包含多个zk进程，其中一个进程为leader，余下的进程为follower。当follower最初与leader建立连接时，它们之间会传输相当多的数据，尤其是follower的数据落后leader很多。initLimit配置follower与leader之间建立连接后进行同步的最长时间。</li>
+<li>syncLimit 配置follower和leader之间发送消息，请求和应答的最大时间长度。</li>
+<li>server.id=host:port1:port2<ul>
+<li>server.id 其中id为一个数字，表示zk进程的id，这个id也是data目录下myid文件的内容</li>
+<li>host 是该zk进程所在的IP地址</li>
+<li>port1 表示follower和leader交换消息所使用的端口</li>
+<li>port2 表示选举leader所使用的端口<h3 id="创建myid-文件"><a href="#创建myid-文件" class="headerlink" title="创建myid 文件"></a>创建myid 文件</h3>在data里会放置一个myid文件，里面就一个数字，用来唯一标识这个服务。这个id是很重要的，一定要保证整个集群中唯一</li>
+</ul>
+</li>
+</ul>
+<p>ZooKeeper会根据这个id来取出server.x上的配置。比如当前id为1，则对应着zoo.cfg里的server.1的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 ~]# echo &quot;1&quot;&gt;/home/kiko/tools/zookeeper-3.4.12/data/myid</div></pre></td></tr></table></figure></p>
+<p>这样一台kiko1机器就配置完了</p>
+<h3 id="复制集群配置"><a href="#复制集群配置" class="headerlink" title="复制集群配置"></a>复制集群配置</h3><p>在集群<code>kiko1</code>上执行,循环复制配置好的<code>zookeeper</code>到其他两台主机<code>kiko2</code>,<code>kiko3</code>上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 data]# for a in &#123;2..3&#125; ; do scp -r /home/kiko/tools/zookeeper-3.4.12/ kiko$a:/home/kiko/tools/zookeeper-3.4.12 ; done</div></pre></td></tr></table></figure></p>
+<p>在集群kiko1 上执行 ,批量修改myid 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 data]# for a in &#123;1..3&#125; ; do ssh kiko$a &quot;source /etc/profile; echo $a &gt; /home/kiko/tools/zookeeper-3.4.12/data/myid&quot; ; done</div></pre></td></tr></table></figure></p>
+<h2 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h2><p>在集群任意一台机器上执行</p>
+<h3 id="启动集群"><a href="#启动集群" class="headerlink" title="启动集群"></a>启动集群</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 data]# for a in &#123;1..3&#125; ; do ssh kiko$a &quot;source /etc/profile; /home/kiko/tools/zookeeper-3.4.12/bin/zkServer.sh start&quot; ; done</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Starting zookeeper ... STARTED</div><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Starting zookeeper ... STARTED</div><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Starting zookeeper ... STARTED</div></pre></td></tr></table></figure></p>
+<h3 id="连接集群"><a href="#连接集群" class="headerlink" title="连接集群"></a>连接集群</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 /]# ./home/kiko/tools/zookeeper-3.4.12/bin/zkCli.sh -server kiko1:2181,kiko2:2181,kiko3:2181</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">Connecting to kiko1:2181,kiko2:2181,kiko3:2181</div><div class="line">2018-05-09 15:51:39,711 [myid:] - INFO  [main:Environment@100] - Client environment:zookeeper.version=3.4.12-e5259e437540f349646870ea94dc2658c4e44b3b, built on 03/27/2018 03:55 GMT</div><div class="line">2018-05-09 15:51:39,715 [myid:] - INFO  [main:Environment@100] - Client environment:host.name=acct.dev.gyist.com</div><div class="line">2018-05-09 15:51:39,715 [myid:] - INFO  [main:Environment@100] - Client environment:java.version=1.8.0_121</div><div class="line">2018-05-09 15:51:39,718 [myid:] - INFO  [main:Environment@100] - Client environment:java.vendor=Oracle Corporation</div><div class="line">2018-05-09 15:51:39,718 [myid:] - INFO  [main:Environment@100] - Client environment:java.home=/usr/java/jdk1.8.0_121/jre</div><div class="line">2018-05-09 15:51:39,718 [myid:] - INFO  [main:Environment@100] - Client environment:java.class.path=/home/kiko/tools/zookeeper-3.4.12/bin/../build/classes:/home/kiko/tools/zookeeper-3.4.12/bin/../build/lib/*.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/slf4j-log4j12-1.7.25.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/slf4j-api-1.7.25.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/netty-3.10.6.Final.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/log4j-1.2.17.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/jline-0.9.94.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/audience-annotations-0.5.0.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../zookeeper-3.4.12.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../src/java/lib/*.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../conf:.:/usr/java/jdk1.8.0_121/lib/dt.jar:/usr/java/jdk1.8.0_121/lib/tools.jar</div><div class="line">2018-05-09 15:51:39,718 [myid:] - INFO  [main:Environment@100] - Client environment:java.library.path=/usr/local/apr/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib</div><div class="line">2018-05-09 15:51:39,718 [myid:] - INFO  [main:Environment@100] - Client environment:java.io.tmpdir=/tmp</div><div class="line">2018-05-09 15:51:39,718 [myid:] - INFO  [main:Environment@100] - Client environment:java.compiler=&lt;NA&gt;</div><div class="line">2018-05-09 15:51:39,719 [myid:] - INFO  [main:Environment@100] - Client environment:os.name=Linux</div><div class="line">2018-05-09 15:51:39,719 [myid:] - INFO  [main:Environment@100] - Client environment:os.arch=amd64</div><div class="line">2018-05-09 15:51:39,719 [myid:] - INFO  [main:Environment@100] - Client environment:os.version=3.8.13-26.1.1.el6uek.x86_64</div><div class="line">2018-05-09 15:51:39,719 [myid:] - INFO  [main:Environment@100] - Client environment:user.name=root</div><div class="line">2018-05-09 15:51:39,719 [myid:] - INFO  [main:Environment@100] - Client environment:user.home=/root</div><div class="line">2018-05-09 15:51:39,719 [myid:] - INFO  [main:Environment@100] - Client environment:user.dir=/</div><div class="line">2018-05-09 15:51:39,721 [myid:] - INFO  [main:ZooKeeper@441] - Initiating client connection, connectString=kiko1:2181,kiko2:2181,kiko3:2181 sessionTimeout=30000 watcher=org.apache.zookeeper.ZooKeeperMain$MyWatcher@67424e82</div><div class="line">Welcome to ZooKeeper!</div><div class="line">2018-05-09 15:51:39,747 [myid:] - INFO  [main-SendThread(kiko3:2181):ClientCnxn$SendThread@1028] - Opening socket connection to server kiko3/192.168.229.117:2181. Will not attempt to authenticate using SASL (unknown error)</div><div class="line">JLine support is enabled</div><div class="line">2018-05-09 15:51:39,842 [myid:] - INFO  [main-SendThread(kiko3:2181):ClientCnxn$SendThread@878] - Socket connection established to kiko3/192.168.229.117:2181, initiating session</div><div class="line">[zk: kiko1:2181,kiko2:2181,kiko3:2181(CONNECTING) 0] 2018-05-09 15:51:39,893 [myid:] - INFO  [main-SendThread(kiko3:2181):ClientCnxn$SendThread@1302] - Session establishment complete on server kiko3/192.168.229.117:2181, sessionid = 0x300044d1c310000, negotiated timeout = 30000</div><div class="line"></div><div class="line">WATCHER::</div><div class="line"></div><div class="line">WatchedEvent state:SyncConnected type:None path:null</div></pre></td></tr></table></figure></p>
+<p>从日志可以看出客户端成功连接的是kiko3 连接上哪台机器的zk进程是随机的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Welcome to ZooKeeper!</div><div class="line">2018-05-09 15:51:39,747 [myid:] - INFO  [main-SendThread(kiko3:2181):ClientCnxn$SendThread@1028] - Opening socket connection to server kiko3/192.168.229.117:2181. Will not attempt to authenticate using SASL (unknown error)</div><div class="line">JLine support is enabled</div></pre></td></tr></table></figure></p>
+<h3 id="集群状态"><a href="#集群状态" class="headerlink" title="集群状态"></a>集群状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 /]# for a in &#123;1..3&#125; ; do ssh kiko$a &quot;source /etc/profile; /home/kiko/tools/zookeeper-3.4.12/bin/zkServer.sh status&quot; ; done</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Mode: follower</div><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Mode: leader</div><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Mode: follower</div></pre></td></tr></table></figure></p>
+<p>通过日志我可以看到 kiko2 leader (ps 是老大)，其他 kiko1 ,kiko3 follower (ps 都是小弟)</p>
+<p>Leader 怎么选举的可以参考<a href="http://www.cnblogs.com/leesf456/p/6107600.html" target="_blank" rel="external">《Zookeeper的Leader选举》</a></p>
+<h3 id="停止集群"><a href="#停止集群" class="headerlink" title="停止集群"></a>停止集群</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@kiko1 /]# for a in &#123;1..3&#125; ; do ssh kiko$a &quot;source /etc/profile; /home/kiko/tools/zookeeper-3.4.12/bin/zkServer.sh stop&quot; ; done</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Stopping zookeeper ... STOPPED</div><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Stopping zookeeper ... STOPPED</div><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Stopping zookeeper ... STOPPED</div></pre></td></tr></table></figure></p>
+<p>本文参考 <a href="https://segmentfault.com/a/1190000010807875" target="_blank" rel="external">CentOs7.3 搭建 ZooKeeper-3.4.9 Cluster 集群服务</a></p>
 
       
     </div>
@@ -530,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/09/zookeeper-3-4-12/" rel="next" title="zookeeper-3-4-12">
-                <i class="fa fa-chevron-left"></i> zookeeper-3-4-12
+              <a href="/2018/05/09/zookeeper-3-4-12/" rel="next" title="Linux 搭建 ZooKeeper-3.4.12 单机服务">
+                <i class="fa fa-chevron-left"></i> Linux 搭建 ZooKeeper-3.4.12 单机服务
               </a>
             
           </div>
@@ -610,8 +667,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -673,6 +739,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-概述"><span class="nav-number">1.</span> <span class="nav-text">Zookeeper 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">2.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper-安装"><span class="nav-number">3.</span> <span class="nav-text">ZooKeeper 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载ZooKeeper"><span class="nav-number">3.1.</span> <span class="nav-text">下载ZooKeeper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取tar文件"><span class="nav-number">3.2.</span> <span class="nav-text">提取tar文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建配置文件"><span class="nav-number">3.3.</span> <span class="nav-text">创建配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建myid-文件"><span class="nav-number">3.4.</span> <span class="nav-text">创建myid 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制集群配置"><span class="nav-number">3.5.</span> <span class="nav-text">复制集群配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群操作"><span class="nav-number">4.</span> <span class="nav-text">集群操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动集群"><span class="nav-number">4.1.</span> <span class="nav-text">启动集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接集群"><span class="nav-number">4.2.</span> <span class="nav-text">连接集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集群状态"><span class="nav-number">4.3.</span> <span class="nav-text">集群状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止集群"><span class="nav-number">4.4.</span> <span class="nav-text">停止集群</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

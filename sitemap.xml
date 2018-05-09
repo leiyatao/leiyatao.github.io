@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>
+    
+    <lastmod>2018-05-09T08:02:51.994Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12/</loc>
+    
+    <lastmod>2018-05-09T06:59:56.722Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leiyatao.com/2017/08/24/spring-boot%E9%9B%86%E6%88%90swagger2/</loc>
     
     <lastmod>2018-05-09T06:44:16.166Z</lastmod>
@@ -33,20 +47,6 @@
     <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
     
     <lastmod>2018-05-09T06:30:38.384Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>
-    
-    <lastmod>2018-05-09T06:26:21.083Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12/</loc>
-    
-    <lastmod>2018-05-09T06:25:31.642Z</lastmod>
     
   </url>
   

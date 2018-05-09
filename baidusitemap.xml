@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>
+    <lastmod>2018-05-09T08:02:51.994Z</lastmod>
+    <data>
+        <display>
+        <title>Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务</title>
+        <pubTime>2018-05-09T06:52:06.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>集群服务</tag>
+         
+        <tag>zookeeper</tag>
+         
+        <tag>Cluster</tag>
+         
+         
+           
+             
+              <breadCrumb title="zookeeper" url="http://leiyatao.com/categories/zookeeper/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12/</loc>
+    <lastmod>2018-05-09T06:59:56.722Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 搭建 ZooKeeper-3.4.12 单机服务</title>
+        <pubTime>2018-05-09T06:24:28.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>环境配置</tag>
+         
+        <tag>zookeeper</tag>
+         
+         
+           
+             
+              <breadCrumb title="zookeeper" url="http://leiyatao.com/categories/zookeeper/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leiyatao.com/2017/08/24/spring-boot%E9%9B%86%E6%88%90swagger2/</loc>
     <lastmod>2018-05-09T06:44:16.166Z</lastmod>
     <data>
@@ -119,56 +169,6 @@
            
              
               <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>
-    <lastmod>2018-05-09T06:26:21.083Z</lastmod>
-    <data>
-        <display>
-        <title>Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务</title>
-        <pubTime>2018-05-09T06:52:06.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>集群服务</tag>
-         
-        <tag>zookeeper</tag>
-         
-        <tag>Cluster</tag>
-         
-         
-           
-             
-              <breadCrumb title="zookeeper" url="http://leiyatao.com/categories/zookeeper/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12/</loc>
-    <lastmod>2018-05-09T06:25:31.642Z</lastmod>
-    <data>
-        <display>
-        <title>zookeeper-3-4-12</title>
-        <pubTime>2018-05-09T06:24:28.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>环境配置</tag>
-         
-        <tag>zookeeper</tag>
-         
-         
-           
-             
-              <breadCrumb title="zookeeper" url="http://leiyatao.com/categories/zookeeper/"/>
           
         </display>
     </data>
