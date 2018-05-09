@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
+    
+    <lastmod>2018-05-09T06:41:19.012Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://leiyatao.com/2018/04/12/jdk-install-linux/</loc>
+    
+    <lastmod>2018-05-09T06:41:18.996Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://leiyatao.com/2018/04/13/mysql-install-linux/</loc>
+    
+    <lastmod>2018-05-09T06:41:18.980Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
     
     <lastmod>2018-05-09T06:30:38.384Z</lastmod>
@@ -37,30 +58,9 @@
   </url>
   
   <url>
-    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
-    
-    <lastmod>2018-04-27T10:07:55.065Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://leiyatao.com/2018/04/27/%E6%90%AD%E5%BB%BAsolr%E5%8D%95%E6%9C%BA%E6%9C%8D%E5%8A%A1/</loc>
     
     <lastmod>2018-04-27T06:47:59.948Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/04/13/mysql-install-linux/</loc>
-    
-    <lastmod>2018-04-16T12:09:18.562Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/04/12/jdk-install-linux/</loc>
-    
-    <lastmod>2018-04-16T12:05:52.129Z</lastmod>
     
   </url>
   

@@ -4,6 +4,80 @@
 
     
   <url>
+    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
+    <lastmod>2018-05-09T06:41:19.012Z</lastmod>
+    <data>
+        <display>
+        <title>mysql主从复制</title>
+        <pubTime>2018-04-16T14:33:33.000Z</pubTime>
+        
+        <tag>数据库</tag>
+         
+        <tag>环境配置</tag>
+         
+        <tag>主从复制</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2018/04/12/jdk-install-linux/</loc>
+    <lastmod>2018-05-09T06:41:18.996Z</lastmod>
+    <data>
+        <display>
+        <title>Linux下JDK环境变量配置</title>
+        <pubTime>2018-04-12T14:51:05.000Z</pubTime>
+        
+        <tag>环境配置</tag>
+         
+        <tag>java</tag>
+         
+        <tag>jdk安装</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://leiyatao.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2018/04/13/mysql-install-linux/</loc>
+    <lastmod>2018-05-09T06:41:18.980Z</lastmod>
+    <data>
+        <display>
+        <title>linux下mysql安装</title>
+        <pubTime>2018-04-13T13:49:21.000Z</pubTime>
+        
+        <tag>环境配置</tag>
+         
+        <tag>mysql</tag>
+         
+        <tag>mysql安装</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leiyatao.com/2017/06/08/MySQL%E5%87%BD%E6%95%B0%E6%80%BB%E6%B1%87/</loc>
     <lastmod>2018-05-09T06:30:38.384Z</lastmod>
     <data>
@@ -107,30 +181,6 @@
 
     
   <url>
-    <loc>http://leiyatao.com/2018/04/16/mysql-master-slave-sync/</loc>
-    <lastmod>2018-04-27T10:07:55.065Z</lastmod>
-    <data>
-        <display>
-        <title>mysql主从复制</title>
-        <pubTime>2018-04-16T14:33:33.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-        <tag>mysql，数据库</tag>
-         
-        <tag>主从复制</tag>
-         
-         
-           
-             
-              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://leiyatao.com/2018/04/27/%E6%90%AD%E5%BB%BAsolr%E5%8D%95%E6%9C%BA%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2018-04-27T06:47:59.948Z</lastmod>
     <data>
@@ -148,50 +198,6 @@
            
              
               <breadCrumb title="solr" url="http://leiyatao.com/categories/solr/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2018/04/13/mysql-install-linux/</loc>
-    <lastmod>2018-04-16T12:09:18.562Z</lastmod>
-    <data>
-        <display>
-        <title>linux下mysql安装</title>
-        <pubTime>2018-04-13T13:49:21.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-        <tag>mysql，mysql安装</tag>
-         
-         
-           
-             
-              <breadCrumb title="mysql" url="http://leiyatao.com/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leiyatao.com/2018/04/12/jdk-install-linux/</loc>
-    <lastmod>2018-04-16T12:05:52.129Z</lastmod>
-    <data>
-        <display>
-        <title>Linux下JDK环境变量配置</title>
-        <pubTime>2018-04-12T14:51:05.000Z</pubTime>
-        
-        <tag>环境配置</tag>
-         
-        <tag>java，jdk安装</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://leiyatao.com/categories/java/"/>
           
         </display>
     </data>

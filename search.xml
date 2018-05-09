@@ -62,9 +62,10 @@
         <category>mysql</category>
       </categories>
       <tags>
+        <tag>数据库</tag>
         <tag>环境配置</tag>
-        <tag>mysql，数据库</tag>
         <tag>主从复制</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -76,7 +77,8 @@
       </categories>
       <tags>
         <tag>环境配置</tag>
-        <tag>mysql，mysql安装</tag>
+        <tag>mysql</tag>
+        <tag>mysql安装</tag>
       </tags>
   </entry>
   <entry>
@@ -88,7 +90,8 @@
       </categories>
       <tags>
         <tag>环境配置</tag>
-        <tag>java，jdk安装</tag>
+        <tag>java</tag>
+        <tag>jdk安装</tag>
       </tags>
   </entry>
   <entry>
