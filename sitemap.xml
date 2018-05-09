@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>
+    
+    <lastmod>2018-05-09T06:26:21.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12/</loc>
+    
+    <lastmod>2018-05-09T06:25:31.642Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leiyatao.com/link/index.html</loc>
     
     <lastmod>2018-05-09T01:43:34.340Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://leiyatao.com/2018/05/08/linux-ssh-free-passwd-login/</loc>
     
     <lastmod>2018-05-09T01:42:12.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/04/27/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>
-    
-    <lastmod>2018-05-08T13:13:34.650Z</lastmod>
     
   </url>
   

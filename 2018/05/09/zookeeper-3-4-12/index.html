@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="环境配置,linux,zookeeper," />
 
 
 
@@ -90,15 +90,17 @@
 
 
 
-<meta name="description" content="只要出发，就能到达">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雷子の博客">
-<meta property="og:url" content="http://leiyatao.com/tags/tomcat/index.html">
+<meta name="description" content="Zookeeper 概述zookeeper实际上是yahoo开发的，用于分布式中一致性处理的框架。最初其作为研发Hadoop时的副产品。由于分布式系统中一致性处理较为困难，其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了zookeeper，以至于zookeeper成为了各种分布式系统的基础组件，其地位之重要，可想而知。著名的hadoop，kafka，dubbo 都是基于zo">
+<meta name="keywords" content="环境配置,linux,zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zookeeper-3-4-12">
+<meta property="og:url" content="http://leiyatao.com/2018/05/09/zookeeper-3-4-12/index.html">
 <meta property="og:site_name" content="雷子の博客">
-<meta property="og:description" content="只要出发，就能到达">
+<meta property="og:description" content="Zookeeper 概述zookeeper实际上是yahoo开发的，用于分布式中一致性处理的框架。最初其作为研发Hadoop时的副产品。由于分布式系统中一致性处理较为困难，其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了zookeeper，以至于zookeeper成为了各种分布式系统的基础组件，其地位之重要，可想而知。著名的hadoop，kafka，dubbo 都是基于zo">
+<meta property="og:updated_time" content="2018-05-09T06:25:31.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雷子の博客">
-<meta name="twitter:description" content="只要出发，就能到达">
+<meta name="twitter:title" content="zookeeper-3-4-12">
+<meta name="twitter:description" content="Zookeeper 概述zookeeper实际上是yahoo开发的，用于分布式中一致性处理的框架。最初其作为研发Hadoop时的副产品。由于分布式系统中一致性处理较为困难，其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了zookeeper，以至于zookeeper成为了各种分布式系统的基础组件，其地位之重要，可想而知。著名的hadoop，kafka，dubbo 都是基于zo">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://leiyatao.com/tags/tomcat/"/>
+  <link rel="canonical" href="http://leiyatao.com/2018/05/09/zookeeper-3-4-12/"/>
 
 
 
 
 
-  <title>标签: tomcat | 雷子の博客</title>
+  <title>zookeeper-3-4-12 | 雷子の博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -168,7 +170,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -326,72 +328,297 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2>tomcat<small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/30/tomcat-1/" itemprop="url">
-              
-                <span itemprop="name">linux中tomcat启动报错</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-30T16:41:38+08:00"
-              content="2018-01-30" >
-          01-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/30/tomcat/" itemprop="url">
-              
-                <span itemprop="name">CentOS7.2上tomcat启动慢问题解决</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-30T20:36:38+08:00"
-              content="2017-11-30" >
-          11-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://leiyatao.com/2018/05/09/zookeeper-3-4-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="雷子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雷子の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">zookeeper-3-4-12</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T14:24:28+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/zookeeper/" itemprop="url" rel="index">
+                    <span itemprop="name">zookeeper</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2018/05/09/zookeeper-3-4-12/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/09/zookeeper-3-4-12/" class="leancloud_visitors" data-flag-title="zookeeper-3-4-12">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,734
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Zookeeper-概述"><a href="#Zookeeper-概述" class="headerlink" title="Zookeeper 概述"></a>Zookeeper 概述</h2><p><code>zookeeper</code>实际上是<code>yahoo</code>开发的，用于分布式中一致性处理的框架。最初其作为研发<code>Hadoop</code>时的副产品。由于分布式系统中一致性处理较为困难，<br>其他的分布式系统没有必要 费劲重复造轮子，故随后的分布式系统中大量应用了<code>zookeeper</code>，以至于<code>zookeeper</code>成为了各种分布式系统的基础组件，其地位之重要，<br>可想而知。著名的<code>hadoop，kafka，dubbo</code> 都是基于<code>zookeeper</code>而构建。</p>
+<p>想理解zookeeper到底是做啥的，那首先得理解清楚，<strong>什么是一致性</strong>？</p>
+<p>所谓的一致性，实际上就是围绕着“看见”来的。谁能看见？能否看见？什么时候看见？举个例子：淘宝后台卖家，在后台上架一件大促的商品，通过服务器A提交到主数据库，<br>假设刚提交后立马就有用户去通过应用服务器B去从数据库查询该商品，就会出现一个现象，卖家已经更新成功了，然而买家却看不到；而经过一段时间后，主数据库的数据同步到<br>了从数据库，买家就能查到了。</p>
+<p>假设卖家更新成功之后买家立马就能看到卖家的更新，则称为<strong>强一致性</strong></p>
+<p>如果卖家更新成功后买家不能看到卖家更新的内容，则称为<strong>弱一致性</strong></p>
+<p>而卖家更新成功后，买家经过一段时间最终能看到卖家的更新，则称为<strong>最终一致性</strong></p>
+<p><a href="http://www.cnblogs.com/leesf456/p/6001278.html" target="_blank" rel="external">《一致性协议》</a></p>
+<p><a href="http://www.cnblogs.com/leesf456/p/6036548.html" target="_blank" rel="external">《ZooKeeper应用场景》</a></p>
+<p><a href="http://www.cnblogs.com/leesf456/p/5992377.html" target="_blank" rel="external">《分布式架构》</a></p>
+<p><a href="http://www.cnblogs.com/leesf456/tag/%E5%88%86%E5%B8%83%E5%BC%8F/" target="_blank" rel="external">《分布式 ZooKeeper 系列》</a></p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Linux版本：Oracle Linux Server release 6.5</li>
+<li>ZooKeeper版本：zookeeper-3.4.12.tar.gz</li>
+<li>jdk版本：jdk1.8.0_121</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>关闭防火墙，根据Linux系统安装的防火墙选择相应的命令<br>关闭 iptables<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service iptables stop # 关闭命令：</div></pre></td></tr></table></figure></p>
+<p>关闭firewall<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl stop firewalld.service # 停止firewall</div></pre></td></tr></table></figure></p>
+<h2 id="ZooKeeper-安装"><a href="#ZooKeeper-安装" class="headerlink" title="ZooKeeper 安装"></a>ZooKeeper 安装</h2><h3 id="下载ZooKeeper"><a href="#下载ZooKeeper" class="headerlink" title="下载ZooKeeper"></a>下载ZooKeeper</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /home/kiko/tools/</div><div class="line">$ wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.12/zookeeper-3.4.12.tar.gz</div></pre></td></tr></table></figure>
+<h3 id="提取tar文件"><a href="#提取tar文件" class="headerlink" title="提取tar文件"></a>提取tar文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ tar -xvf zookeeper-3.4.12.tar.gz</div><div class="line">$ cd zookeeper-3.4.12</div></pre></td></tr></table></figure>
+<p>创建data文件夹 用于存储数据文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir /home/kiko/tools/zookeeper-3.4.12/data</div></pre></td></tr></table></figure></p>
+<p>创建logs文件夹 用于存储日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir /home/kiko/tools/zookeeper-3.4.12/logs</div></pre></td></tr></table></figure></p>
+<h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p>使用命令 <code>vim conf/zoo.cfg</code> 创建配置文件并打开，ps (其实目录conf 下有默认的配置文件，但是注释太多，英文一大堆，太乱)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /home/kiko/tools/zookeeper-3.4.12/conf/zoo.cfg</div></pre></td></tr></table></figure>
+<p>编辑内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">tickTime = 2000</div><div class="line">dataDir =  /home/kiko/tools/zookeeper-3.4.12/data</div><div class="line">dataLogDir = home/kiko/tools/zookeeper-3.4.12/logs</div><div class="line">tickTime = 2000</div><div class="line">clientPort = 2181</div><div class="line">initLimit = 5</div><div class="line">syncLimit = 2</div></pre></td></tr></table></figure></p>
+<h4 id="配置文件描述"><a href="#配置文件描述" class="headerlink" title="配置文件描述"></a>配置文件描述</h4><ul>
+<li>tickTime 则是上述两个超时配置的基本单位，例如对于initLimit，其配置值为5，说明其超时时间为 2000ms * 5 = 10秒。</li>
+<li>dataDir 其配置的含义跟单机模式下的含义类似，不同的是集群模式下还有一个myid文件。myid文件的内容只有一行，且内容只能为1 - 255之间的数字，这个数字亦即上面介绍server.id中的id，表示zk进程的id。</li>
+<li>dataLogDir 如果没提供的话使用的则是dataDir。zookeeper的持久化都存储在这两个目录里。dataLogDir里是放到的顺序日志(WAL)。而dataDir里放的是内存数据结构的snapshot，便于快速恢复。为了达到性能最大化，一般建议把dataDir和dataLogDir分到不同的磁盘上，这样就可以充分利用磁盘顺序写的特性。</li>
+<li>initLimit ZooKeeper集群模式下包含多个zk进程，其中一个进程为leader，余下的进程为follower。 当follower最初与leader建立连接时，它们之间会传输相当多的数据，尤其是follower的数据落后leader很多。initLimit配置follower与leader之间建立连接后进行同步的最长时间。</li>
+<li>syncLimit 配置follower和leader之间发送消息，请求和应答的最大时间长度。</li>
+</ul>
+<h2 id="ZooKeeper操作"><a href="#ZooKeeper操作" class="headerlink" title="ZooKeeper操作"></a>ZooKeeper操作</h2><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[kiko@kiko1 bin]$ ./zkServer.sh start</div></pre></td></tr></table></figure>
+<p>相应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Starting zookeeper ... STARTED</div></pre></td></tr></table></figure></p>
+<h3 id="连接服务"><a href="#连接服务" class="headerlink" title="连接服务"></a>连接服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[kiko@kiko1 bin]$ ./zkCli.sh</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">Connecting to localhost:2181</div><div class="line">2018-05-09 14:17:48,978 [myid:] - INFO  [main:Environment@100] - Client environment:zookeeper.version=3.4.12-e5259e437540f349646870ea94dc2658c4e44b3b, built on 03/27/2018 03:55 GMT</div><div class="line">2018-05-09 14:17:48,983 [myid:] - INFO  [main:Environment@100] - Client environment:host.name=acct.dev.gyist.com</div><div class="line">2018-05-09 14:17:48,983 [myid:] - INFO  [main:Environment@100] - Client environment:java.version=1.8.0_121</div><div class="line">2018-05-09 14:17:48,986 [myid:] - INFO  [main:Environment@100] - Client environment:java.vendor=Oracle Corporation</div><div class="line">2018-05-09 14:17:48,986 [myid:] - INFO  [main:Environment@100] - Client environment:java.home=/usr/java/jdk1.8.0_121/jre</div><div class="line">2018-05-09 14:17:48,986 [myid:] - INFO  [main:Environment@100] - Client environment:java.class.path=/home/kiko/tools/zookeeper-3.4.12/bin/../build/classes:/home/kiko/tools/zookeeper-3.4.12/bin/../build/lib/*.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/slf4j-log4j12-1.7.25.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/slf4j-api-1.7.25.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/netty-3.10.6.Final.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/log4j-1.2.17.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/jline-0.9.94.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../lib/audience-annotations-0.5.0.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../zookeeper-3.4.12.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../src/java/lib/*.jar:/home/kiko/tools/zookeeper-3.4.12/bin/../conf:.:/usr/java/jdk1.8.0_121/lib/dt.jar:/usr/java/jdk1.8.0_121/lib/tools.jar</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:java.io.tmpdir=/tmp</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:java.compiler=&lt;NA&gt;</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:os.name=Linux</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:os.arch=amd64</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:os.version=3.8.13-26.1.1.el6uek.x86_64</div><div class="line">2018-05-09 14:17:48,987 [myid:] - INFO  [main:Environment@100] - Client environment:user.name=kiko</div><div class="line">2018-05-09 14:17:48,988 [myid:] - INFO  [main:Environment@100] - Client environment:user.home=/home/kiko</div><div class="line">2018-05-09 14:17:48,988 [myid:] - INFO  [main:Environment@100] - Client environment:user.dir=/home/kiko/tools/zookeeper-3.4.12/bin</div><div class="line">2018-05-09 14:17:48,989 [myid:] - INFO  [main:ZooKeeper@441] - Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.zookeeper.ZooKeeperMain$MyWatcher@67424e82</div><div class="line">Welcome to ZooKeeper!</div><div class="line">2018-05-09 14:17:49,016 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1028] - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)</div><div class="line">JLine support is enabled</div><div class="line">2018-05-09 14:17:49,107 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@878] - Socket connection established to localhost/127.0.0.1:2181, initiating session</div><div class="line">2018-05-09 14:17:49,119 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1302] - Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x10003f83e3b0001, negotiated timeout = 30000</div><div class="line"></div><div class="line">WATCHER::</div><div class="line"></div><div class="line">WatchedEvent state:SyncConnected type:None path:null</div><div class="line">[zk: localhost:2181(CONNECTED) 0]</div></pre></td></tr></table></figure></p>
+<h3 id="服务状态"><a href="#服务状态" class="headerlink" title="服务状态"></a>服务状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[kiko@kiko1 bin]$ ./zkServer.sh status</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Mode: standalone</div></pre></td></tr></table></figure></p>
+<h3 id="停止服务"><a href="#停止服务" class="headerlink" title="停止服务"></a>停止服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[kiko@kiko1 bin]$ ./zkServer.sh stop</div></pre></td></tr></table></figure>
+<p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /home/kiko/tools/zookeeper-3.4.12/bin/../conf/zoo.cfg</div><div class="line">Stopping zookeeper ... STOPPED</div></pre></td></tr></table></figure></p>
+<p>本文参考 <a href="http://www.ymq.io/2017/08/18/zookeeper/" target="_blank" rel="external">CentOs7.3 搭建 ZooKeeper-3.4.9 单机服务</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/环境配置/" rel="tag"># 环境配置</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/zookeeper/" rel="tag"># zookeeper</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/08/linux-ssh-free-passwd-login/" rel="next" title="linux ssh  免密登录">
+                <i class="fa fa-chevron-left"></i> linux ssh  免密登录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/09/zookeeper-3-4-12集群/" rel="prev" title="Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务">
+                Linux搭建 ZooKeeper-3.4.12 Cluster 集群服务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +626,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -418,8 +651,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -481,6 +723,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-概述"><span class="nav-number">1.</span> <span class="nav-text">Zookeeper 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">2.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper-安装"><span class="nav-number">3.</span> <span class="nav-text">ZooKeeper 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载ZooKeeper"><span class="nav-number">3.1.</span> <span class="nav-text">下载ZooKeeper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取tar文件"><span class="nav-number">3.2.</span> <span class="nav-text">提取tar文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建配置文件"><span class="nav-number">3.3.</span> <span class="nav-text">创建配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件描述"><span class="nav-number">3.3.1.</span> <span class="nav-text">配置文件描述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper操作"><span class="nav-number">4.</span> <span class="nav-text">ZooKeeper操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务"><span class="nav-number">4.1.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接服务"><span class="nav-number">4.2.</span> <span class="nav-text">连接服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务状态"><span class="nav-number">4.3.</span> <span class="nav-text">服务状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止服务"><span class="nav-number">4.4.</span> <span class="nav-text">停止服务</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -614,6 +872,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
