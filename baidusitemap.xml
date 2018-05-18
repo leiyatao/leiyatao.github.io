@@ -3,11 +3,9 @@
 
 
     
-    
-    
   <url>
     <loc>http://leiyatao.com/2018/05/09/linux-solr-SolrCloud/</loc>
-    <lastmod>2018-05-10T02:36:25.033Z</lastmod>
+    <lastmod>2018-05-18T09:58:31.926Z</lastmod>
     <data>
         <display>
         <title>Linux 搭建 SolrCloud 集群服务</title>
@@ -34,6 +32,8 @@
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>http://leiyatao.com/2018/05/09/zookeeper-3-4-12%E9%9B%86%E7%BE%A4/</loc>

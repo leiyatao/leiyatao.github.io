@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leiyatao.com/2018/05/09/linux-solr-SolrCloud/</loc>
+    
+    <lastmod>2018-05-18T09:58:31.926Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leiyatao.com/about/index.html</loc>
     
     <lastmod>2018-05-10T10:18:01.046Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://leiyatao.com/link/index.html</loc>
     
     <lastmod>2018-05-10T10:13:42.038Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leiyatao.com/2018/05/09/linux-solr-SolrCloud/</loc>
-    
-    <lastmod>2018-05-10T02:36:25.033Z</lastmod>
     
   </url>
   
