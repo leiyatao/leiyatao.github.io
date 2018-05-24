@@ -482,7 +482,7 @@
           <p>今天在linux同一服务器部署部署两个tomcat，tomcat1启动正常，tomcat2启动时包如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ERROR: transport error 202: bind failed: Address already in use</div><div class="line">ERROR: JDWP Transport dt_socket failed to initialize, TRANSPORT_INIT(510)</div><div class="line">JDWP exit error AGENT_ERROR_TRANSPORT_INIT(197): No transports initialized [debugInit.c:750]</div><div class="line">ERROR: transport error 202: bind failed: Address already in use</div><div class="line">ERROR: JDWP Transport dt_socket failed to initialize, TRANSPORT_INIT(510)</div><div class="line">JDWP exit error AGENT_ERROR_TRANSPORT_INIT(197): No transports initialized [debugInit.c:750]</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/30/tomcat-1/#далее" rel="contents">
+            <a class="btn" href="/2018/01/30/tomcat-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -665,7 +665,7 @@
 <h2 id="检查占用端口命令"><a href="#检查占用端口命令" class="headerlink" title="检查占用端口命令"></a>检查占用端口命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-- 检查所有占用端口</div><div class="line">netstat -ntlp</div><div class="line">-- 查询指定端口被占用 例如8080</div><div class="line">netstat -apn | grep 8080</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/09/linux/#далее" rel="contents">
+            <a class="btn" href="/2017/12/09/linux/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -846,7 +846,7 @@
 <h2 id="一、环境介绍"><a href="#一、环境介绍" class="headerlink" title="一、环境介绍"></a>一、环境介绍</h2><p>系统版本：CentOS 7.2<br>软件版本：Tomcat 8</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/30/tomcat/#далее" rel="contents">
+            <a class="btn" href="/2017/11/30/tomcat/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1026,7 +1026,7 @@
           <p>昨晚阿里云上部署的应用服务突然无法访问，以为是服务挂了，准备ssh远程上去看个究竟。以前也出现过类似的情况，解决方案是远程上去后重启tomcat服务马上就恢复正常。这次准备ssh竟然连接不上，瞬间眼前一黑。打电话问同事是否做了什么操作，同事反馈，由于服务无法访问，他直接把系统执行reboot给重启了。reboot后直接无法ssh连接，也就是系统不能正常重启。登录阿里云控制台重启ECS实例依旧不成功，通过阿里云控制台实例的<strong>远程连接</strong> 进入管理终端，界面显示如下：<br><img src="http://olg4sxpno.bkt.clouddn.com/20171013note_attach.jpg" alt="yun"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/记一次阿里云服务系统奔溃事件及处理过程/#далее" rel="contents">
+            <a class="btn" href="/2017/10/13/记一次阿里云服务系统奔溃事件及处理过程/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1206,7 +1206,7 @@
           <h2 id="1-pom-xml引入swagger2依赖："><a href="#1-pom-xml引入swagger2依赖：" class="headerlink" title="1.pom.xml引入swagger2依赖："></a>1.pom.xml引入swagger2依赖：</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--Swagger2的依赖--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;swagger.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;swagger.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/24/spring-boot集成swagger2/#далее" rel="contents">
+            <a class="btn" href="/2017/08/24/spring-boot集成swagger2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1391,7 +1391,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/27/zookeeper-dubbo环境搭建/#далее" rel="contents">
+            <a class="btn" href="/2017/06/27/zookeeper-dubbo环境搭建/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1571,7 +1571,7 @@
           <p>今天开发服务器[<code>linux</code>]上的mongodb数据库突然挂了,打开mongodb日志发现如下提示：</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/19/linux命令检查当前文件夹子目录所占空间大小/#далее" rel="contents">
+            <a class="btn" href="/2017/06/19/linux命令检查当前文件夹子目录所占空间大小/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1753,7 +1753,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/08/MySQL函数总汇/#далее" rel="contents">
+            <a class="btn" href="/2017/06/08/MySQL函数总汇/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1933,7 +1933,7 @@
           <p>表备份<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 备份表结构和数据</span></div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name_new <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> table_name_old <span class="keyword">where</span> <span class="number">1</span>=<span class="number">1</span>;</div><div class="line"><span class="comment">-- 备份空表结构</span></div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name_new <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> table_name_old <span class="keyword">where</span> <span class="number">1</span>=<span class="number">2</span>;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/25/ORACLE查看所有表和字段/#далее" rel="contents">
+            <a class="btn" href="/2017/05/25/ORACLE查看所有表和字段/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2113,7 +2113,7 @@
           <p><img src="http://or2aqyec7.bkt.clouddn.com/default.jpeg" alt="mahua"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/06/25/魅力甘南/#далее" rel="contents">
+            <a class="btn" href="/2016/06/25/魅力甘南/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
