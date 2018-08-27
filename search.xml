@@ -37,9 +37,9 @@
       </categories>
       <tags>
         <tag>linux</tag>
-        <tag>集群服务</tag>
         <tag>Cluster</tag>
         <tag>zookeeper</tag>
+        <tag>集群服务</tag>
       </tags>
   </entry>
   <entry>
@@ -50,8 +50,8 @@
         <category>zookeeper</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
         <tag>linux</tag>
+        <tag>环境配置</tag>
         <tag>zookeeper</tag>
       </tags>
   </entry>
@@ -63,8 +63,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
         <tag>linux</tag>
+        <tag>环境配置</tag>
         <tag>ssh</tag>
         <tag>集群服务</tag>
       </tags>
