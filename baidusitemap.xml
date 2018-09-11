@@ -3,6 +3,28 @@
 
 
     
+  <url>
+    <loc>http://leiyatao.com/2017/09/11/ContextLoaderListener%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%89%8D%E5%90%8E%E6%96%87%E5%92%8CDispatcherServlet%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E5%85%B3%E7%B3%BB/</loc>
+    <lastmod>2018-09-11T12:29:41.976Z</lastmod>
+    <data>
+        <display>
+        <title>ContextLoaderListener初始化的前后文和DispatcherServlet初始化的上下文关系</title>
+        <pubTime>2017-09-11T12:13:40.000Z</pubTime>
+        
+        <tag>spring</tag>
+         
+        <tag>springmvc</tag>
+         
+         
+           
+             
+              <breadCrumb title="spring" url="http://leiyatao.com/categories/spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://leiyatao.com/2018/07/02/maven-local-jar/</loc>
