@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nginx安装配置]]></title>
+    <url>%2F2018%2F11%2F19%2Fnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[环境 Linux版本：Linux version 3.8.13-26.1.1.el6uek.x86_64 (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) Nginx版本：nginx-1.13.12 安装依赖软件12yum -y install gcc gcc-c++ autoconf automake makeyum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel 安装 Nginx下载1# wget http://nginx.org/download/nginx-1.13.12.tar.gz 解压1# tar -xvf nginx-1.13.12.tar.gz 创建安装目录1# mkdir -p /usr/local/nginx 修改配置12# cd nginx-1.13.12/# ./configure --prefix=/usr/local/nginx 安装1#make &amp;&amp; make install 启动进入安装目录1# cd /usr/local/nginx/sbin 启动1# ./nginx 这时候在安装机器就可以输入地址查看了。 如果远程访问的话需要关闭防火墙或者将80端口开放，添加新端口后需要reload 防火墙。 Nginx 其他命令以下包含了 Nginx 常用的几个命令：12345./nginx -s reload # 重新载入配置文件./nginx -s reopen # 重启 Nginx./nginx -s stop # 停止 Nginx./nginx -t # 测试配置文件./nginx -v # 查看版本]]></content>
+      <categories>
+        <category>nginx</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+        <tag>反向代理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Elasticsearch安装使用]]></title>
+    <url>%2F2018%2F11%2F10%2FElasticsearch%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[本文以目前最新版本elasticsearch-6.4.3为例 下载elasticsearch官方下载：https://www.elastic.co/cn/downloads/elasticsearch1wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.3.tar.gz 解压1tar -xvf elasticsearch-6.4.3.tar.gz 安装注意:elasticsearch安装时不能以root权限进行安装，否则会报以下错误12345678910111213141516[root@kiko1 bin]# ./elasticsearch[2018-11-10T17:41:55,713][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [] uncaught exception in thread [main]org.elasticsearch.bootstrap.StartupException: java.lang.RuntimeException: can not run elasticsearch as root at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:140) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:127) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.4.3.jar:6.4.3] at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.4.3.jar:6.4.3] at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:93) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:86) ~[elasticsearch-6.4.3.jar:6.4.3]Caused by: java.lang.RuntimeException: can not run elasticsearch as root at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:104) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:171) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:326) ~[elasticsearch-6.4.3.jar:6.4.3] at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:136) ~[elasticsearch-6.4.3.jar:6.4.3] ... 6 more 创建专有用户123456## root权限下新增一个用户useradd kiko#授权chown -R kiko /home/kiko/tools/elasticsearch-*## 进入bin目录下进行安装[kiko@kiko1 bin]$ ./elasticsearch ###]]></content>
+      <categories>
+        <category>Elasticsearch</category>
+      </categories>
+      <tags>
+        <tag>es</tag>
+        <tag>Elasticsearch</tag>
+        <tag>搜索</tag>
+        <tag>Elasticsearch安装</tag>
+        <tag>安装</tag>
+        <tag>solr</tag>
+        <tag>Lucene</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[redis单机版安装]]></title>
+    <url>%2F2018%2F09%2F18%2Fredis-signle-install%2F</url>
+    <content type="text"><![CDATA[环境 环境 版本 linux Red Hat Enterprise Linux Server release 6.10 (Santiago) redis 3.2.12 下载在redis官网网站去下载,具体下载地址12345678910111213[root@kiko1 tools]# wget http://download.redis.io/releases/redis-3.2.12.tar.gz[root@kiko1 tools]# tar -xvf redis-3.2.12.tar.gz[root@kiko1 tools]# cd redis-3.2.12[root@kiko1 redis-3.2.12]# make[root@kiko1 redis-3.2.12]# cd src &amp;&amp; make install[root@kiko1 redis-3.2.12]# cd utils[root@kiko1 utils]# ./install_server.sh 初始化设置1234567891011121314151617181920Welcome to the redis service installerThis script will help you easily set up a running redis serverPlease select the redis port for this instance: [6379]Selecting default: 6379Please select the redis config file name [/etc/redis/6379.conf]Selected default - /etc/redis/6379.confPlease select the redis log file name [/var/log/redis_6379.log]Selected default - /var/log/redis_6379.logPlease select the data directory for this instance [/var/lib/redis/6379]Selected default - /var/lib/redis/6379Please select the redis executable path [/usr/local/bin/redis-server]Selected config:Port : 6379Config file : /etc/redis/6379.confLog file : /var/log/redis_6379.logData dir : /var/lib/redis/6379Executable : /usr/local/bin/redis-serverCli Executable : /usr/local/bin/redis-cliIs this ok? Then press ENTER to go on or Ctrl-C to abort.]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>redis</tag>
+        <tag>redis3.2.9</tag>
+        <tag>redis安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MAVEN加载本地jar包]]></title>
     <url>%2F2018%2F07%2F02%2Fmaven-local-jar%2F</url>
     <content type="text"><![CDATA[正常情况下，在以MAVEN创建的java工程中，引用jar包直接在本地Maven仓库或远程仓库中找到响应jar的maven依赖，直接添加到pom.xml的&lt;dependencies&gt;...&lt;/dependencies&gt;中。 但最近在做第三方支付服务，该服务需要引入支付有关的几个jar包。而这些jar包在maven官方仓库中是没有的。 那么如何在添加本地的jar包到maven中并可以package成可执行jar包呢？ 配置MAVEN环境变量maven环境配置不在此赘述。 方法一 将本地jar包添加到本地仓库添加本地jar包到本地Maven仓库Maven安装jar包命令是1mvn install:install-file -Dfile=jar包的位置 -DgroupId=自定义groupId -DartifactId=自定义artifactId -Dversion=自定义version -Dpackaging=jar 例如：12mvn install:install-file -Dfile=F:\svn\hsxt-dev\09_20180605\hsxt-access-web\hsxt-access-web-aps\lib\commons-utils-0.0.1-SNAPSHOT.jar -DgroupId=commons-utils -DartifactId=commons-utils -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar 在java工程pom.xml文件中添加依赖123456&lt;!-- 智能POS jar--&gt;&lt;dependency&gt; &lt;groupId&gt;commons-utils&lt;/groupId&gt; &lt;artifactId&gt;commons-utils&lt;/artifactId&gt; &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;&lt;/dependency&gt; package JAR包1mvn package 到此，package JAR包的方法跟平常一样。clean后package，在target目录中就会生成打包好的jar包。 方法二 将本地jar包添加到工程添加jar到工程主目录的lib中在工程主目录创建lib文件夹，然后将相应的jar包添加到lib文件夹下。 在pom.xml中添加依赖如下12345678 &lt;!-- 智能POS jar--&gt;&lt;dependency&gt; &lt;groupId&gt;commons-utils&lt;/groupId&gt; &lt;artifactId&gt;commons-utils&lt;/artifactId&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt; &lt;systemPath&gt;$&#123;basedir&#125;\lib\commons-utils-0.0.1-SNAPSHOT.jar&lt;/systemPath&gt;&lt;/dependency&gt; 说明： groupId、artifactId、version任意填写。 scope表示从本地文件系统拿，一定需要配合systemPath属性使用。 systemPath为jar包的绝对路径 ${basedir}为项目根目录的绝对路径 注意事项！！ 用方法二添加jar是可以在本地将第三方jar包添加到maven工程中的。但是在package时，这些第三方jar包不会被打入到jar包中。所以该方法只适用于本地开发。 如果想要用jar包部署项目，请参见上面方法一，将jar包安装到本地maven仓库。 本文参考]]></content>
@@ -37,9 +81,9 @@
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>集群服务</tag>
         <tag>Cluster</tag>
         <tag>zookeeper</tag>
-        <tag>集群服务</tag>
       </tags>
   </entry>
   <entry>
@@ -50,8 +94,8 @@
         <category>zookeeper</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>环境配置</tag>
+        <tag>linux</tag>
         <tag>zookeeper</tag>
       </tags>
   </entry>
@@ -63,8 +107,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>环境配置</tag>
+        <tag>linux</tag>
         <tag>ssh</tag>
         <tag>集群服务</tag>
       </tags>

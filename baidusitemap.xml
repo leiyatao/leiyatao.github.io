@@ -3,6 +3,88 @@
 
 
     
+  <url>
+    <loc>http://leiyatao.com/2018/11/19/nginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-11-19T09:32:27.337Z</lastmod>
+    <data>
+        <display>
+        <title>nginx安装配置</title>
+        <pubTime>2018-11-19T08:27:57.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>nginx</tag>
+         
+        <tag>反向代理</tag>
+         
+         
+           
+             
+              <breadCrumb title="nginx" url="http://leiyatao.com/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2018/11/10/Elasticsearch%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-11-10T09:56:42.373Z</lastmod>
+    <data>
+        <display>
+        <title>Elasticsearch安装使用</title>
+        <pubTime>2018-11-10T09:38:09.000Z</pubTime>
+        
+        <tag>es</tag>
+         
+        <tag>Elasticsearch</tag>
+         
+        <tag>搜索</tag>
+         
+        <tag>Elasticsearch安装</tag>
+         
+        <tag>安装</tag>
+         
+        <tag>solr</tag>
+         
+        <tag>Lucene</tag>
+         
+         
+           
+             
+              <breadCrumb title="Elasticsearch" url="http://leiyatao.com/categories/Elasticsearch/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leiyatao.com/2018/09/18/redis-signle-install/</loc>
+    <lastmod>2018-09-18T12:58:52.022Z</lastmod>
+    <data>
+        <display>
+        <title>redis单机版安装</title>
+        <pubTime>2018-09-18T11:27:39.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>redis</tag>
+         
+        <tag>redis3.2.9</tag>
+         
+        <tag>redis安装</tag>
+         
+         
+           
+             
+              <breadCrumb title="redis" url="http://leiyatao.com/categories/redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://leiyatao.com/2017/09/11/ContextLoaderListener%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%89%8D%E5%90%8E%E6%96%87%E5%92%8CDispatcherServlet%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E5%85%B3%E7%B3%BB/</loc>
@@ -111,11 +193,11 @@
         
         <tag>linux</tag>
          
+        <tag>集群服务</tag>
+         
         <tag>Cluster</tag>
          
         <tag>zookeeper</tag>
-         
-        <tag>集群服务</tag>
          
          
            
@@ -135,9 +217,9 @@
         <title>Linux 搭建 ZooKeeper-3.4.12 单机服务</title>
         <pubTime>2018-05-09T06:24:28.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>环境配置</tag>
+         
+        <tag>linux</tag>
          
         <tag>zookeeper</tag>
          
@@ -281,9 +363,9 @@
         <title>linux ssh  免密登录</title>
         <pubTime>2018-05-08T12:37:30.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>环境配置</tag>
+         
+        <tag>linux</tag>
          
         <tag>ssh</tag>
          
