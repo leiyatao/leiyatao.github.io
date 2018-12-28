@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[confluence6.9安装]]></title>
+    <url>%2F2018%2F12%2F28%2Fconfluence6-9%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[简介 Confluence是一个专业的企业知识管理与协同软件，也可以用于构建企业wiki。使用简单，但它强大的编辑和站点管理特征能够帮助团队成员之间共享信息、文档协作、集体讨论，信息推送。 Confluence为团队提供一个协作环境。在这里，团队成员齐心协力，各擅其能，协同地编写文档和管理项目。从此打破不同团队、不同部门以及个人之间信息孤岛的僵局，Confluence真正实现了组织资源共享。 环境要求本次安装已CentOS7.4为例，安装前需要mysql，jdk支持。 运行环境 CentOS7.4 mysql version 5.7.20 jdk java version “1.8.0_191 Confluence安装下载下载安装包和注册工具1234# 安装包下载 wget https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.9.1-x64.bin# 注册工具下载 wget http://down.whsir.com/downloads/confluence_crack.zip 设置执行权限1chmod +x atlassian-confluence-6.9.1-x64.bin 安装123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051$ ./atlassian-confluence-6.9.1-x64.binUnpacking JRE ...Starting Installer ...You do not have administrator rights to this machine and as such, some installation options will not be available. Are you sure you want to continue?Yes [y, Enter], No [n]输入y或者直接回车yThis will install Confluence 6.9.1 on your computer.OK [o, Enter], Cancel [c]# 输入o或直接回车oClick Next to continue, or Cancel to exit Setup.Choose the appropriate installation or upgrade option.Please choose one of the following:Express Install (uses default settings) [1],Custom Install (recommended for advanced users) [2, Enter],Upgrade an existing Confluence installation [3]# 这里输入数字11See where Confluence will be installed and the settings that will be used.Installation Directory: /home/xhc/atlassian/confluenceHome Directory: /home/xhc/atlassian/application-data/confluenceHTTP Port: 8090RMI Port: 8000Install as service: NoInstall [i, Enter], Exit [e]# 输入i或者直接回车iExtracting files ...Please wait a few moments while we configure Confluence.Installation of Confluence 6.9.1 is completeStart Confluence now?Yes [y, Enter], No [n]# 输入y或者直接回车yPlease wait a few moments while Confluence starts up.Launching Confluence ...Installation of Confluence 6.9.1 is completeYour installation of Confluence 6.9.1 is now ready and can be accessed viayour browser.Confluence 6.9.1 can be accessed at http://localhost:8090Finishing installation ... 2. 书写一个质能守恒公式[^LaTeX]$$E=mc^2$$]]></content>
+      <categories>
+        <category>confluence</category>
+      </categories>
+      <tags>
+        <tag>confluence</tag>
+        <tag>wiki</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[nginx安装配置]]></title>
     <url>%2F2018%2F11%2F19%2Fnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[环境 Linux版本：Linux version 3.8.13-26.1.1.el6uek.x86_64 (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) Nginx版本：nginx-1.13.12 安装依赖软件12yum -y install gcc gcc-c++ autoconf automake makeyum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel 安装 Nginx下载1# wget http://nginx.org/download/nginx-1.13.12.tar.gz 解压1# tar -xvf nginx-1.13.12.tar.gz 创建安装目录1# mkdir -p /usr/local/nginx 修改配置12# cd nginx-1.13.12/# ./configure --prefix=/usr/local/nginx 安装1#make &amp;&amp; make install 启动进入安装目录1# cd /usr/local/nginx/sbin 启动1# ./nginx 这时候在安装机器就可以输入地址查看了。 如果远程访问的话需要关闭防火墙或者将80端口开放，添加新端口后需要reload 防火墙。 Nginx 其他命令以下包含了 Nginx 常用的几个命令：12345./nginx -s reload # 重新载入配置文件./nginx -s reopen # 重启 Nginx./nginx -s stop # 停止 Nginx./nginx -t # 测试配置文件./nginx -v # 查看版本]]></content>
@@ -94,8 +106,8 @@
         <category>zookeeper</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
         <tag>linux</tag>
+        <tag>环境配置</tag>
         <tag>zookeeper</tag>
       </tags>
   </entry>
@@ -107,8 +119,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
         <tag>linux</tag>
+        <tag>环境配置</tag>
         <tag>ssh</tag>
         <tag>集群服务</tag>
       </tags>
