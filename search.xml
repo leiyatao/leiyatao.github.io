@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL查看表注释或字段注释]]></title>
+    <url>%2F2019%2F03%2F07%2F%E6%9F%A5%E7%9C%8B%E8%A1%A8%E6%B3%A8%E9%87%8A%E6%88%96%E5%AD%97%E6%AE%B5%E6%B3%A8%E9%87%8A%2F</url>
+    <content type="text"><![CDATA[查看所有表的注释123456789SELECTtable_name 表名,table_comment 表说明FROMinformation_schema.TABLESWHEREtable_schema = '数据库名'ORDER BYtable_name 查询所有表及字段的注释1234567891011121314SELECTa.table_name 表名,a.table_comment 表说明,b.COLUMN_NAME 字段名,b.column_comment 字段说明,b.column_type 字段类型,b.column_key 约束FROMinformation_schema. TABLES aLEFT JOIN information_schema. COLUMNS b ON a.table_name = b.TABLE_NAMEWHEREa.table_schema = '数据库名'ORDER BYa.table_name 查询某表的所有字段的注释1234567selectCOLUMN_NAME 字段名,column_comment 字段说明,column_type 字段类型,column_key 约束 from information_schema.columnswhere table_schema = '数据库名'and table_name = '表名' ; 或者1show full columns from 表名; 查看表生成的DDL注意表名不加单引号1show create table 表名; 新建表以及添加表和字段的注释12345create table t_user( ID INT(19) primary key auto_increment comment '主键', NAME VARCHAR(300) comment '姓名', CREATE_TIME date comment '创建时间')comment = '用户信息表'; 修改表/字段的注释修改表注释1alter table t_user comment = '修改后的表注释信息(用户信息表)'; 修改字段注释1alter table t_user modify column id int comment '主键ID';]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[confluence6.9安装]]></title>
     <url>%2F2018%2F12%2F28%2Fconfluence6-9%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[简介 Confluence是一个专业的企业知识管理与协同软件，也可以用于构建企业wiki。使用简单，但它强大的编辑和站点管理特征能够帮助团队成员之间共享信息、文档协作、集体讨论，信息推送。 Confluence为团队提供一个协作环境。在这里，团队成员齐心协力，各擅其能，协同地编写文档和管理项目。从此打破不同团队、不同部门以及个人之间信息孤岛的僵局，Confluence真正实现了组织资源共享。 环境要求本次安装已CentOS7.4为例，安装前需要mysql，jdk支持。 运行环境 CentOS7.4 mysql version 5.7.20 jdk java version “1.8.0_191 Confluence安装下载下载安装包和注册工具1234# 安装包下载 wget https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.9.1-x64.bin# 注册工具下载 wget http://down.whsir.com/downloads/confluence_crack.zip 设置执行权限1chmod +x atlassian-confluence-6.9.1-x64.bin 安装123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051$ ./atlassian-confluence-6.9.1-x64.binUnpacking JRE ...Starting Installer ...You do not have administrator rights to this machine and as such, some installation options will not be available. Are you sure you want to continue?Yes [y, Enter], No [n]输入y或者直接回车yThis will install Confluence 6.9.1 on your computer.OK [o, Enter], Cancel [c]# 输入o或直接回车oClick Next to continue, or Cancel to exit Setup.Choose the appropriate installation or upgrade option.Please choose one of the following:Express Install (uses default settings) [1],Custom Install (recommended for advanced users) [2, Enter],Upgrade an existing Confluence installation [3]# 这里输入数字11See where Confluence will be installed and the settings that will be used.Installation Directory: /home/xhc/atlassian/confluenceHome Directory: /home/xhc/atlassian/application-data/confluenceHTTP Port: 8090RMI Port: 8000Install as service: NoInstall [i, Enter], Exit [e]# 输入i或者直接回车iExtracting files ...Please wait a few moments while we configure Confluence.Installation of Confluence 6.9.1 is completeStart Confluence now?Yes [y, Enter], No [n]# 输入y或者直接回车yPlease wait a few moments while Confluence starts up.Launching Confluence ...Installation of Confluence 6.9.1 is completeYour installation of Confluence 6.9.1 is now ready and can be accessed viayour browser.Confluence 6.9.1 can be accessed at http://localhost:8090Finishing installation ... 安装完成会自动启动 打开网页获取ID访问http://IP:8090 切换语言 获得插件 授权码走到这一步，就可获取服务器id 破解破解需要分两步： 一是破解文件 二是获取授权码 破解文件 从服务器上下载/opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.3.0.jar文件到windows客户端重命名为atlassian-extras-2.4.jar 运行confluence_keygen.jar（文中最开始的那个破解包，在windows上运行，需要在windows上安装好java） 选择.patch!找到刚才重命名的那个文件打开 打开后在当前目录下可以看到atlassian-extras-2.4.jar和atlassian-extras-2.4.bak两个文件，这里atlassian-extras-2.4.jar已经是破解好的了，将atlassian-extras-2.4.jar名字改回来atlassian-extras-decoder-v2-3.3.0.jar上传到服务器上的/opt/atlassian/confluence/confluence/WEB-INF/lib/目录，覆盖原来的atlassian-extras-decoder-v2-3.3.0.jar 二、获取授权码复制网页中的服务器ID，运行破解工具confluence_keygen.jar，破解复制Key到Confluence里，获得授权码，进行下一步 数据库配置 参考文章 http://blog.51cto.com/m51cto/2131964 https://blog.csdn.net/weixin_41004350/article/details/80590421]]></content>
@@ -106,8 +118,8 @@
         <category>zookeeper</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>环境配置</tag>
+        <tag>linux</tag>
         <tag>zookeeper</tag>
       </tags>
   </entry>
@@ -119,8 +131,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>环境配置</tag>
+        <tag>linux</tag>
         <tag>ssh</tag>
         <tag>集群服务</tag>
       </tags>
