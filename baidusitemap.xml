@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://leiyatao.com/2019/03/07/%E6%9F%A5%E7%9C%8B%E8%A1%A8%E6%B3%A8%E9%87%8A%E6%88%96%E5%AD%97%E6%AE%B5%E6%B3%A8%E9%87%8A/</loc>
     <lastmod>2019-03-07T11:39:56.676Z</lastmod>
@@ -24,7 +25,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://leiyatao.com/2018/12/28/confluence6-9%E5%AE%89%E8%A3%85/</loc>
@@ -335,9 +335,9 @@
         <title>Linux 搭建 ZooKeeper-3.4.12 单机服务</title>
         <pubTime>2018-05-09T06:24:28.000Z</pubTime>
         
-        <tag>环境配置</tag>
-         
         <tag>linux</tag>
+         
+        <tag>环境配置</tag>
          
         <tag>zookeeper</tag>
          
@@ -481,9 +481,9 @@
         <title>linux ssh  免密登录</title>
         <pubTime>2018-05-08T12:37:30.000Z</pubTime>
         
-        <tag>环境配置</tag>
-         
         <tag>linux</tag>
+         
+        <tag>环境配置</tag>
          
         <tag>ssh</tag>
          
