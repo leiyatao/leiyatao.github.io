@@ -118,8 +118,8 @@
         <category>zookeeper</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>环境配置</tag>
+        <tag>linux</tag>
         <tag>zookeeper</tag>
       </tags>
   </entry>
@@ -131,8 +131,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>环境配置</tag>
+        <tag>linux</tag>
         <tag>ssh</tag>
         <tag>集群服务</tag>
       </tags>
