@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springboot-https]]></title>
+    <url>%2F2020%2F11%2F11%2Fspringboot-https%2F</url>
+    <content type="text"><![CDATA[好久好久没有写这个博客了，如果今天不是为了给域名续费我都忘了我还有个博客]]></content>
+      <categories>
+        <category>springboot</category>
+      </categories>
+      <tags>
+        <tag>springboot https</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL查看表注释或字段注释]]></title>
     <url>%2F2019%2F03%2F07%2F%E6%9F%A5%E7%9C%8B%E8%A1%A8%E6%B3%A8%E9%87%8A%E6%88%96%E5%AD%97%E6%AE%B5%E6%B3%A8%E9%87%8A%2F</url>
     <content type="text"><![CDATA[查看所有表的注释123456789SELECTtable_name 表名,table_comment 表说明FROMinformation_schema.TABLESWHEREtable_schema = '数据库名'ORDER BYtable_name 查询所有表及字段的注释1234567891011121314SELECTa.table_name 表名,a.table_comment 表说明,b.COLUMN_NAME 字段名,b.column_comment 字段说明,b.column_type 字段类型,b.column_key 约束FROMinformation_schema. TABLES aLEFT JOIN information_schema. COLUMNS b ON a.table_name = b.TABLE_NAMEWHEREa.table_schema = '数据库名'ORDER BYa.table_name 查询某表的所有字段的注释1234567selectCOLUMN_NAME 字段名,column_comment 字段说明,column_type 字段类型,column_key 约束 from information_schema.columnswhere table_schema = '数据库名'and table_name = '表名' ; 或者1show full columns from 表名; 查看表生成的DDL注意表名不加单引号1show create table 表名; 新建表以及添加表和字段的注释12345create table t_user( ID INT(19) primary key auto_increment comment '主键', NAME VARCHAR(300) comment '姓名', CREATE_TIME date comment '创建时间')comment = '用户信息表'; 修改表/字段的注释修改表注释1alter table t_user comment = '修改后的表注释信息(用户信息表)'; 修改字段注释1alter table t_user modify column id int comment '主键ID';]]></content>
