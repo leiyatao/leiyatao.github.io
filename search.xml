@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ORACLE锁表问题处理]]></title>
+    <url>%2F2020%2F12%2F18%2Foracle%E9%94%81%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[for update造成oracle锁表问题解决今天下午在单元测试造数据过程中在pl/sql中使用select * from table for update 修改数据 1select * from T_BS_NEXGO_MERCH_PIC t where t.APPLY_ID='fuiou112020081218312000 for update; 当数据修改完成后没有进行commit就关掉了PL/SQL，之后再插入数据时PL/SQL直接卡死。 检查是否锁表查看是否锁表的sql 1select * from v$session t1, v$locked_object t2 where t1.sid = t2.SESSION_ID; 执行锁表语句结果 从而发现有一条锁表记录 解锁杀掉锁表进程：记录下SID和serial# ，分别替换掉下面的1900,11073，即可解除锁表，注意，必须有管理员权限才可以执行 1alter system kill session '1900,11073'; 后记以后如果在plsql中不想用SQL语句修改数据，直接在表中修改数据避免使用for update,多用如下语句1select t.*,rowid from tbname 以上语句同样可以在plsql的查询结果中尽心数据修改，并且可避免锁表风险。]]></content>
+      <categories>
+        <category>ORACLE</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>ORACLE</tag>
+        <tag>锁表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot https访问配置]]></title>
     <url>%2F2020%2F11%2F11%2Fspringboot-https%2F</url>
     <content type="text"><![CDATA[好久好久没有写这个博客了，如果今天不是为了给域名续费我都忘了我还有个博客]]></content>
